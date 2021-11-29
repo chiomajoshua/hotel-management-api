@@ -1,4 +1,6 @@
-using hotel_management_api_identity.Core.HealthChecks;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using hotel_management_api_identity.Core.Helpers;
 using hotel_management_api_identity.Core.MiddlewareExtensions;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
@@ -42,13 +44,11 @@ try
     builder.Services.AddHealthChecks()
                 .AddCheck("self", () => HealthCheckResult.Healthy());
     
-
-
-
-
-
-
-
+    builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
+        .ConfigureContainer<ContainerBuilder>(builder =>
+    {
+        builder.RegisterModule(new AutofacContainerModule());        
+    });
 
     var app = builder.Build();
     app.ConfigureExceptionHandler();
@@ -70,8 +70,10 @@ try
     app.UseRouting();
     app.UseCors("pol");
     app.UseHttpsRedirection();
+    
 
     app.UseAuthorization();
+    app.UseAuthenticationMiddleware();
 
     app.UseEndpoints(endpoints =>
     {
