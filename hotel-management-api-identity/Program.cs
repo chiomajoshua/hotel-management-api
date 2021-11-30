@@ -1,7 +1,9 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using HealthChecks.UI.Client;
 using hotel_management_api_identity.Core.Helpers;
 using hotel_management_api_identity.Core.MiddlewareExtensions;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Serilog;
@@ -71,11 +73,13 @@ try
 
     app.UseEndpoints(endpoints =>
     {
-        endpoints.MapControllers();
-        if (app.Environment.IsDevelopment())
+        endpoints.MapHealthChecks("/health", new HealthCheckOptions
         {
-            endpoints.MapHealthChecks("/healthz");
-        }
+            AllowCachingResponses = false,
+            Predicate = _ => true,
+            ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+        });
+        endpoints.MapControllers();           
     });
 
     app.Run();
