@@ -146,3 +146,23 @@ Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostExce
 2021-11-30 17:35:48.540 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
 2021-11-30 17:35:49.354 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 155.6216 ms
 2021-11-30 17:35:49.531 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 69.2458 ms
+2021-11-30 17:44:54.583 +01:00 [INF] Now listening on: https://localhost:7135
+2021-11-30 17:44:54.613 +01:00 [INF] Now listening on: http://localhost:5135
+2021-11-30 17:44:54.616 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-30 17:44:54.617 +01:00 [INF] Hosting environment: Development
+2021-11-30 17:44:54.617 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-11-30 17:44:58.376 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 113.8533 ms
+2021-11-30 17:44:58.532 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 64.6888 ms
+2021-11-30 17:45:28.542 +01:00 [INF] HTTP GET /health responded 401 in 131.7319 ms
+2021-11-30 17:45:28.562 +01:00 [INF] HTTP GET /favicon.ico responded 401 in 0.8873 ms
+2021-11-30 17:46:02.096 +01:00 [INF] HTTP GET /healthz responded 401 in 0.6165 ms
+2021-11-30 17:46:02.119 +01:00 [INF] HTTP GET /favicon.ico responded 401 in 0.4114 ms
+2021-11-30 17:46:06.900 +01:00 [INF] HTTP GET /healthz responded 401 in 0.3705 ms
+2021-11-30 17:46:06.918 +01:00 [INF] HTTP GET /favicon.ico responded 401 in 0.2537 ms
+2021-11-30 17:51:05.358 +01:00 [INF] Now listening on: https://localhost:7135
+2021-11-30 17:51:05.382 +01:00 [INF] Now listening on: http://localhost:5135
+2021-11-30 17:51:05.385 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-30 17:51:05.385 +01:00 [INF] Hosting environment: Development
+2021-11-30 17:51:05.386 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-11-30 17:51:06.437 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 200.1686 ms
+2021-11-30 17:51:06.621 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 82.5996 ms

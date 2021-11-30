@@ -1,5 +1,7 @@
 ﻿using hotel_management_api_identity.Core.Helpers.Models;
 using System.Dynamic;
+using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace hotel_management_api_identity.Core.Helpers.Extension
 {
@@ -7,39 +9,31 @@ namespace hotel_management_api_identity.Core.Helpers.Extension
     {
         public static bool IgnoreProperty<T>(this Type typeObject, string propertyName)
         {
-#pragma warning disable CS8604 // Possible null reference argument.
             return Attribute.IsDefined(typeObject.GetProperty(propertyName), typeof(IgnoreDuringInsertOrUpdateAttribute), false);
-#pragma warning restore CS8604 // Possible null reference argument.
         }
 
         public static bool IgnoreTrailProperty<T>(this Type typeObject, string propertyName)
         {
-#pragma warning disable CS8604 // Possible null reference argument.
             return Attribute.IsDefined(typeObject.GetProperty(propertyName), typeof(IgnoreDuringInsertOrUpdateAttribute), false);
-#pragma warning restore CS8604 // Possible null reference argument.
         }
 
-        public static string? GetTableName<T>(this Type entity)
+        public static string GetTableName<T>(this Type entity)
         {
             if (!Attribute.IsDefined(entity, typeof(TableNameAttribute), false))
             {
                 if (Attribute.IsDefined(entity, typeof(TableNameAttribute), false))
                 {
                     var tableNameAttribute1 = Attribute.GetCustomAttribute(entity, attributeType: typeof(TableNameAttribute)) as TableNameAttribute;
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
                     return tableNameAttribute1.Name;
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
                 }
                 return null;
             }
 
             var tableNameAttribute = Attribute.GetCustomAttribute(entity, typeof(TableNameAttribute)) as TableNameAttribute;
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
             return tableNameAttribute.Name;
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
         }
 
-        public static T? GetClassInstance<T>(this Dictionary<string, object> dict, Type type) where T : class
+        public static T GetClassInstance<T>(this Dictionary<string, object> dict, Type type) where T : class
         {
             var obj = Activator.CreateInstance(type);
 
@@ -64,6 +58,45 @@ namespace hotel_management_api_identity.Core.Helpers.Extension
             }
             dynamic eoDynamic = eo;
             return eoDynamic;
+        }
+
+        public static bool IsValidEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
+
+            try
+            {
+                email = Regex.Replace(email, @"(@)(.+)$", DomainMapper,
+                                      RegexOptions.None, TimeSpan.FromMilliseconds(200));
+
+                static string DomainMapper(Match match)
+                {
+                    var idn = new IdnMapping();
+                    string domainName = idn.GetAscii(match.Groups[2].Value);
+
+                    return match.Groups[1].Value + domainName;
+                }
+            }
+            catch (RegexMatchTimeoutException)
+            {
+                return false;
+            }
+            catch (ArgumentException)
+            {
+                return false;
+            }
+
+            try
+            {
+                return Regex.IsMatch(email,
+                    @"^[^@\s]+@[^@\s]+\.[^@\s]+$",
+                    RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
+            }
+            catch (RegexMatchTimeoutException)
+            {
+                return false;
+            }
         }
     }
 }
