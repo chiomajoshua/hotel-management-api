@@ -4,7 +4,6 @@ using hotel_management_api_identity.Core.Helpers;
 using hotel_management_api_identity.Core.MiddlewareExtensions;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
-using Microsoft.OpenApi.Models;
 using Serilog;
 using System.Globalization;
 
@@ -28,10 +27,8 @@ try
     builder.Services.AddControllers();
     // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
     builder.Services.AddEndpointsApiExplorer();
-    builder.Services.AddSwaggerGen(c =>
-    {
-        c.SwaggerDoc("v1", new OpenApiInfo { Title = "House-4-Identity-Microservice", Version = "v1" });
-    });
+    builder.Services.AddSwaggerService();
+    
     builder.Services.AddCors(options =>
     {
         options.AddPolicy("pol",
@@ -53,12 +50,7 @@ try
     var app = builder.Build();
     app.ConfigureExceptionHandler();
     app.UseSerilogRequestLogging();
-    // Configure the HTTP request pipeline.
-    if (app.Environment.IsDevelopment())
-    {
-        app.UseSwagger();
-        app.UseSwaggerUI();
-    }
+   
 
     var supportedCultures = new[] { new CultureInfo("en-GB"), new CultureInfo("en-US") };
     app.UseRequestLocalization(new RequestLocalizationOptions
@@ -67,6 +59,8 @@ try
         SupportedCultures = supportedCultures,
         SupportedUICultures = supportedCultures
     });
+
+    app.UseSwaggerService(app.Environment);
     app.UseRouting();
     app.UseCors("pol");
     app.UseHttpsRedirection();

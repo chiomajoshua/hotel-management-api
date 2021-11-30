@@ -1,11 +1,13 @@
-﻿namespace hotel_management_api_identity.Core.Storage.QueryRepository
+﻿using System.Data.SqlClient;
+
+namespace hotel_management_api_identity.Core.Storage.QueryRepository
 {
     public interface IDapperCommand<TEntity> where TEntity : class
     {
         Task AddAsync(TEntity entity);
-        Task AddRangeAsync(List<TEntity> entity);
+        Task AddBatchAsync(TEntity entity, List<Dictionary<string, object>> columnValuePairs, SqlTransaction sqlTransaction);
         Task UpdateAsync(TEntity entity);
-        Task DeleteAsync(Guid id);
+        Task UpdateBatchAsync(TEntity entity, List<Dictionary<string, object>> columnValuePairs, SqlTransaction sqlTransaction);
     }
     public class DapperCommand<TEntity> : IDapperCommand<TEntity> where TEntity : class
     {
@@ -20,24 +22,31 @@
             _connStr = _configuration.GetConnectionString("DbConnectionString");            
             _utilities = utilities;
         }
-        public Task AddAsync(TEntity entity)
+        public async Task AddAsync(TEntity entity)
         {
-            throw new NotImplementedException();
+            await _executers.ExecuteCommandAsync<TEntity>(_connStr, _utilities.GenerateInsertQuery(entity), _utilities.GetObjectParams(entity));
         }
 
-        public Task AddRangeAsync(List<TEntity> entity)
+        public async Task AddBatchAsync(TEntity entity, List<Dictionary<string, object>> columnValuePairs, SqlTransaction sqlTransaction)
         {
-            throw new NotImplementedException();
+            string query = _utilities.GenerateBulkInsertQuery<TEntity>(columnValuePairs);
+
+            await _executers.ExecuteCommandAsync<TEntity>(query, new { }, sqlTransaction);
+        }
+        
+        public async Task UpdateAsync(TEntity entity)
+        {
+            string connectionString = _utilities.GetConnectionString();
+
+            string query = $"{_utilities.GenerateUpdateQuery(entity)}";
+            await _executers.ExecuteCommandAsync<TEntity>(connectionString, query, _utilities.GetObjectParams(entity));
         }
 
-        public Task DeleteAsync(Guid id)
+        public async Task UpdateBatchAsync(TEntity entity, List<Dictionary<string, object>> columnValuePairs, SqlTransaction sqlTransaction)
         {
-            throw new NotImplementedException();
-        }
+            string query = _utilities.GenerateBulkUpdateQuery<TEntity>(columnValuePairs);
 
-        public Task UpdateAsync(TEntity entity)
-        {
-            throw new NotImplementedException();
+            await _executers.ExecuteCommandAsync<TEntity>(query, new { }, sqlTransaction);
         }
     }
 }

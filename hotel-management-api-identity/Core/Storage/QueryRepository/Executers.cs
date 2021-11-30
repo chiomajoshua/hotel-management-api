@@ -37,32 +37,30 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
         /// <param name="task"></param>
         public void ExecuteCommand(string connStr, Action<SqlConnection, SqlTransaction> task)
         {
-            using (var conn = new SqlConnection(connStr))
+            using var conn = new SqlConnection(connStr);
+            SqlTransaction? _sqlTransaction = null;
+            try
             {
-                SqlTransaction _sqlTransaction = null;
-                try
+                conn.Open();
+                _sqlTransaction = conn.BeginTransaction();
+                task(conn, _sqlTransaction);
+                _sqlTransaction.Commit();
+            }
+            catch (SqlException)
+            {
+                if (_sqlTransaction?.Connection != null)
                 {
-                    conn.Open();
-                    _sqlTransaction = conn.BeginTransaction();
-                    task(conn, _sqlTransaction);
-                    _sqlTransaction.Commit();
+                    _sqlTransaction.Rollback();
                 }
-                catch (SqlException ex)
+                throw;
+            }
+            catch (Exception)
+            {
+                if (_sqlTransaction?.Connection != null)
                 {
-                    if (_sqlTransaction?.Connection != null)
-                    {
-                        _sqlTransaction.Rollback();
-                    }
-                    throw ex;
+                    _sqlTransaction.Rollback();
                 }
-                catch (Exception ex)
-                {
-                    if (_sqlTransaction?.Connection != null)
-                    {
-                        _sqlTransaction.Rollback();
-                    }
-                    throw ex;
-                }
+                throw;
             }
         }
 
@@ -75,33 +73,31 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
         /// <returns></returns>
         public T ExecuteCommand<T>(string connStr, Func<SqlConnection, SqlTransaction, T> task)
         {
-            using (var conn = new SqlConnection(connStr))
+            using var conn = new SqlConnection(connStr);
+            SqlTransaction? _sqlTransaction = null;
+            try
             {
-                SqlTransaction _sqlTransaction = null;
-                try
+                conn.Open();
+                _sqlTransaction = conn.BeginTransaction();
+                T responseObject = task(conn, _sqlTransaction);
+                _sqlTransaction.Commit();
+                return responseObject;
+            }
+            catch (SqlException)
+            {
+                if (_sqlTransaction?.Connection != null)
                 {
-                    conn.Open();
-                    _sqlTransaction = conn.BeginTransaction();
-                    T responseObject = task(conn, _sqlTransaction);
-                    _sqlTransaction.Commit();
-                    return responseObject;
+                    _sqlTransaction.Rollback();
                 }
-                catch (SqlException ex)
+                throw;
+            }
+            catch (Exception)
+            {
+                if (_sqlTransaction?.Connection != null)
                 {
-                    if (_sqlTransaction?.Connection != null)
-                    {
-                        _sqlTransaction.Rollback();
-                    }
-                    throw ex;
+                    _sqlTransaction.Rollback();
                 }
-                catch (Exception ex)
-                {
-                    if (_sqlTransaction?.Connection != null)
-                    {
-                        _sqlTransaction.Rollback();
-                    }
-                    throw ex;
-                }
+                throw;
             }
         }
 
@@ -114,33 +110,31 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
         /// <returns></returns>
         public async Task<T> ExecuteCommandAsync<T>(string connStr, Func<SqlConnection, SqlTransaction, Task<T>> task)
         {
-            using (var conn = new SqlConnection(connStr))
+            using var conn = new SqlConnection(connStr);
+            SqlTransaction? _sqlTransaction = null;
+            try
             {
-                SqlTransaction _sqlTransaction = null;
-                try
+                conn.Open();
+                _sqlTransaction = conn.BeginTransaction();
+                var returnData = await task(conn, _sqlTransaction);
+                _sqlTransaction.Commit();
+                return returnData;
+            }
+            catch (SqlException)
+            {
+                if (_sqlTransaction?.Connection != null)
                 {
-                    conn.Open();
-                    _sqlTransaction = conn.BeginTransaction();
-                    var returnData = await task(conn, _sqlTransaction);
-                    _sqlTransaction.Commit();
-                    return returnData;
+                    _sqlTransaction.Rollback();
                 }
-                catch (SqlException ex)
+                throw;
+            }
+            catch (Exception)
+            {
+                if (_sqlTransaction?.Connection != null)
                 {
-                    if (_sqlTransaction?.Connection != null)
-                    {
-                        _sqlTransaction.Rollback();
-                    }
-                    throw ex;
+                    _sqlTransaction.Rollback();
                 }
-                catch (Exception ex)
-                {
-                    if (_sqlTransaction?.Connection != null)
-                    {
-                        _sqlTransaction.Rollback();
-                    }
-                    throw ex;
-                }
+                throw;
             }
         }
 
@@ -153,32 +147,30 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
         /// <param name="param"></param>
         public void ExecuteCommand<T>(string connStr, string query, object param)
         {
-            using (var conn = new SqlConnection(connStr))
+            using var conn = new SqlConnection(connStr);
+            SqlTransaction? _sqlTransaction = null;
+            try
             {
-                SqlTransaction _sqlTransaction = null;
-                try
+                conn.Open();
+                _sqlTransaction = conn.BeginTransaction();
+                conn.Execute(query, param, transaction: _sqlTransaction);
+                _sqlTransaction.Commit();
+            }
+            catch (SqlException)
+            {
+                if (_sqlTransaction?.Connection != null)
                 {
-                    conn.Open();
-                    _sqlTransaction = conn.BeginTransaction();
-                    conn.Execute(query, param, transaction: _sqlTransaction);
-                    _sqlTransaction.Commit();
+                    _sqlTransaction.Rollback();
                 }
-                catch (SqlException ex)
+                throw;
+            }
+            catch (Exception)
+            {
+                if (_sqlTransaction?.Connection != null)
                 {
-                    if (_sqlTransaction?.Connection != null)
-                    {
-                        _sqlTransaction.Rollback();
-                    }
-                    throw ex;
+                    _sqlTransaction.Rollback();
                 }
-                catch (Exception ex)
-                {
-                    if (_sqlTransaction?.Connection != null)
-                    {
-                        _sqlTransaction.Rollback();
-                    }
-                    throw ex;
-                }
+                throw;
             }
         }
 
@@ -191,32 +183,30 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
         /// <param name="param"></param>
         public async Task ExecuteCommandAsync<T>(string connStr, string query, object param)
         {
-            using (var conn = new SqlConnection(connStr))
+            using var conn = new SqlConnection(connStr);
+            SqlTransaction? _sqlTransaction = null;
+            try
             {
-                SqlTransaction _sqlTransaction = null;
-                try
+                conn.Open();
+                _sqlTransaction = conn.BeginTransaction();
+                await conn.ExecuteAsync(query, param, transaction: _sqlTransaction);
+                _sqlTransaction.Commit();
+            }
+            catch (SqlException)
+            {
+                if (_sqlTransaction?.Connection != null)
                 {
-                    conn.Open();
-                    _sqlTransaction = conn.BeginTransaction();
-                    await conn.ExecuteAsync(query, param, transaction: _sqlTransaction);
-                    _sqlTransaction.Commit();
+                    _sqlTransaction.Rollback();
                 }
-                catch (SqlException ex)
+                throw;
+            }
+            catch (Exception)
+            {
+                if (_sqlTransaction?.Connection != null)
                 {
-                    if (_sqlTransaction?.Connection != null)
-                    {
-                        _sqlTransaction.Rollback();
-                    }
-                    throw ex;
+                    _sqlTransaction.Rollback();
                 }
-                catch (Exception ex)
-                {
-                    if (_sqlTransaction?.Connection != null)
-                    {
-                        _sqlTransaction.Rollback();
-                    }
-                    throw ex;
-                }
+                throw;
             }
         }
 
@@ -224,23 +214,21 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
 
         public IEnumerable<T> ExecuteReader<T>(string connStr, Func<SqlConnection, SqlTransaction, IEnumerable<T>> task)
         {
-            using (var conn = new SqlConnection(connStr))
+            using var conn = new SqlConnection(connStr);
+            SqlTransaction? _sqlTransaction = null;
+            try
             {
-                SqlTransaction _sqlTransaction = null;
-                try
-                {
-                    conn.Open();
-                    IEnumerable<T> responseObject = task(conn, _sqlTransaction);
-                    return responseObject;
-                }
-                catch (SqlException ex)
-                {
-                    throw ex;
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
+                conn.Open();
+                IEnumerable<T> responseObject = task(conn, _sqlTransaction);
+                return responseObject;
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
 
@@ -253,23 +241,21 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
         /// <returns></returns>
         public async Task<IEnumerable<T>> ExecuteReaderAsync<T>(string connStr, Func<SqlConnection, SqlTransaction, Task<IEnumerable<T>>> task)
         {
-            using (var conn = new SqlConnection(connStr))
+            using var conn = new SqlConnection(connStr);
+            SqlTransaction? _sqlTransaction = null;
+            try
             {
-                SqlTransaction _sqlTransaction = null;
-                try
-                {
-                    conn.Open();
-                    IEnumerable<T> responseObject = await task(conn, _sqlTransaction);
-                    return responseObject;
-                }
-                catch (SqlException ex)
-                {
-                    throw ex;
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
+                conn.Open();
+                IEnumerable<T> responseObject = await task(conn, _sqlTransaction);
+                return responseObject;
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
 
@@ -282,22 +268,20 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
         /// <param name="param"></param>
         public IEnumerable<T> ExecuteReader<T>(string connStr, string query, object param)
         {
-            using (var conn = new SqlConnection(connStr))
+            using var conn = new SqlConnection(connStr);
+            try
             {
-                try
-                {
-                    conn.Open();
-                    IEnumerable<T> responseObject = conn.Query<T>(query, param, commandTimeout: _configuration.GetValue<int>("AppSettings:DatabaseReadTimeout"));
-                    return responseObject;
-                }
-                catch (SqlException ex)
-                {
-                    throw ex;
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
+                conn.Open();
+                IEnumerable<T> responseObject = conn.Query<T>(query, param, commandTimeout: _configuration.GetValue<int>("AppSettings:DatabaseReadTimeout"));
+                return responseObject;
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
 
@@ -310,22 +294,20 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
         /// <param name="param"></param>
         public async Task<IEnumerable<T>> ExecuteReaderAsync<T>(string connStr, string query, object param)
         {
-            using (var conn = new SqlConnection(connStr))
+            using var conn = new SqlConnection(connStr);
+            try
             {
-                try
-                {
-                    conn.Open();
-                    IEnumerable<T> responseObject = await conn.QueryAsync<T>(query, param, commandTimeout: _configuration.GetValue<int>("AppSettings:DatabaseReadTimeout"));
-                    return responseObject;
-                }
-                catch (SqlException ex)
-                {
-                    throw ex;
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
+                conn.Open();
+                IEnumerable<T> responseObject = await conn.QueryAsync<T>(query, param, commandTimeout: _configuration.GetValue<int>("AppSettings:DatabaseReadTimeout"));
+                return responseObject;
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
 
@@ -340,28 +322,28 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
         /// <returns></returns>
         public async Task ExecuteCommandAsync<T>(string connStr, string query, object param, SqlTransaction sqlTransaction)
         {
-            SqlTransaction _sqlTransaction = sqlTransaction;
+            var _sqlTransaction = sqlTransaction;
             if (_sqlTransaction == null) throw new SqlTransactionNotInitializedException(Core.Constants.ResponseMessages.SQlTransactionNotInitialized);
 
             try
             {
                 await _sqlTransaction.Connection.ExecuteAsync(query, param, transaction: _sqlTransaction);
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
                 if (_sqlTransaction?.Connection != null)
                 {
                     _sqlTransaction.Rollback();
                 }
-                throw ex;
+                throw;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 if (_sqlTransaction?.Connection != null)
                 {
                     _sqlTransaction.Rollback();
                 }
-                throw ex;
+                throw;
             }
         }
 
@@ -382,21 +364,21 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
             {
                 sqlTransaction.Connection.Execute(query, param, transaction: sqlTransaction);
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
                 if (sqlTransaction != null)
                 {
                     sqlTransaction.Rollback();
                 }
-                throw ex;
+                throw;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 if (sqlTransaction != null)
                 {
                     sqlTransaction.Rollback();
                 }
-                throw ex;
+                throw;
             }
         }
 
@@ -415,21 +397,21 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
             {
                 await sqlTransaction.Connection.ExecuteAsync(query, param, transaction: sqlTransaction);
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
                 if (sqlTransaction != null)
                 {
                     sqlTransaction.Rollback();
                 }
-                throw ex;
+                throw;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 if (sqlTransaction != null)
                 {
                     sqlTransaction.Rollback();
                 }
-                throw ex;
+                throw;
             }
         }
     }

@@ -6,7 +6,7 @@ using System.Net;
 
 namespace hotel_management_api_identity.Core.MiddlewareExtensions
 {
-    public static class ExceptionMiddlewareExtensions
+    public static class ExceptionMiddleware
     {
         public static void ConfigureExceptionHandler(this IApplicationBuilder app)
         {
