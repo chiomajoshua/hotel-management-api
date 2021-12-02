@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using hotel_management_api_identity.Features.Onboarding.Models;
+using hotel_management_api_identity.Features.Onboarding.Services;
+using Microsoft.AspNetCore.Mvc;
 using System.Net.Mime;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -9,9 +11,10 @@ namespace hotel_management_api_identity.Features.Onboarding
     [ApiController]
     public class OnboardingController : ControllerBase
     {
-        public OnboardingController()
+        private readonly IOnboardingService _onboardingService;
+        public OnboardingController(IOnboardingService onboardingService)
         {
-
+            _onboardingService = onboardingService;
         }
        
         [HttpPost]
@@ -19,11 +22,13 @@ namespace hotel_management_api_identity.Features.Onboarding
         [Consumes(MediaTypeNames.Application.Json)]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(object))]
-        [ProducesResponseType(StatusCodes.Status409Conflict, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(object))]
-        public async Task<IActionResult> Customer()
+        public async Task<IActionResult> Customer(CreateCustomerRequest createCustomerRequest)
         {
-            return Ok();
+            if(!ModelState.IsValid)
+                return BadRequest(ModelState);
+            return Created("Customer", await _onboardingService.CreateCustomer(createCustomerRequest));
+            
         }
 
         [HttpPost]
@@ -31,7 +36,6 @@ namespace hotel_management_api_identity.Features.Onboarding
         [Consumes(MediaTypeNames.Application.Json)]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(object))]
-        [ProducesResponseType(StatusCodes.Status409Conflict, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(object))]
         public async Task<IActionResult> Room()
         {
@@ -43,7 +47,6 @@ namespace hotel_management_api_identity.Features.Onboarding
         [Consumes(MediaTypeNames.Application.Json)]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(object))]
-        [ProducesResponseType(StatusCodes.Status409Conflict, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(object))]
         public async Task<IActionResult> Menu()
         {
@@ -57,9 +60,11 @@ namespace hotel_management_api_identity.Features.Onboarding
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status409Conflict, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(object))]
-        public async Task<IActionResult> Employee()
+        public async Task<IActionResult> Employee(CreateEmployeeRequest createEmployeeRequest)
         {
-            return Ok();
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            return Created("Employee", await _onboardingService.CreateEmployee(createEmployeeRequest));
         }
     }
 }

@@ -22,6 +22,7 @@ namespace hotel_management_api_identity.Core.Storage.Models
         [Required]
         public string PhoneNumber { get; set; }
         public Enums.Id IdType { get; set; }
+        public string IdNumber { get; set; }
         [Required]
         public string Email { get; set; }        
         public Enums.Gender Gender { get; set; }

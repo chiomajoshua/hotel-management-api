@@ -28,6 +28,23 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
         /// <param name="criteria"></param>
         /// <returns></returns>
         Task<TEntity> GetByDefaultAsync(Dictionary<string, string> criteria);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="criteria"></param>
+        /// <returns></returns>
+        Task<TEntity> ValidateTokenAsync(Dictionary<string, string> criteria);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="criteria"></param>
+        /// <returns></returns>
+        Task<TEntity> GetByDefaultAsync(Dictionary<string, Guid> criteria);
+
+
+
     }
 
 
@@ -41,38 +58,45 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
         {
             _configuration = configuration;
             _executers = executers;
-            _connStr = _configuration.GetConnectionString("DbConnectionString");
+            _connStr = _configuration.GetConnectionString("DefaultConnection");
             _utilities = utilities;
         }
 
         public async Task<TEntity> GetByDefaultAsync(Dictionary<string, string> criteria)
         {
             string query = _utilities.GenerateSelectQuery<TEntity>(criteria);
-
-#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
-            var entityObject = await _executers.ExecuteReaderAsync<TEntity>(_connStr, query, null);
-#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
-#pragma warning disable CS8603 // Possible null reference return.
+            var entityObject = await _executers.ExecuteReaderAsync<TEntity>(query, null);
             return entityObject.FirstOrDefault();
-#pragma warning restore CS8603 // Possible null reference return.
+        }
+
+        public async Task<TEntity> GetByDefaultAsync(Dictionary<string, Guid> criteria)
+        {
+            string query = _utilities.GenerateSingleRecordQuery<TEntity>(criteria);
+            var entityObject = await _executers.ExecuteReaderAsync<TEntity>(query, null);
+            return entityObject.FirstOrDefault();
         }
 
         public async Task<IQueryable<TEntity>> GetByAsync(Dictionary<string, string> criteria, int pageSize, int pageNumber)
         {
             string query = _utilities.GeneratePaginatedSelectQuery<TEntity>(criteria, pageSize, pageNumber);
-
-#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
-            var entityObject = await _executers.ExecuteReaderAsync<TEntity>(_utilities.GetConnectionString(), query, null);
-#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
+            var entityObject = await _executers.ExecuteReaderAsync<TEntity>(query, null);
             return entityObject.AsQueryable();
         }
 
         public async Task<bool> IsExistAsync(Dictionary<string, string> criteria)
         {
             string query = _utilities.GenerateSingleRecordQuery<TEntity>(criteria);
-
-            var entityObject = await _executers.ExecuteReaderAsync<TEntity>(_connStr, query, null);
+            var entityObject = await _executers.ExecuteReaderAsync<TEntity>(query, null);
             return entityObject.Count() > 0;
         }
+
+       
+
+        public async Task<TEntity> ValidateTokenAsync(Dictionary<string, string> criteria)
+        {
+            string query = _utilities.GenerateTokenValidationQuery<TEntity>(criteria);
+            var entityObject = await _executers.ExecuteReaderAsync<TEntity>(query, null);
+            return entityObject.FirstOrDefault();
+        }        
     }
 }

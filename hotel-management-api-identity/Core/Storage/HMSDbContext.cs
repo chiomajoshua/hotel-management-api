@@ -17,10 +17,18 @@ namespace hotel_management_api_identity.Core.Storage
         public DbSet<Room> Room { get; set; }
         public DbSet<Sales> Sales { get; set; }
         public DbSet<Booking> Booking { get; set; }
+        public DbSet<Tokens> Tokens { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Tokens>(b =>
+            {
+                b.HasIndex(i => i.Token).IsUnique(false);
+                b.HasIndex(i => i.CreatedById).IsUnique(false);
+                b.HasIndex(i => i.ExpiryDate).IsUnique(false);
+            });
+
             modelBuilder.Entity<Employee>(b =>
             {
                 b.HasIndex(i => i.Id).IsUnique(false);

@@ -35,6 +35,10 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
 
         string GenerateDeleteQuery<TEntity>(TEntity entity) where TEntity : class;
         string GenerateBulkUpdateQuery<TEntity>(List<Dictionary<string, object>> columnValues) where TEntity : class;
+
+        string GenerateTokenValidationQuery<TEntity>(Dictionary<string, string> criteria) where TEntity : class;
+
+        string GenerateSingleRecordQuery<TEntity>(Dictionary<string, Guid> criteria) where TEntity : class;
     }
 
 
@@ -46,7 +50,7 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
         public QueryUtilities(IConfiguration configuration)
         {
             _configuration = configuration;
-            _connStr = _configuration.GetConnectionString("DbConnectionString");           
+            _connStr = _configuration.GetConnectionString("DefaultConnection");           
         }
 
         public string GetConnectionString()
@@ -61,14 +65,12 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
 
         public Dictionary<string, object> GenerateParams<TEntity>(IEnumerable<PropertyInfo> listOfProperties, TEntity entity) where TEntity : class
         {
-            Dictionary<string, object> objectDictionary = new Dictionary<string, object>();
+            var objectDictionary = new Dictionary<string, object>();
             foreach (var prop in listOfProperties)
             {
                 if (!entity.GetType().IgnoreProperty<Type>(prop.Name))
                 {
-#pragma warning disable CS8604 // Possible null reference argument.
                     objectDictionary.Add(prop.Name, value: prop.GetValue(entity));
-#pragma warning restore CS8604 // Possible null reference argument.
                 }
             }
             return objectDictionary;
@@ -76,30 +78,24 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
 
         public string GenerateInsertQuery<TEntity>(TEntity entity) where TEntity : class
         {
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string tableName = typeof(TEntity).GetTableName<Type>();
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-
             var insertQuery = new StringBuilder($"INSERT INTO dbo.[{tableName}] ");
-            insertQuery.Append("(");
+            insertQuery.Append('(');
             var properties = GenerateParams(typeof(TEntity).GetProperties(), entity).Keys.ToList();
             properties.ForEach(prop => { insertQuery.Append($"[{prop}],"); });
             insertQuery
-                .Remove(insertQuery.Length - 1, 1)
-                .Append(") VALUES (");
+                .Remove(startIndex: insertQuery.Length - 1, length: 1).Append(") VALUES (");
             properties.ForEach(prop => { insertQuery.Append($"@{prop},"); });
             insertQuery
-                .Remove(insertQuery.Length - 1, 1)
-                .Append(")");
+                .Remove(startIndex: insertQuery.Length - 1, length: 1)
+                .Append(')');
             return insertQuery.ToString();
         }
 
         public string GenerateBulkInsertQuery<TEntity>(List<Dictionary<string, object>> columnValues) where TEntity : class
         {
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string tableName = typeof(TEntity).GetTableName<Type>();
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-            string? query = null;
+            string query = null;
             foreach (var listItem in columnValues)
             {
                 query = $"{query}insert into dbo.[{tableName}] (";
@@ -114,17 +110,12 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
                 }
                 query = $"{query[0..^1]});";
             }
-
-#pragma warning disable CS8603 // Possible null reference return.
             return query;
-#pragma warning restore CS8603 // Possible null reference return.
         }
 
         public string GenerateUpdateQuery<TEntity>(TEntity entity) where TEntity : class
         {
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string tableName = typeof(TEntity).GetTableName<Type>();
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
             var updateQuery = new StringBuilder($"UPDATE dbo.[{tableName}] ");
             updateQuery.Append("SET");
             var properties = GenerateParams(typeof(TEntity).GetProperties(), entity).Keys.ToList();
@@ -141,9 +132,7 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
 
         public string GenerateDeleteQuery<TEntity>(TEntity entity) where TEntity : class
         {
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string tableName = typeof(TEntity).GetTableName<Type>();
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
             var deleteQuery = new StringBuilder($"DELETE FROM dbo.[{tableName}] ");
             deleteQuery.Append($" where ID = @ID");
             return deleteQuery.ToString();
@@ -183,11 +172,11 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
             var properties = GenerateParams(typeof(TEntity).GetProperties(), entity).Keys.ToList();
             properties.ForEach(prop => { insertQuery.Append($"[{prop}],"); });
             insertQuery
-                .Remove(insertQuery.Length - 1, 1)
+                .Remove(startIndex: insertQuery.Length - 1, length: 1)
                 .Append(") VALUES (");
             properties.ForEach(prop => { insertQuery.Append($"@AuditLog_{prop},"); });
             insertQuery
-                .Remove(insertQuery.Length - 1, 1)
+                .Remove(startIndex: insertQuery.Length - 1, length: 1)
                 .Append(")");
 
             return insertQuery.ToString();
@@ -195,10 +184,7 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
 
         public string GenerateSelectQuery<TEntity>(Dictionary<string, string> criteria) where TEntity : class
         {
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string tableName = typeof(TEntity).GetTableName<Type>();
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-
             var selectQuery = new StringBuilder($"SELECT * FROM dbo.[{tableName}] with (nolock) WHERE ");
             int count = 1;
             foreach (var item in criteria)
@@ -210,54 +196,12 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
                 }
                 count++;
             }
-            return $"{selectQuery.ToString()} order by creationdate desc";
-        }
-        public string GeneratePaginatedSelectQuery<TEntity>(Dictionary<string, string> criteria, int pageSize, int pageNumber) where TEntity : class
-        {
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
-            string tableName = typeof(TEntity).GetTableName<Type>();
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-
-            var selectQuery = new StringBuilder($"SELECT * FROM dbo.[{tableName}] with (nolock) WHERE ");
-            int count = 1;
-            foreach (var item in criteria)
-            {
-                selectQuery.Append($"{item.Key} like '%{item.Value.Trim().Replace(' ', '%')}%' ");
-                if (criteria.Count > count)
-                {
-                    selectQuery.Append("AND ");
-                }
-                count++;
-            }
-            return $"{selectQuery.ToString()} order by creationdate desc OFFSET {pageNumber} ROWS FETCH NEXT {pageSize} ROWS ONLY";
+            return $"{selectQuery} order by createdon desc";
         }
 
-        public string GenerateSelectQuery2<TEntity>(Dictionary<string, string> criteria) where TEntity : class
+        public string GenerateSingleRecordQuery<TEntity>(Dictionary<string, Guid> criteria) where TEntity : class
         {
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string tableName = typeof(TEntity).GetTableName<Type>();
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-
-            var selectQuery = new StringBuilder($"SELECT * FROM dbo.[{tableName}] with (nolock) WHERE ");
-            int count = 1;
-            foreach (var item in criteria)
-            {
-                selectQuery.Append($"{item.Key} like '%{item.Value.Trim().Replace(' ', '%')}%' ");
-                if (criteria.Count > count)
-                {
-                    selectQuery.Append("AND ");
-                }
-                count++;
-            }
-            return $"{selectQuery.ToString()}";
-        }
-
-        public string GenerateSingleRecordQuery<TEntity>(Dictionary<string, string> criteria) where TEntity : class
-        {
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
-            string tableName = typeof(TEntity).GetTableName<Type>();
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-
             var selectQuery = new StringBuilder($"SELECT TOP 1 ID FROM dbo.[{tableName}] WHERE ");
             int count = 1;
             foreach (var item in criteria)
@@ -269,22 +213,85 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
                 }
                 count++;
             }
-            return $"{selectQuery.ToString()} order by creationdate desc";
+            return $"{selectQuery} order by CreatedOn desc";
+        }
+
+        public string GenerateTokenValidationQuery<TEntity>(Dictionary<string, string> criteria) where TEntity : class
+        {
+            string tableName = typeof(TEntity).GetTableName<Type>();
+            var selectQuery = new StringBuilder($"SELECT * FROM dbo.[{tableName}] with (nolock) WHERE ");
+            int count = 1;
+            foreach (var item in criteria)
+            {
+                 selectQuery.Append($"{item.Key} like '%{item.Value.Trim().Replace(' ', '%')}%' ");
+                if (criteria.Count > count)
+                {
+                    selectQuery.Append("AND ");
+                }
+                count++;
+            }
+
+            return $"{selectQuery} AND ExpiryDate >= {DateTimeOffset.UtcNow} order by createdon desc";
+        }
+        public string GeneratePaginatedSelectQuery<TEntity>(Dictionary<string, string> criteria, int pageSize, int pageNumber) where TEntity : class
+        {
+            string tableName = typeof(TEntity).GetTableName<Type>();
+            var selectQuery = new StringBuilder($"SELECT * FROM dbo.[{tableName}] with (nolock) WHERE ");
+            int count = 1;
+            foreach (var item in criteria)
+            {
+                selectQuery.Append($"{item.Key} like '%{item.Value.Trim().Replace(' ', '%')}%' ");
+                if (criteria.Count > count)
+                {
+                    selectQuery.Append("AND ");
+                }
+                count++;
+            }
+            return $"{selectQuery} order by createdon desc OFFSET {pageNumber} ROWS FETCH NEXT {pageSize} ROWS ONLY";
+        }
+
+        public string GenerateSelectQuery2<TEntity>(Dictionary<string, string> criteria) where TEntity : class
+        {
+            string tableName = typeof(TEntity).GetTableName<Type>();
+            var selectQuery = new StringBuilder($"SELECT * FROM dbo.[{tableName}] with (nolock) WHERE ");
+            int count = 1;
+            foreach (var item in criteria)
+            {
+                selectQuery.Append($"{item.Key} like '%{item.Value.Trim().Replace(' ', '%')}%' ");
+                if (criteria.Count > count)
+                {
+                    selectQuery.Append("AND ");
+                }
+                count++;
+            }
+            return $"{selectQuery}";
+        }
+
+        public string GenerateSingleRecordQuery<TEntity>(Dictionary<string, string> criteria) where TEntity : class
+        {
+            string tableName = typeof(TEntity).GetTableName<Type>();
+            var selectQuery = new StringBuilder($"SELECT TOP 1 ID FROM dbo.[{tableName}] WHERE ");
+            int count = 1;
+            foreach (var item in criteria)
+            {
+                selectQuery.Append($"{item.Key} = '{item.Value}' ");
+                if (criteria.Count > count)
+                {
+                    selectQuery.Append("AND ");
+                }
+                count++;
+            }
+            return $"{selectQuery} order by CreatedOn desc";
         }
 
         public string GenerateBulkUpdateQuery<TEntity>(List<Dictionary<string, object>> columnValues) where TEntity : class
         {
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string tableName = typeof(TEntity).GetTableName<Type>();
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-            string? query = null;
-            string? tempQuery = null;
+            string query = null;
             string idString = "";
             foreach (var listItem in columnValues)
             {
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
-                tempQuery = query;
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
+                string tempQuery = query;
                 query = $"{query}update dbo.[{tableName}] set ";
                 foreach (string item in listItem.Keys)
                 {
@@ -294,19 +301,10 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
                     }
                     query = $"{query}{item} = '{listItem[item]}',";
                 }
-                if (!string.IsNullOrEmpty(idString))
-                {
-                    query = $"{query.Substring(0, query.Length - 1)}{idString};{Environment.NewLine}";
-                }
-                else
-                {
-                    query = tempQuery;
-                }
+                query = !string.IsNullOrEmpty(idString) ? $"{query.Substring(0, query.Length - 1)}{idString};{Environment.NewLine}" : tempQuery;
                 idString = "";
             }
-#pragma warning disable CS8603 // Possible null reference return.
             return query;
-#pragma warning restore CS8603 // Possible null reference return.
         }
 
         #endregion

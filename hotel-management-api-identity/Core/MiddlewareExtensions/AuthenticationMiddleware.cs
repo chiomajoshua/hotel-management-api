@@ -1,16 +1,21 @@
-﻿using Newtonsoft.Json;
+﻿using hotel_management_api_identity.Core.Helpers.Extension;
+using hotel_management_api_identity.Features.Authentication.Models;
+using hotel_management_api_identity.Features.Authentication.Services;
+using Newtonsoft.Json;
 
 namespace hotel_management_api_identity.Core.MiddlewareExtensions
 {
     public class AuthenticationMiddleware
     {
         private readonly RequestDelegate _next;
-        private IConfiguration _config;
+        private readonly IConfiguration _config;
+        private readonly ITokenService _tokenService;
 
-        public AuthenticationMiddleware(RequestDelegate next, IConfiguration configuration)
+        public AuthenticationMiddleware(RequestDelegate next, IConfiguration configuration, ITokenService tokenService)
         {
             _next = next;
             _config = configuration;
+            _tokenService = tokenService;
         }
 
         public async Task Invoke(HttpContext httpContext)
@@ -37,12 +42,14 @@ namespace hotel_management_api_identity.Core.MiddlewareExtensions
                 return;
             }
 
-            var _authValues = _config.GetValue<string>("AccessKeys").Split(",").ToList();
-
-            if (_authValues.Any(e => e == authHeader))
+            var _authValues = authHeader.Split(" ");
+            if (_authValues.Length > 2)
             {
-                await _next(httpContext);
-                return;
+                if (await _tokenService.ValidateToken(new TokenRequest { Email = httpContext.User.Identity.GetEmail(), Token = _authValues[1]}))
+                {
+                    await _next(httpContext);
+                    return;
+                }
             }
 
             httpContext.Response.StatusCode = 401;

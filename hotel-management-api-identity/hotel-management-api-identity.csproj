@@ -14,6 +14,7 @@
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
     <PackageReference Include="Dapper" Version="2.0.123" />
     <PackageReference Include="FluentMigrator.Runner" Version="3.3.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -36,14 +37,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Authentication\Models\" />
-    <Folder Include="Features\Authentication\Services\" />
-    <Folder Include="Features\Enquiry\Models\" />
-    <Folder Include="Features\Enquiry\Services\" />
-    <Folder Include="Features\Onboarding\Models\" />
-    <Folder Include="Features\Onboarding\Services\" />
-    <Folder Include="Features\Sales\Models\" />
-    <Folder Include="Features\Sales\Services\" />
+    <Folder Include="Features\Enquiry\Transaction\" />
+    <Folder Include="Features\Transaction\Models\" />
+    <Folder Include="Features\Transaction\Services\" />
   </ItemGroup>
 
   <ItemGroup>

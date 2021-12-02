@@ -1,4 +1,5 @@
 ﻿using hotel_management_api_identity.Core.Constants;
+using hotel_management_api_identity.Core.Helpers.Extension;
 using hotel_management_api_identity.Core.Helpers.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -12,6 +13,7 @@ namespace hotel_management_api_identity.Core.Storage.Models
     [Serializable]
     public class Employee : BaseEntity
     {
+        [Required]
         public string FirstName { get; set; }
         [Required]
         public string LastName { get; set; }
@@ -26,6 +28,13 @@ namespace hotel_management_api_identity.Core.Storage.Models
         public string Address { get; set; }
         [Required]
         public Enums.User UserType { get; set; }
+        public string EmployeeCode { get; set; } = Extensions.RandomEmployeeNumber();
+
+
+        public override string ToString()
+        {
+            return $"{FirstName} {LastName}";
+        }
 
         public Employee()
         {

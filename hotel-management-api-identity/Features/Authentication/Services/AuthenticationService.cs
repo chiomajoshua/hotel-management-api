@@ -1,0 +1,108 @@
+﻿using hotel_management_api_identity.Core.Helpers;
+using hotel_management_api_identity.Core.Helpers.Extension;
+using hotel_management_api_identity.Core.Storage.Models;
+using hotel_management_api_identity.Core.Storage.QueryRepository;
+using hotel_management_api_identity.Features.Authentication.Models;
+using hotel_management_api_identity.Features.Enquiry.Employee.Service;
+using Newtonsoft.Json;
+
+namespace hotel_management_api_identity.Features.Authentication.Services
+{
+    public interface IAuthenticationService : IAutoDependencyCore
+    {
+        /// <summary>
+        /// Login
+        /// </summary>
+        /// <param name="loginRequest"></param>
+        /// <returns></returns>
+        Task<bool> ValidateCredentials(LoginRequest loginRequest);
+
+        /// <summary>
+        /// Create logon for user
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        Task<string> CreateAccount(string email);
+
+        /// <summary>
+        /// Check if User Logon Exists
+        /// </summary>
+        /// <param name="employeeId"></param>
+        /// <returns></returns>
+        Task<bool> IsLogonExists(Guid employeeId);
+    }
+    public class AuthenticationService : IAuthenticationService
+    {
+        private readonly IEmployeeService _employeeService;
+        private readonly ILogger<AuthenticationService> _logger;
+        private readonly IDapperQuery<Login> _loginQuery;
+        private readonly IDapperQuery<Employee> _employeeQuery;
+        private readonly IDapperCommand<Login> _loginCommand;
+        public AuthenticationService(ILogger<AuthenticationService> logger, IEmployeeService employeeService, IDapperCommand<Login> loginCommand, IDapperQuery<Login> loginQuery,
+                                       IDapperQuery<Employee> employeeQuery)
+        {
+            _logger = logger;
+            _employeeService = employeeService;
+            _loginCommand = loginCommand;
+            _loginQuery = loginQuery;
+            _employeeQuery = employeeQuery;
+        }
+
+        public async Task<string> CreateAccount(string email)
+        {
+            try
+            {
+                _logger.LogInformation($"CreateAccount Request -----> {email}");
+                if (await _employeeService.IsEmployeeExistsByEmail(email))
+                {
+                    var defaultPassword = "P@$$w0rd";
+                    var employee = await _employeeQuery.GetByDefaultAsync(new Dictionary<string, string>() { { "email", email } });
+                    await _loginCommand.AddAsync(new Login { Password = Extensions.Encrypt(defaultPassword), Employee = employee });
+                    if (await IsLogonExists(employee.Id)) return defaultPassword;                    
+                }
+                return string.Empty;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, ex.Message);
+                return string.Empty;
+            }
+        }
+
+        public async Task<bool> IsLogonExists(Guid employeeId)
+        {
+            try
+            {
+                var loginResponse = await _loginQuery.GetByDefaultAsync(new Dictionary<string, Guid>() { { "employeeId", employeeId } });
+                if(loginResponse is not null)   return true;
+                return false;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, ex.Message);
+                return false;
+            }
+        }
+
+        public async Task<bool> ValidateCredentials(LoginRequest loginRequest)
+        {
+            try
+            {
+                _logger.LogInformation($"ValidateCredentials Request -----> {JsonConvert.SerializeObject(loginRequest)}");
+                if (await _employeeService.IsEmployeeExistsByEmail(loginRequest.Email))
+                {
+                    var employeeId = _employeeService.GetEmployeeByEmail(loginRequest.Email).Result.Data.EmployeeId;
+                    var loginResponse = await _loginQuery.GetByDefaultAsync(new Dictionary<string, Guid>() { { "employeeId", employeeId } });
+                    if (loginResponse.Employee.Email == loginRequest.Email && Extensions.Decrypt(loginResponse.Password).Equals(loginRequest.Password))
+                        return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, ex.Message);
+                return false;
+            }
+        }
+    }
+}

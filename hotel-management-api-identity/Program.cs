@@ -17,7 +17,6 @@ Log.Information("Starting up");
 
 try
 {
-
     var builder = WebApplication.CreateBuilder(args);
 
     // Add services to the container.
@@ -30,7 +29,12 @@ try
     // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerService();
-    
+
+    var jwtTokenSettings = builder.Configuration.GetSection("JwtToken");
+    builder.Services.Configure<JwtToken>(jwtTokenSettings);
+    builder.Services.AddIdentity(jwtTokenSettings.Get<JwtToken>());
+
+
     builder.Services.AddCors(options =>
     {
         options.AddPolicy("pol",
@@ -40,8 +44,7 @@ try
                     builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
         });
     });
-    builder.Services.AddHealthChecks()
-                .AddCheck("self", () => HealthCheckResult.Healthy());
+    builder.Services.AddHealthChecks();
     
     builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
         .ConfigureContainer<ContainerBuilder>(builder =>

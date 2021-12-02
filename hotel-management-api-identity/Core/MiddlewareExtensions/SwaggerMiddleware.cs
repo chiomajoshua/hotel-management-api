@@ -16,9 +16,7 @@ namespace hotel_management_api_identity.Core.MiddlewareExtensions
             _ = services.AddSwaggerGen(c =>
               {
                   c.SwaggerDoc("v1", new OpenApiInfo { Title = "House 4 MS API V1", Version = $"1.0" });
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
                   //c.IncludeXmlComments(Path.ChangeExtension(Assembly.GetEntryAssembly().Location, "xml"));
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
                   c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                   {
                       Description = "",

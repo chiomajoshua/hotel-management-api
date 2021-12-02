@@ -49,6 +49,9 @@ namespace hotel_management_api_identity.Migrations
                     b.Property<string>("ModifiedById")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTimeOffset>("ModifiedOn")
+                        .HasColumnType("datetimeoffset");
+
                     b.Property<Guid?>("RoomId")
                         .HasColumnType("uniqueidentifier");
 
@@ -96,6 +99,9 @@ namespace hotel_management_api_identity.Migrations
                     b.Property<int>("Gender")
                         .HasColumnType("int");
 
+                    b.Property<string>("IdNumber")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("IdType")
                         .HasColumnType("int");
 
@@ -105,6 +111,9 @@ namespace hotel_management_api_identity.Migrations
 
                     b.Property<string>("ModifiedById")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset>("ModifiedOn")
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
@@ -146,7 +155,11 @@ namespace hotel_management_api_identity.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("EmployeeCode")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("FirstName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Gender")
@@ -161,6 +174,9 @@ namespace hotel_management_api_identity.Migrations
 
                     b.Property<string>("ModifiedById")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset>("ModifiedOn")
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
@@ -195,6 +211,9 @@ namespace hotel_management_api_identity.Migrations
 
                     b.Property<string>("ModifiedById")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset>("ModifiedOn")
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(450)");
@@ -234,6 +253,9 @@ namespace hotel_management_api_identity.Migrations
                     b.Property<string>("ModifiedById")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTimeOffset>("ModifiedOn")
+                        .HasColumnType("datetimeoffset");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
@@ -262,6 +284,9 @@ namespace hotel_management_api_identity.Migrations
 
                     b.Property<string>("ModifiedById")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset>("ModifiedOn")
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(450)");
@@ -301,6 +326,9 @@ namespace hotel_management_api_identity.Migrations
                     b.Property<string>("ModifiedById")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTimeOffset>("ModifiedOn")
+                        .HasColumnType("datetimeoffset");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
@@ -318,6 +346,42 @@ namespace hotel_management_api_identity.Migrations
                     b.HasIndex("Price");
 
                     b.ToTable("Sales");
+                });
+
+            modelBuilder.Entity("hotel_management_api_identity.Core.Storage.Models.Tokens", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CreatedById")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTimeOffset>("CreatedOn")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<DateTimeOffset>("ExpiryDate")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("ModifiedById")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset>("ModifiedOn")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("Token")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedById");
+
+                    b.HasIndex("ExpiryDate");
+
+                    b.HasIndex("Token");
+
+                    b.ToTable("Tokens");
                 });
 
             modelBuilder.Entity("hotel_management_api_identity.Core.Storage.Models.Booking", b =>
