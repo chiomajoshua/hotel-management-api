@@ -13,6 +13,7 @@
         public const string OperationSuccessful = "Operation successful!";
         public const string OperationFailed = "Operation Failed";
         public const string FailedProcessResponse = "Sorry, there was an error processing your request.";
+
         public const string CustomerCreatedSuccessfully = "Congratulations! Customer Information Has Been Successfully Added To Our Records";
         public const string CustomerAlreadyExists = "Sorry, The Customer Already Exists";
         public const string CustomerCreationFailed = "Sorry, We Could Not Create This Customer";
@@ -24,6 +25,10 @@
         public const string RoomCreatedSuccessfully = "Congratulations! Room Information Has Been Successfully Added To Our Records";
         public const string RoomAlreadyExists = "Sorry, The Room Already Exists";
         public const string RoomCreationFailed = "Sorry, We Could Not Create This Room";
+
+        public const string MenuCreatedSuccessfully = "Congratulations! Menu Information Has Been Successfully Added To Our Records";
+        public const string MenuAlreadyExists = "Sorry, The Item Already Exists In The Menu";
+        public const string MenuCreationFailed = "Sorry, We Could Not Add This Item To The Menu";
 
         public const string NoKycJobForUser = "No KYC Job was created for the user";
         public const string NoKYCToken = "Unable to get token from Mati";

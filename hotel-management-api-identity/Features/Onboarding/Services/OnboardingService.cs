@@ -1,11 +1,14 @@
 ﻿using hotel_management_api_identity.Core.Constants;
 using hotel_management_api_identity.Core.Helpers;
+using hotel_management_api_identity.Core.Helpers.Extension;
 using hotel_management_api_identity.Core.Storage.QueryRepository;
 using hotel_management_api_identity.Features.Authentication.Services;
 using hotel_management_api_identity.Features.Enquiry.Customer.Config;
 using hotel_management_api_identity.Features.Enquiry.Customer.Service;
 using hotel_management_api_identity.Features.Enquiry.Employee.Config;
 using hotel_management_api_identity.Features.Enquiry.Employee.Service;
+using hotel_management_api_identity.Features.Enquiry.Menu.Config;
+using hotel_management_api_identity.Features.Enquiry.Menu.Service;
 using hotel_management_api_identity.Features.Enquiry.Room.Config;
 using hotel_management_api_identity.Features.Enquiry.Room.Service;
 using hotel_management_api_identity.Features.Onboarding.Models;
@@ -36,6 +39,13 @@ namespace hotel_management_api_identity.Features.Onboarding.Services
         /// <param name="createRoomRequest"></param>
         /// <returns></returns>
         Task<GenericResponse<CreateRoomResponse>> CreateRoom(CreateRoomRequest createRoomRequest);
+
+        /// <summary>
+        /// Add New Menu
+        /// </summary>
+        /// <param name="createMenuRequest"></param>
+        /// <returns></returns>
+        Task<GenericResponse<CreateMenuResponse>> CreateMenu(CreateMenuRequest createMenuRequest);
     }
 
 
@@ -44,14 +54,17 @@ namespace hotel_management_api_identity.Features.Onboarding.Services
         private readonly IDapperCommand<Core.Storage.Models.Customer> _customerCommand;
         private readonly IDapperCommand<Core.Storage.Models.Employee> _employeeCommand;
         private readonly IDapperCommand<Core.Storage.Models.Room> _roomCommand;
+        private readonly IDapperCommand<Core.Storage.Models.Menu> _menuCommand;
         private readonly ICustomerService _customerService;
         private readonly IAuthenticationService _authenticationService;
         private readonly IRoomService _roomService;
+        private readonly IMenuService _menuService;
         private readonly IEmployeeService _employeeService;
         private readonly ILogger<OnboardingService> _logger;
         public OnboardingService(IDapperCommand<Core.Storage.Models.Customer> customerCommand,ICustomerService customerService, ILogger<OnboardingService> logger,
                                   IDapperCommand<Core.Storage.Models.Employee> employeeCommand, IEmployeeService employeeService, IAuthenticationService authenticationService,
-                                  IRoomService roomService, IDapperCommand<Core.Storage.Models.Room> roomCommand)
+                                  IRoomService roomService, IDapperCommand<Core.Storage.Models.Room> roomCommand, IDapperCommand<Core.Storage.Models.Menu> menuCommand,
+                                  IMenuService menuService)
         {
             _customerService = customerService;
             _employeeService = employeeService;
@@ -61,6 +74,8 @@ namespace hotel_management_api_identity.Features.Onboarding.Services
             _logger = logger;
             _authenticationService = authenticationService;
             _roomCommand = roomCommand;
+            _menuCommand = menuCommand;
+            _menuService = menuService;
         }
 
         public async Task<GenericResponse<CreateCustomerResponse>> CreateCustomer(CreateCustomerRequest createCustomerRequest)
@@ -108,6 +123,29 @@ namespace hotel_management_api_identity.Features.Onboarding.Services
             {
                 _logger.LogError(ex, ex.Message);
                 return new GenericResponse<CreateEmployeeResponse> { IsSuccessful = false, Message = ResponseMessages.GeneralError };
+            }
+        }
+
+        public async Task<GenericResponse<CreateMenuResponse>> CreateMenu(CreateMenuRequest createMenuRequest)
+        {
+            try
+            {
+                _logger.LogInformation($"Create Menu Request ----->>>> {JsonConvert.SerializeObject(createMenuRequest)}");
+                var isRoomExists = await _menuService.IsMenuExists(createMenuRequest.Item);
+                if (!isRoomExists)
+                {
+                    await _menuCommand.AddAsync(createMenuRequest.ToDbMenu());
+                    if (await _menuService.IsMenuExists(createMenuRequest.Item))
+                        return new GenericResponse<CreateMenuResponse> { IsSuccessful = true, Message = ResponseMessages.MenuCreatedSuccessfully, Data = new CreateMenuResponse { Item = createMenuRequest.Item, Category = createMenuRequest.Category.Description() } };
+
+                    return new GenericResponse<CreateMenuResponse> { IsSuccessful = false, Message = ResponseMessages.MenuCreationFailed };
+                }
+                return new GenericResponse<CreateMenuResponse> { IsSuccessful = false, Message = ResponseMessages.MenuAlreadyExists };
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, ex.Message);
+                return new GenericResponse<CreateMenuResponse> { IsSuccessful = false, Message = ResponseMessages.GeneralError };
             }
         }
 

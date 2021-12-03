@@ -50,9 +50,11 @@ namespace hotel_management_api_identity.Features.Onboarding
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(object))]
-        public async Task<IActionResult> Menu()
+        public async Task<IActionResult> Menu(CreateMenuRequest createMenuRequest)
         {
-            return Ok();
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            return Created("Menu", await _onboardingService.CreateMenu(createMenuRequest));
         }
 
         [HttpPost]

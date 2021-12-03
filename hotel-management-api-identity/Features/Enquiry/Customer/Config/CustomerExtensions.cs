@@ -21,8 +21,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Customer.Config
                 CreatedOn = data.CreatedOn
             }));
 
-            return new List<CustomerResponse>();
-            
+            return new List<CustomerResponse>();            
         }
         public static CustomerResponse ToCustomer(this Core.Storage.Models.Customer customerData)
         {
