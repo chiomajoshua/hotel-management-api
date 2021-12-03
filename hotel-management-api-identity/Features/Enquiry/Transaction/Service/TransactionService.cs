@@ -56,7 +56,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Transaction.Service
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                _logger.LogError("GetTransactions Error", ex.Message);
                 return new GenericResponse<IEnumerable<TransactionResponse>> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
             }
         }
@@ -72,7 +72,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Transaction.Service
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                _logger.LogError("GetTransactionsByEmployee Error", ex.Message);
                 return new GenericResponse<IEnumerable<TransactionResponse>> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
             }
         }
@@ -88,7 +88,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Transaction.Service
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                _logger.LogError("GetTransactionsByDateRange Error", ex.Message);
                 return new GenericResponse<IEnumerable<TransactionResponse>> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
             }
         }

@@ -82,7 +82,7 @@ namespace hotel_management_api_identity.Features.Onboarding.Services
         {
             try
             {
-                _logger.LogInformation($"Create Customer Request ----->>>> {JsonConvert.SerializeObject(createCustomerRequest)}");
+                _logger.LogInformation($"Create Customer Request ----->>>> ", JsonConvert.SerializeObject(createCustomerRequest));
                 var isCustomerExists = await _customerService.IsCustomerExistsByEmail(createCustomerRequest.Email) || await _customerService.IsCustomerExistsByPhone(createCustomerRequest.PhoneNumber);
                 if (!isCustomerExists)
                 {
@@ -95,7 +95,7 @@ namespace hotel_management_api_identity.Features.Onboarding.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                _logger.LogError("CreateCustomer Error", ex.Message);
                 return new GenericResponse<CreateCustomerResponse> { IsSuccessful = false, Message = ResponseMessages.GeneralError };
             }
         }
@@ -104,7 +104,7 @@ namespace hotel_management_api_identity.Features.Onboarding.Services
         {
             try
             {
-                _logger.LogInformation($"Create Employee Request ----->>>> {JsonConvert.SerializeObject(createEmployeeRequest)}");
+                _logger.LogInformation($"Create Employee Request ----->>>> ", JsonConvert.SerializeObject(createEmployeeRequest));
                 var isCustomerExists = await _employeeService.IsEmployeeExistsByEmail(createEmployeeRequest.Email) || await _employeeService.IsEmployeeExistsByPhone(createEmployeeRequest.PhoneNumber);
                 if (!isCustomerExists)
                 {
@@ -121,7 +121,7 @@ namespace hotel_management_api_identity.Features.Onboarding.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                _logger.LogError("CreateEmployee Error", ex.Message);
                 return new GenericResponse<CreateEmployeeResponse> { IsSuccessful = false, Message = ResponseMessages.GeneralError };
             }
         }
@@ -130,7 +130,7 @@ namespace hotel_management_api_identity.Features.Onboarding.Services
         {
             try
             {
-                _logger.LogInformation($"Create Menu Request ----->>>> {JsonConvert.SerializeObject(createMenuRequest)}");
+                _logger.LogInformation($"Create Menu Request ----->>>> ", JsonConvert.SerializeObject(createMenuRequest));
                 var isRoomExists = await _menuService.IsMenuExists(createMenuRequest.Item);
                 if (!isRoomExists)
                 {
@@ -144,7 +144,7 @@ namespace hotel_management_api_identity.Features.Onboarding.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                _logger.LogError("CreateMenu Error", ex.Message);
                 return new GenericResponse<CreateMenuResponse> { IsSuccessful = false, Message = ResponseMessages.GeneralError };
             }
         }
@@ -153,7 +153,7 @@ namespace hotel_management_api_identity.Features.Onboarding.Services
         {
             try
             {
-                _logger.LogInformation($"Create Room Request ----->>>> {JsonConvert.SerializeObject(createRoomRequest)}");
+                _logger.LogInformation($"Create Room Request ----->>>> ", JsonConvert.SerializeObject(createRoomRequest));
                 var isRoomExists = await _roomService.IsRoomExists(createRoomRequest.Name);
                 if (!isRoomExists)
                 {
@@ -167,7 +167,7 @@ namespace hotel_management_api_identity.Features.Onboarding.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                _logger.LogError("CreateRoom Error", ex.Message);
                 return new GenericResponse<CreateRoomResponse> { IsSuccessful = false, Message = ResponseMessages.GeneralError };
             }
         }

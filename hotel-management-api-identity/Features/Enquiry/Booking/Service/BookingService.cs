@@ -30,7 +30,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Booking.Service
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                _logger.LogError("GetAllBookings Error", ex.Message);
                 return new GenericResponse<IEnumerable<BookingResponse>> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
             }
         }

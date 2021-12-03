@@ -52,7 +52,7 @@ namespace hotel_management_api_identity.Features.Authentication.Services
         {
             try
             {
-                _logger.LogInformation(message: $"CreateAccount Request -----> {email}");
+                _logger.LogInformation(message: $"CreateAccount Request ----->", email);
                 if (await _employeeService.IsEmployeeExistsByEmail(email))
                 {
                     var defaultPassword = "P@$$w0rd";
@@ -64,7 +64,7 @@ namespace hotel_management_api_identity.Features.Authentication.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                _logger.LogError("CreateAccount Error", ex.Message);
                 return string.Empty;
             }
         }
@@ -79,7 +79,7 @@ namespace hotel_management_api_identity.Features.Authentication.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                _logger.LogError("IsLogonExists Error", ex.Message);
                 return false;
             }
         }
@@ -88,7 +88,7 @@ namespace hotel_management_api_identity.Features.Authentication.Services
         {
             try
             {
-                _logger.LogInformation($"ValidateCredentials Request -----> {JsonConvert.SerializeObject(loginRequest)}");
+                _logger.LogInformation($"ValidateCredentials Request ----->", JsonConvert.SerializeObject(loginRequest));
                 if (await _employeeService.IsEmployeeExistsByEmail(loginRequest.Email))
                 {
                     var employeeId = _employeeService.GetEmployeeByEmail(loginRequest.Email).Result.Data.EmployeeId;
@@ -100,7 +100,7 @@ namespace hotel_management_api_identity.Features.Authentication.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                _logger.LogError("ValidateCredentials Error", ex.Message);
                 return false;
             }
         }

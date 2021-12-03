@@ -73,7 +73,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Customer.Service
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                _logger.LogError("GetCustomerByEmail Error", ex.Message);
                 return new GenericResponse<CustomerResponse> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
             }
         }
@@ -89,7 +89,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Customer.Service
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                _logger.LogError("GetCustomerByPhone Error", ex.Message);
                 return new GenericResponse<CustomerResponse> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
             }
         }
@@ -104,7 +104,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Customer.Service
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                _logger.LogError("GetCustomers Error", ex.Message);
                 return new GenericResponse<IEnumerable<CustomerResponse>> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
             }
         }
@@ -122,7 +122,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Customer.Service
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                _logger.LogError("IsCustomerExistsByEmail Error", ex.Message);
                 return false;
             }
         }
@@ -140,7 +140,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Customer.Service
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                _logger.LogError("IsCustomerExistsByPhone Error", ex.Message);
                 return false;
             }
         }

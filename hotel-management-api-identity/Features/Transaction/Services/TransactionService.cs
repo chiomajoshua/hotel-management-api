@@ -56,7 +56,7 @@ namespace hotel_management_api_identity.Features.Transaction.Services
         {
             try
             {
-                _logger.LogInformation($"Create Purchase Request ----> {JsonConvert.SerializeObject(createBookingRequest)},{addedBy}");
+                _logger.LogInformation($"Create Purchase Request ----> ", JsonConvert.SerializeObject(createBookingRequest) + addedBy);
                 if (!await _roomService.IsRoomTaken(createBookingRequest.CheckInDate, createBookingRequest.CheckOutDate, Guid.Parse(createBookingRequest.RoomId)))
                 {
                     await _bookingCommand.AddAsync(new Core.Storage.Models.Booking
@@ -77,7 +77,7 @@ namespace hotel_management_api_identity.Features.Transaction.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                _logger.LogError("CreateBooking Error", ex.Message);
                 return new GenericResponse<CreateBookingResponse> { IsSuccessful = false, Message = ResponseMessages.GeneralError };
             }
         }
@@ -112,14 +112,14 @@ namespace hotel_management_api_identity.Features.Transaction.Services
             
             try
             {
-                _logger.LogInformation($"Create Purchase Request ----> {JsonConvert.SerializeObject(createPurchaseRequest)},{addedBy}");               
+                _logger.LogInformation($"Create Purchase Request ----> ", JsonConvert.SerializeObject(createPurchaseRequest) + addedBy);               
                 await _salesCommand.AddAsync(new Core.Storage.Models.Sales { Category = createPurchaseRequest.Category, Item = createPurchaseRequest.Item, Price = createPurchaseRequest.Price,
                                                                              Quantity = createPurchaseRequest.Quantity, CreatedById = addedBy, ModifiedById = addedBy});
                 return new GenericResponse<CreatePurchaseResponse> { IsSuccessful = true, Message = ResponseMessages.OperationSuccessful, Data = new CreatePurchaseResponse { IsSold = true } };                                    
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                _logger.LogError("CreatePurchase Error", ex.Message);
                 return new GenericResponse<CreatePurchaseResponse> { IsSuccessful = false, Message = ResponseMessages.GeneralError };
             }
         }

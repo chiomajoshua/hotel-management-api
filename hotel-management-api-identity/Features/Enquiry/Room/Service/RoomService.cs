@@ -65,7 +65,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Room.Service
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                _logger.LogError("GetRoomByName Error", ex.Message);
                 return new GenericResponse<RoomResponse> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
             }
         }
@@ -80,7 +80,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Room.Service
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                _logger.LogError("GetRooms Error", ex.Message);
                 return new GenericResponse<IEnumerable<RoomResponse>> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
             }
         }
@@ -97,7 +97,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Room.Service
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                _logger.LogError("IsRoomExists Error", ex.Message);
                 return false;
             }
         }
@@ -114,7 +114,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Room.Service
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                _logger.LogError("IsRoomTaken Error", ex.Message);
                 return false;
             }
         }        
