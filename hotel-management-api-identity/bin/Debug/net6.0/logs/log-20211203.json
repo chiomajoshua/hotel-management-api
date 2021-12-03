@@ -229,3 +229,10 @@ Error Number:207,State:1,Class:16
 2021-12-03 14:03:04.111 +01:00 [INF] Create Employee Request ----->>>> {"FirstName":"Desmond","LastName":"Okolie","PhoneNumber":"09011348909","Email":"desperado@gmail.com","Gender":1,"Address":"Lagos, Nigeria","UserType":2}
 2021-12-03 14:03:09.093 +01:00 [INF] CreateAccount Request -----> desperado@gmail.com
 2021-12-03 14:03:17.319 +01:00 [INF] HTTP POST /api/Onboarding/employee responded 201 in 19242.6672 ms
+2021-12-03 15:20:16.040 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-03 15:20:16.065 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-03 15:20:16.066 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-03 15:20:16.066 +01:00 [INF] Hosting environment: Development
+2021-12-03 15:20:16.067 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-03 15:20:17.098 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 162.7861 ms
+2021-12-03 15:20:17.340 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 127.7780 ms

@@ -43,6 +43,8 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
         string GeneratePaginatedSelectQuery<TEntity>(int pageSize, int pageNumber) where TEntity : class;
 
         string GenerateCheckIfRoomIsEmptyQuery<TEntity>(Dictionary<string, DateTimeOffset> criteria, Guid roomId) where TEntity : class;
+
+        string GeneratePaginatedSelectQuery<TEntity>(Dictionary<string, DateTimeOffset> criteria) where TEntity : class;
     }
 
 
@@ -266,6 +268,35 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
             }
 
             return $"{selectQuery} AND RoomId = '{roomId}' order by createdon desc";
+        }
+
+        public string GeneratePaginatedSelectQuery<TEntity>(Dictionary<string, DateTimeOffset> criteria) where TEntity : class
+        {
+            string tableName = typeof(TEntity).GetTableName<Type>();
+            var selectQuery = new StringBuilder($"SELECT * FROM dbo.[{tableName}] with (nolock) WHERE ");
+            int count = 1;
+            foreach (var item in criteria)
+            {
+                if (count == 1)
+                {
+                    selectQuery.Append($"CreatedOn >= 'TODATETIMEOFFSET('{item.Value}', '+01:00')'");
+                    if (criteria.Count > count)
+                    {
+                        selectQuery.Append("AND ");
+                    }
+                    count++;
+                }
+                if (count == 2)
+                {
+                    selectQuery.Append($"CreatedOn <= 'TODATETIMEOFFSET('{item.Value}', '+01:00')'");
+                    if (criteria.Count > count)
+                    {
+                        selectQuery.Append("AND ");
+                    }
+                    count++;
+                }
+            }
+            return $"{selectQuery} order by createdon";
         }
         public string GeneratePaginatedSelectQuery<TEntity>(Dictionary<string, string> criteria, int pageSize, int pageNumber) where TEntity : class
         {

@@ -37,8 +37,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Enquiry\Transaction\Config\" />
-    <Folder Include="Features\Enquiry\Transaction\Model\" />
+    <Folder Include="Features\Enquiry\Booking\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -99,7 +99,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Customer.Service
             try
             {
                 var result = await _customerQuery.GetByAsync(pageSize, pageNumber);
-                if (result is not null) return new GenericResponse<IEnumerable<CustomerResponse>> { Data = result.ToList().ToCustomerList(), IsSuccessful = true, Message = ResponseMessages.OperationSuccessful };
+                if (result.Count() > 0) return new GenericResponse<IEnumerable<CustomerResponse>> { Data = result.ToList().ToCustomerList(), IsSuccessful = true, Message = ResponseMessages.OperationSuccessful };
                 return new GenericResponse<IEnumerable<CustomerResponse>> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
             }
             catch (Exception ex)
