@@ -37,9 +37,11 @@ namespace hotel_management_api_identity.Features.Onboarding
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(object))]
-        public async Task<IActionResult> Room()
+        public async Task<IActionResult> Room(CreateRoomRequest createRoomRequest)
         {
-            return Ok();
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            return Created("Room", await _onboardingService.CreateRoom(createRoomRequest));
         }
 
         [HttpPost]

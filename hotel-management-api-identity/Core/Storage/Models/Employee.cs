@@ -19,7 +19,6 @@ namespace hotel_management_api_identity.Core.Storage.Models
         public string LastName { get; set; }
         [Required]
         public string PhoneNumber { get; set; }
-        public Enums.Id IdType { get; set; }
         [Required]
         public string Email { get; set; }
         [Required]
@@ -29,6 +28,7 @@ namespace hotel_management_api_identity.Core.Storage.Models
         [Required]
         public Enums.User UserType { get; set; }
         public string EmployeeCode { get; set; } = Extensions.RandomEmployeeNumber();
+        public virtual Login Login {get; set;}
 
 
         public override string ToString()

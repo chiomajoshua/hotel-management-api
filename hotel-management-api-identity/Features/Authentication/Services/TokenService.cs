@@ -34,13 +34,15 @@ namespace hotel_management_api_identity.Features.Authentication.Services
         private readonly ILogger<TokenService> _logger;
         private readonly IDapperQuery<Employee> _employeeQuery;
         private readonly IDapperCommand<Tokens> _tokenCommand;
+        private readonly IDapperQuery<Tokens> _tokenQuery;
         private readonly IOptions<JwtToken> _appSettings;
-        public TokenService(ILogger<TokenService> logger, IDapperQuery<Employee> employeeQuery, IOptions<JwtToken> appSettings, IDapperCommand<Tokens> tokenCommand)
+        public TokenService(ILogger<TokenService> logger, IDapperQuery<Employee> employeeQuery, IOptions<JwtToken> appSettings, IDapperCommand<Tokens> tokenCommand, IDapperQuery<Tokens> tokenQuery)
         {
             _logger = logger;
             _employeeQuery = employeeQuery;
             _tokenCommand = tokenCommand;
             _appSettings = appSettings;
+            _tokenQuery = tokenQuery;
         }
         
         public string CreateToken(string email)
@@ -65,8 +67,10 @@ namespace hotel_management_api_identity.Features.Authentication.Services
                     Issuer = _appSettings.Value.Issuer,
                     Audience = _appSettings.Value.Audience,
                     Expires = DateTime.Now.AddHours(Convert.ToInt32(_appSettings.Value.Expiry)),
-                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_appSettings.Value.Secret)), SecurityAlgorithms.EcdsaSha512Signature)
+                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_appSettings.Value.Secret)), SecurityAlgorithms.HmacSha512Signature)
                  };
+
+                var dateTime = tokenDescriptor.Expires;
                 var token = new JwtSecurityTokenHandler().WriteToken(new JwtSecurityTokenHandler().CreateToken(tokenDescriptor));
                 SaveToken(new TokenRequest { Email = email, ExpiryDate = (DateTimeOffset)tokenDescriptor.Expires, Token = token}).Wait();
                 return token;
@@ -83,7 +87,7 @@ namespace hotel_management_api_identity.Features.Authentication.Services
             try
             {
                 var query = new Dictionary<string, string>() { { "Token", tokenRequest.Token }, { "CreatedById", tokenRequest.Email } };
-                var result = await _employeeQuery.ValidateTokenAsync(query);
+                var result = await _tokenQuery.ValidateTokenAsync(query);
                 if (result is not null) return true;
                 return false;
             }

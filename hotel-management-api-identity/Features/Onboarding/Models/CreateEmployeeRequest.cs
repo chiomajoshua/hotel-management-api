@@ -20,16 +20,16 @@ namespace hotel_management_api_identity.Features.Onboarding.Models
         [Required]
         public Enums.User UserType { get; set; }
 
-        public CreateEmployeeRequest( string firstName, string lastName, string phoneNumber, string idNumber, string email, Enums.Gender gender, string address, Enums.User userType)
-        {
-            FirstName = firstName;
-            LastName = lastName;
-            PhoneNumber = phoneNumber;
-            UserType = userType;
-            Address = address;
-            Email = email;
-            Gender = gender;
-        }
+        //public CreateEmployeeRequest( string firstName, string lastName, string phoneNumber, string idNumber, string email, Enums.Gender gender, string address, Enums.User userType)
+        //{
+        //    FirstName = firstName;
+        //    LastName = lastName;
+        //    PhoneNumber = phoneNumber;
+        //    UserType = userType;
+        //    Address = address;
+        //    Email = email;
+        //    Gender = gender;
+        //}
     }
 
 

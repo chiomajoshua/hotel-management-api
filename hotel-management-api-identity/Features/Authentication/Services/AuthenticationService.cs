@@ -27,9 +27,9 @@ namespace hotel_management_api_identity.Features.Authentication.Services
         /// <summary>
         /// Check if User Logon Exists
         /// </summary>
-        /// <param name="employeeId"></param>
+        /// <param name="email"></param>
         /// <returns></returns>
-        Task<bool> IsLogonExists(Guid employeeId);
+        Task<bool> IsLogonExists(string email);
     }
     public class AuthenticationService : IAuthenticationService
     {
@@ -57,8 +57,8 @@ namespace hotel_management_api_identity.Features.Authentication.Services
                 {
                     var defaultPassword = "P@$$w0rd";
                     var employee = await _employeeQuery.GetByDefaultAsync(new Dictionary<string, string>() { { "email", email } });
-                    await _loginCommand.AddAsync(new Login { Password = Extensions.Encrypt(defaultPassword), Employee = employee });
-                    if (await IsLogonExists(employee.Id)) return defaultPassword;                    
+                    await _loginCommand.AddAsync(new Login { Password = Extensions.Encrypt(defaultPassword), Email = email });
+                if (await IsLogonExists(employee.Email)) return defaultPassword;                    
                 }
                 return string.Empty;
             }
@@ -69,11 +69,11 @@ namespace hotel_management_api_identity.Features.Authentication.Services
             }
         }
 
-        public async Task<bool> IsLogonExists(Guid employeeId)
+        public async Task<bool> IsLogonExists(string email)
         {
             try
             {
-                var loginResponse = await _loginQuery.GetByDefaultAsync(new Dictionary<string, Guid>() { { "employeeId", employeeId } });
+                var loginResponse = await _loginQuery.GetByDefaultAsync(new Dictionary<string, string>() { { "email", email } });
                 if(loginResponse is not null)   return true;
                 return false;
             }
@@ -92,8 +92,8 @@ namespace hotel_management_api_identity.Features.Authentication.Services
                 if (await _employeeService.IsEmployeeExistsByEmail(loginRequest.Email))
                 {
                     var employeeId = _employeeService.GetEmployeeByEmail(loginRequest.Email).Result.Data.EmployeeId;
-                    var loginResponse = await _loginQuery.GetByDefaultAsync(new Dictionary<string, Guid>() { { "employeeId", employeeId } });
-                    if (loginResponse.Employee.Email == loginRequest.Email && Extensions.Decrypt(loginResponse.Password).Equals(loginRequest.Password))
+                    var loginResponse = await _loginQuery.GetByDefaultAsync(new Dictionary<string, string>() { { "email", loginRequest.Email } });
+                    if (loginResponse.Email == loginRequest.Email && Extensions.Decrypt(loginResponse.Password).Equals(loginRequest.Password))
                         return true;
                 }
                 return false;

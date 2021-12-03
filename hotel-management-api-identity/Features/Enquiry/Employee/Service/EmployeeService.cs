@@ -43,7 +43,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Employee.Service
         private readonly ILogger<EmployeeService> _logger;
         private readonly IDapperQuery<Core.Storage.Models.Employee> _employeeQuery;
 
-        public EmployeeService(DapperQuery<Core.Storage.Models.Employee> employeeQuery, ILogger<EmployeeService> logger)
+        public EmployeeService(IDapperQuery<Core.Storage.Models.Employee> employeeQuery, ILogger<EmployeeService> logger)
         {
             _employeeQuery = employeeQuery;
             _logger = logger;

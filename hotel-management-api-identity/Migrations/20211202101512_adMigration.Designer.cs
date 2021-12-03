@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using hotel_management_api_identity.Core.Storage;
 
@@ -11,9 +12,10 @@ using hotel_management_api_identity.Core.Storage;
 namespace hotel_management_api_identity.Migrations
 {
     [DbContext(typeof(HMSDbContext))]
-    partial class HMSDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211202101512_adMigration")]
+    partial class adMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -169,9 +171,6 @@ namespace hotel_management_api_identity.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("LoginId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("ModifiedById")
                         .HasColumnType("nvarchar(max)");
 
@@ -190,8 +189,6 @@ namespace hotel_management_api_identity.Migrations
                     b.HasIndex("Email");
 
                     b.HasIndex("Id");
-
-                    b.HasIndex("LoginId");
 
                     b.ToTable("Employee");
                 });
@@ -399,15 +396,6 @@ namespace hotel_management_api_identity.Migrations
                     b.Navigation("Customer");
 
                     b.Navigation("Room");
-                });
-
-            modelBuilder.Entity("hotel_management_api_identity.Core.Storage.Models.Employee", b =>
-                {
-                    b.HasOne("hotel_management_api_identity.Core.Storage.Models.Login", "Login")
-                        .WithMany()
-                        .HasForeignKey("LoginId");
-
-                    b.Navigation("Login");
                 });
 #pragma warning restore 612, 618
         }

@@ -4,7 +4,6 @@ using hotel_management_api_identity.Core.Helpers.Extension;
 using hotel_management_api_identity.Core.Storage.QueryRepository;
 using hotel_management_api_identity.Features.Enquiry.Customer.Config;
 using hotel_management_api_identity.Features.Enquiry.Customer.Model;
-using hotel_management_api_identity.Features.Onboarding.Models;
 
 namespace hotel_management_api_identity.Features.Enquiry.Customer.Service
 {
@@ -37,7 +36,15 @@ namespace hotel_management_api_identity.Features.Enquiry.Customer.Service
         /// <param name="phone"></param>
         /// <returns></returns>
         Task<GenericResponse<CustomerResponse>> GetCustomerByPhone(string phone);
-       
+
+
+       /// <summary>
+       /// Gets All Customers
+       /// </summary>
+       /// <param name="pageSize"></param>
+       /// <param name="pageNumber"></param>
+       /// <returns></returns>
+        Task<GenericResponse<IEnumerable<CustomerResponse>>> GetCustomers(int pageSize, int pageNumber);
     }
 
 
@@ -46,7 +53,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Customer.Service
         private readonly ILogger<CustomerService> _logger;        
         private readonly IDapperQuery<Core.Storage.Models.Customer> _customerQuery;
 
-        public CustomerService(DapperQuery<Core.Storage.Models.Customer> customerQuery,
+        public CustomerService(IDapperQuery<Core.Storage.Models.Customer> customerQuery,
                                ILogger<CustomerService> logger)
         {            
             _customerQuery = customerQuery;
@@ -84,6 +91,21 @@ namespace hotel_management_api_identity.Features.Enquiry.Customer.Service
             {
                 _logger.LogError(ex, ex.Message);
                 return new GenericResponse<CustomerResponse> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
+            }
+        }
+
+        public async Task<GenericResponse<IEnumerable<CustomerResponse>>> GetCustomers(int pageSize, int pageNumber)
+        {
+            try
+            {
+                var result = await _customerQuery.GetByAsync(pageSize, pageNumber);
+                if (result is not null) return new GenericResponse<IEnumerable<CustomerResponse>> { Data = result.ToList().ToCustomerList(), IsSuccessful = true, Message = ResponseMessages.OperationSuccessful };
+                return new GenericResponse<IEnumerable<CustomerResponse>> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, ex.Message);
+                return new GenericResponse<IEnumerable<CustomerResponse>> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
             }
         }
 

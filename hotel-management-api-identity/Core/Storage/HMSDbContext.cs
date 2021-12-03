@@ -45,6 +45,7 @@ namespace hotel_management_api_identity.Core.Storage
             modelBuilder.Entity<Login>(b =>
             {
                 b.HasIndex(i => i.Id).IsUnique(false);
+                b.HasIndex(i => i.Email).IsUnique(false);
                 b.HasIndex(i => i.Password).IsUnique(false);
             });
 

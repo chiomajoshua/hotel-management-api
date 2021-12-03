@@ -39,6 +39,8 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
         string GenerateTokenValidationQuery<TEntity>(Dictionary<string, string> criteria) where TEntity : class;
 
         string GenerateSingleRecordQuery<TEntity>(Dictionary<string, Guid> criteria) where TEntity : class;
+
+        string GeneratePaginatedSelectQuery<TEntity>(int pageSize, int pageNumber) where TEntity : class;
     }
 
 
@@ -223,15 +225,15 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
             int count = 1;
             foreach (var item in criteria)
             {
-                 selectQuery.Append($"{item.Key} like '%{item.Value.Trim().Replace(' ', '%')}%' ");
+                 selectQuery.Append($"{item.Key} = '{item.Value.Trim()}'");
                 if (criteria.Count > count)
                 {
                     selectQuery.Append("AND ");
                 }
                 count++;
-            }
+            }           
 
-            return $"{selectQuery} AND ExpiryDate >= {DateTimeOffset.UtcNow} order by createdon desc";
+            return $"{selectQuery} AND ExpiryDate >= TODATETIMEOFFSET('{DateTimeOffset.UtcNow}', '+01:00') order by createdon desc";
         }
         public string GeneratePaginatedSelectQuery<TEntity>(Dictionary<string, string> criteria, int pageSize, int pageNumber) where TEntity : class
         {
@@ -247,6 +249,13 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
                 }
                 count++;
             }
+            return $"{selectQuery} order by createdon desc OFFSET {pageNumber} ROWS FETCH NEXT {pageSize} ROWS ONLY";
+        }
+
+        public string GeneratePaginatedSelectQuery<TEntity>(int pageSize, int pageNumber) where TEntity : class
+        {
+            string tableName = typeof(TEntity).GetTableName<Type>();
+            var selectQuery = new StringBuilder($"SELECT * FROM dbo.[{tableName}] with (nolock)");            
             return $"{selectQuery} order by createdon desc OFFSET {pageNumber} ROWS FETCH NEXT {pageSize} ROWS ONLY";
         }
 

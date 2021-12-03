@@ -17,6 +17,14 @@
         public const string CustomerAlreadyExists = "Sorry, The Customer Already Exists";
         public const string CustomerCreationFailed = "Sorry, We Could Not Create This Customer";
 
+        public const string EmployeeCreatedSuccessfully = "Congratulations! Employee Information Has Been Successfully Added To Our Records";
+        public const string EmployeeAlreadyExists = "Sorry, The Employee Already Exists";
+        public const string EmployeeCreationFailed = "Sorry, We Could Not Create This Employee";
+
+        public const string RoomCreatedSuccessfully = "Congratulations! Room Information Has Been Successfully Added To Our Records";
+        public const string RoomAlreadyExists = "Sorry, The Room Already Exists";
+        public const string RoomCreationFailed = "Sorry, We Could Not Create This Room";
+
         public const string NoKycJobForUser = "No KYC Job was created for the user";
         public const string NoKYCToken = "Unable to get token from Mati";
         public const string UnableToCreateJob = "Unable to create kyc job on mati";

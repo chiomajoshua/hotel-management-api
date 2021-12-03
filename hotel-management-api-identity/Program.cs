@@ -30,7 +30,7 @@ try
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerService();
 
-    var jwtTokenSettings = builder.Configuration.GetSection("JwtToken");
+    var jwtTokenSettings = builder.Configuration.GetSection("JwtTokenSettings");
     builder.Services.Configure<JwtToken>(jwtTokenSettings);
     builder.Services.AddIdentity(jwtTokenSettings.Get<JwtToken>());
 

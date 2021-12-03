@@ -47,7 +47,8 @@ namespace hotel_management_api_identity.Features.Enquiry.Employee.Config
                 LastName = createEmployeeRequest.LastName,
                 PhoneNumber = createEmployeeRequest.PhoneNumber,
                 Gender = createEmployeeRequest.Gender,
-                Address = createEmployeeRequest.Address
+                Address = createEmployeeRequest.Address,
+                UserType = createEmployeeRequest.UserType
             };
         }
     }

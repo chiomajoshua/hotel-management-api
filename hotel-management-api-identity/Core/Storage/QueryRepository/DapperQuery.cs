@@ -43,6 +43,7 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
         /// <returns></returns>
         Task<TEntity> GetByDefaultAsync(Dictionary<string, Guid> criteria);
 
+        Task<IQueryable<TEntity>> GetByAsync(int pageSize, int pageNumber);
 
 
     }
@@ -90,7 +91,12 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
             return entityObject.Count() > 0;
         }
 
-       
+       public async Task<IQueryable<TEntity>> GetByAsync(int pageSize, int pageNumber)
+        {
+            string query = _utilities.GeneratePaginatedSelectQuery<TEntity>(pageSize,pageNumber );
+            var entityObject = await _executers.ExecuteReaderAsync<TEntity>(query, null);
+            return entityObject.AsQueryable();            
+        }
 
         public async Task<TEntity> ValidateTokenAsync(Dictionary<string, string> criteria)
         {

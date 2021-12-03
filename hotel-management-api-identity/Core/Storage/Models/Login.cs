@@ -10,7 +10,7 @@ namespace hotel_management_api_identity.Core.Storage.Models
     [Serializable]
     public class Login : BaseEntity
     {
+        public string Email { get; set; }
         public string Password { get; set; }
-        public virtual Employee Employee { get; set; }
     }
 }

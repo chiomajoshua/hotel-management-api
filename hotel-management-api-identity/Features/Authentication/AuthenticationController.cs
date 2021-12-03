@@ -37,30 +37,5 @@ namespace hotel_management_api_identity.Features.Authentication
                 return Ok(new { loginRequest.Email, Token = _tokenService.CreateToken(loginRequest.Email) });
             return Unauthorized("Email/Password Is Incorrect");
         }
-
-        // GET api/<AuthenticationController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<AuthenticationController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/<AuthenticationController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<AuthenticationController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }
