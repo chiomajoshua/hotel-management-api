@@ -12,12 +12,12 @@ API documentation is [here](https://localhost:5000/swagger/index.html)
 
 
 #### Technologies Used
-- dotnet-core 3.1
+- dotnet 6.0
 - Microsoft SQL Server
 
 ##### Prerequisites
-- dotnet-core 3.1 SDK needs to be installed on your machine. See [dotnet-core Docs](https://dotnet.microsoft.com/download/dotnet-core/3.1)
-- Although not required visual studio 2019 needs to be installed
+- dotnet 6.0 SDK needs to be installed on your machine. See [dotnet-core Docs](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+- Although not required visual studio 2022 needs to be installed
 - SQL Server Management Studio needs to be installed on you local machine
 
 ##### Setting up locally
