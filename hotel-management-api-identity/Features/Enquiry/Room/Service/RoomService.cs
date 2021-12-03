@@ -108,7 +108,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Room.Service
             {
                 if (string.IsNullOrEmpty(roomId.ToString())) return false;
                 var query = new Dictionary<string, DateTimeOffset>() { { "CheckInDate", checkInDate }, { "CheckOutDate", checkOutDate } };
-                var result = await _roomQuery.IsExistAsync(query, roomId);
+                var result = await _bookingQuery.IsExistAsync(query, roomId);
                 if (result) return true;
                 return false;
             }
