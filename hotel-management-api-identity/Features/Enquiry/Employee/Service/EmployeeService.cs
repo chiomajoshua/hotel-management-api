@@ -94,7 +94,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Employee.Service
             try
             {
                 var result = await _employeeQuery.GetByAsync(pageSize, pageNumber);
-                if (result.Count() > 0) return new GenericResponse<IEnumerable<EmployeeResponse>> { Data = result.ToList().ToEmployeeList(), IsSuccessful = true, Message = ResponseMessages.OperationSuccessful };
+                if (result.Any()) return new GenericResponse<IEnumerable<EmployeeResponse>> { Data = result.ToList().ToEmployeeList(), IsSuccessful = true, Message = ResponseMessages.OperationSuccessful };
                 return new GenericResponse<IEnumerable<EmployeeResponse>> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
             }
             catch (Exception ex)

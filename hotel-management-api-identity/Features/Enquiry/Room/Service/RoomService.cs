@@ -117,6 +117,6 @@ namespace hotel_management_api_identity.Features.Enquiry.Room.Service
                 _logger.LogError(ex, ex.Message);
                 return false;
             }
-        }
+        }        
     }
 }

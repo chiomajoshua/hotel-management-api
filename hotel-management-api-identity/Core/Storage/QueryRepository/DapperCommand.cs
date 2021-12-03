@@ -11,15 +11,11 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
     }
     public class DapperCommand<TEntity> : IDapperCommand<TEntity> where TEntity : class
     {
-        private readonly IConfiguration _configuration;
         private readonly IExecuters _executers;
         private readonly IQueryUtilities _utilities;
-        private readonly string _connStr;
-        public DapperCommand(IConfiguration configuration, IExecuters executers, IQueryUtilities utilities)
+        public DapperCommand(IExecuters executers, IQueryUtilities utilities)
         {
-            _configuration = configuration;
             _executers = executers;
-            _connStr = _configuration.GetConnectionString("DefaultConnection"); 
             _utilities = utilities;
         }
         public async Task AddAsync(TEntity entity)

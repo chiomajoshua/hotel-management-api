@@ -27,7 +27,6 @@ namespace hotel_management_api_identity.Features.Enquiry.Transaction
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(object))]
         public async Task<IActionResult> GetAllTransactions(GenericRequest genericRequest)
         {
-
             return Ok(await _transactionService.GetTransactions(genericRequest.PageSize, genericRequest.PageNumber));
         }
 

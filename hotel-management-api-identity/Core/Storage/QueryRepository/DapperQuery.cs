@@ -71,15 +71,11 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
 
     public class DapperQuery<TEntity> : IDapperQuery<TEntity> where TEntity : class
     {
-        private readonly IConfiguration _configuration;
         private readonly IExecuters _executers;
         private readonly IQueryUtilities _utilities;
-        private readonly string _connStr;
-        public DapperQuery(IConfiguration configuration, IExecuters executers, IQueryUtilities utilities)
+        public DapperQuery(IExecuters executers, IQueryUtilities utilities)
         {
-            _configuration = configuration;
             _executers = executers;
-            _connStr = _configuration.GetConnectionString("DefaultConnection");
             _utilities = utilities;
         }
 
@@ -115,14 +111,14 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
         {
             string query = _utilities.GenerateSingleRecordQuery<TEntity>(criteria);
             var entityObject = await _executers.ExecuteReaderAsync<TEntity>(query, null);
-            return entityObject.Count() > 0;
+            return entityObject.Any();
         }
 
         public async Task<bool> IsExistAsync(Dictionary<string, DateTimeOffset> criteria, Guid roomId)
         {
             string query = _utilities.GenerateCheckIfRoomIsEmptyQuery<TEntity>(criteria, roomId);
             var entityObject = await _executers.ExecuteReaderAsync<TEntity>(query, null);
-            return entityObject.Count() > 0;
+            return entityObject.Any();
         }
 
         public async Task<IQueryable<TEntity>> GetByAsync(int pageSize, int pageNumber)

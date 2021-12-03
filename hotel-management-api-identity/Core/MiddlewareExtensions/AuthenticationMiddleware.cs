@@ -11,7 +11,7 @@ namespace hotel_management_api_identity.Core.MiddlewareExtensions
         private readonly RequestDelegate _next;
         private readonly ITokenService _tokenService;
         private readonly IOptions<JwtToken> _appSettings;
-        public static string _validEmail { get; set; }
+        public static string ValidEmail { get; set; }
 
         public AuthenticationMiddleware()
         {
@@ -60,9 +60,9 @@ namespace hotel_management_api_identity.Core.MiddlewareExtensions
             var _authValues = authHeader.Split(" ");
             if (_authValues.Length > 1)
             {
-                _validEmail = PrincipalUtilities.GetEmail(_authValues[1], _appSettings.Value.Audience, _appSettings.Value.Issuer, _appSettings.Value.Secret);
+                ValidEmail = PrincipalUtilities.GetEmail(_authValues[1], _appSettings.Value.Audience, _appSettings.Value.Issuer, _appSettings.Value.Secret);
                 var roles = PrincipalUtilities.GetRoles(_authValues[1], _appSettings.Value.Audience, _appSettings.Value.Issuer, _appSettings.Value.Secret);
-                if (await _tokenService.ValidateToken(new TokenRequest { Email = _validEmail, Token = _authValues[1]}))
+                if (await _tokenService.ValidateToken(new TokenRequest { Email = ValidEmail, Token = _authValues[1]}))
                 {
                     await _next(httpContext);
                     return;
@@ -81,7 +81,7 @@ namespace hotel_management_api_identity.Core.MiddlewareExtensions
 
         public string ActiveEmail()
         {
-            return _validEmail;
+            return ValidEmail;
         }
     }
 

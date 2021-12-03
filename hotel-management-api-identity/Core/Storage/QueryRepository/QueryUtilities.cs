@@ -174,7 +174,7 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
         public string GenerateAuditLogInsertQuery<TEntity>(TEntity entity) where TEntity : class
         {
             var insertQuery = new StringBuilder($"INSERT INTO AuditLogs ");
-            _ = insertQuery.Append("(");
+            _ = insertQuery.Append('(');
             var properties = GenerateParams(typeof(TEntity).GetProperties(), entity).Keys.ToList();
             properties.ForEach(prop => { insertQuery.Append($"[{prop}],"); });
             insertQuery
@@ -183,7 +183,7 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
             properties.ForEach(prop => { insertQuery.Append($"@AuditLog_{prop},"); });
             insertQuery
                 .Remove(startIndex: insertQuery.Length - 1, length: 1)
-                .Append(")");
+                .Append(')');
 
             return insertQuery.ToString();
         }

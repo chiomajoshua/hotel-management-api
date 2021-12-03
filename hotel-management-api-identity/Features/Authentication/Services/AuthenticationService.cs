@@ -52,7 +52,7 @@ namespace hotel_management_api_identity.Features.Authentication.Services
         {
             try
             {
-                _logger.LogInformation($"CreateAccount Request -----> {email}");
+                _logger.LogInformation(message: $"CreateAccount Request -----> {email}");
                 if (await _employeeService.IsEmployeeExistsByEmail(email))
                 {
                     var defaultPassword = "P@$$w0rd";

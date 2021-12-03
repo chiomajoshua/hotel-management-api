@@ -51,7 +51,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Transaction.Service
             try
             {
                 var result = await _salesQuery.GetByAsync(pageSize, pageNumber);
-                if (result.Count() > 0) return new GenericResponse<IEnumerable<TransactionResponse>> { Data = result.ToList().ToTransactionsList(), IsSuccessful = true, Message = ResponseMessages.OperationSuccessful };
+                if (result.Any()) return new GenericResponse<IEnumerable<TransactionResponse>> { Data = result.ToList().ToTransactionsList(), IsSuccessful = true, Message = ResponseMessages.OperationSuccessful };
                 return new GenericResponse<IEnumerable<TransactionResponse>> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
             }
             catch (Exception ex)
@@ -67,7 +67,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Transaction.Service
             {
                 var query = new Dictionary<string, string>() { { "createdbyId", email } };
                 var result = await _salesQuery.GetByAsync(query, pageSize, pageNumber);
-                if (result.Count() > 0) return new GenericResponse<IEnumerable<TransactionResponse>> { Data = result.ToList().ToTransactionsList(), IsSuccessful = true, Message = ResponseMessages.OperationSuccessful };
+                if (result.Any()) return new GenericResponse<IEnumerable<TransactionResponse>> { Data = result.ToList().ToTransactionsList(), IsSuccessful = true, Message = ResponseMessages.OperationSuccessful };
                 return new GenericResponse<IEnumerable<TransactionResponse>> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
             }
             catch (Exception ex)
@@ -83,7 +83,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Transaction.Service
             {
                 var query = new Dictionary<string, DateTimeOffset>() { { "startDate", startDate }, { "endDate", endDate } };
                 var result = await _salesQuery.GetByDateRangeAsync(query);
-                if (result.Count() > 0) return new GenericResponse<IEnumerable<TransactionResponse>> { Data = result.ToList().ToTransactionsList(), IsSuccessful = true, Message = ResponseMessages.OperationSuccessful };
+                if (result.Any()) return new GenericResponse<IEnumerable<TransactionResponse>> { Data = result.ToList().ToTransactionsList(), IsSuccessful = true, Message = ResponseMessages.OperationSuccessful };
                 return new GenericResponse<IEnumerable<TransactionResponse>> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
             }
             catch (Exception ex)

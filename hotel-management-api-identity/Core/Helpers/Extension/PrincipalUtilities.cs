@@ -22,7 +22,7 @@ namespace hotel_management_api_identity.Core.Helpers.Extension
         private static ClaimsPrincipal ValidateToken(string jwtToken, string audience, string issuer, string secret)
         {
             IdentityModelEventSource.ShowPII = true;
-            TokenValidationParameters validationParameters = new TokenValidationParameters();
+            TokenValidationParameters validationParameters = new();
 
             validationParameters.ValidateLifetime = true;
 
@@ -53,15 +53,6 @@ namespace hotel_management_api_identity.Core.Helpers.Extension
             var claim = claimsList.Find(c => c.Type == claimType);
             return claim != null ? claim.Value : string.Empty;
         }
-
-        private static IEnumerable<Claim> GetClaimValues(this IEnumerable<Claim> claims, string claimType)
-        {
-            var claimsList = new List<Claim>(claims);
-            var claim = claimsList.FindAll(c => c.Type == claimType);
-            return claim;
-        }
-
-
         private static string GetClaimValue(this IIdentity identity, string claimType)
         {
             var claimIdentity = (ClaimsIdentity)identity;
