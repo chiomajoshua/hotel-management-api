@@ -15,6 +15,7 @@ Log.Logger = new LoggerConfiguration()
 
 Log.Information("Starting up");
 
+
 try
 {
     var builder = WebApplication.CreateBuilder(args);
@@ -33,6 +34,7 @@ try
     var jwtTokenSettings = builder.Configuration.GetSection("JwtTokenSettings");
     builder.Services.Configure<JwtToken>(jwtTokenSettings);
     builder.Services.AddIdentity(jwtTokenSettings.Get<JwtToken>());
+    
 
 
     builder.Services.AddCors(options =>
@@ -55,7 +57,9 @@ try
     var app = builder.Build();
     app.ConfigureExceptionHandler();
     app.UseSerilogRequestLogging();
-   
+    
+
+
 
     var supportedCultures = new[] { new CultureInfo("en-GB"), new CultureInfo("en-US") };
     app.UseRequestLocalization(new RequestLocalizationOptions
@@ -69,6 +73,7 @@ try
     app.UseRouting();
     app.UseCors("pol");
     app.UseHttpsRedirection();
+    
     
 
     app.UseAuthorization();

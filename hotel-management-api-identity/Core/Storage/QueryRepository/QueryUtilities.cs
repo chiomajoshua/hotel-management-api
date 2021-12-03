@@ -105,7 +105,7 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
                 {
                     query = $"{query}{item},";
                 }
-                query = $"{query.Substring(0, query.Length - 1)}) values( ";
+                query = $"{query[0..^1]}) values( ";
                 foreach (object item in listItem.Values)
                 {
                     query = $"{query}'{item}',";
@@ -154,7 +154,7 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
         public Dictionary<string, object> GenerateAuditTrailParams<TEntity>(Dictionary<string, object> objectDictionary, IEnumerable<System.Reflection.PropertyInfo> listOfAuditLogProperties, TEntity auditLogEntity)
             where TEntity : class
         {
-            objectDictionary = objectDictionary ?? new Dictionary<string, object>();
+            objectDictionary ??= new Dictionary<string, object>();
 
             foreach (var prop in listOfAuditLogProperties)
             {
@@ -170,7 +170,7 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
         public string GenerateAuditLogInsertQuery<TEntity>(TEntity entity) where TEntity : class
         {
             var insertQuery = new StringBuilder($"INSERT INTO AuditLogs ");
-            insertQuery.Append("(");
+            _ = insertQuery.Append("(");
             var properties = GenerateParams(typeof(TEntity).GetProperties(), entity).Keys.ToList();
             properties.ForEach(prop => { insertQuery.Append($"[{prop}],"); });
             insertQuery
@@ -310,7 +310,7 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
                     }
                     query = $"{query}{item} = '{listItem[item]}',";
                 }
-                query = !string.IsNullOrEmpty(idString) ? $"{query.Substring(0, query.Length - 1)}{idString};{Environment.NewLine}" : tempQuery;
+                query = !string.IsNullOrEmpty(idString) ? $"{query[0..^1]}{idString};{Environment.NewLine}" : tempQuery;
                 idString = "";
             }
             return query;

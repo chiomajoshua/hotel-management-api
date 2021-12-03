@@ -8,7 +8,8 @@ namespace hotel_management_api_identity.Features.Enquiry.Menu.Config
     {
         public static IEnumerable<MenuResponse> ToMenuList(this List<Core.Storage.Models.Menu> menuData)
         {
-            new List<MenuResponse>().AddRange(menuData.Select(data => new MenuResponse()
+            var result = new List<MenuResponse>();
+            result.AddRange(menuData.Select(data => new MenuResponse()
             {
                 Category = data.Category.Description(),
                 CreatedById = data.CreatedById,
@@ -20,7 +21,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Menu.Config
                 ModifiedOn = data.ModifiedOn,
                 Price = data.Price
             }));
-            return new List<MenuResponse>();
+            return result;
         }
 
 

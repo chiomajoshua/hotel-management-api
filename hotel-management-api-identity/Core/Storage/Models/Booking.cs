@@ -11,9 +11,9 @@ namespace hotel_management_api_identity.Core.Storage.Models
     public class Booking : BaseEntity
     {
         public bool HasDiscount { get; set; }
+        public DateTimeOffset CheckInDate { get; set; }
         public DateTimeOffset CheckOutDate { get; set; }
-        public virtual Room Room { get; set; }
-        public virtual Customer Customer { get; set; }
         public decimal AmountPaid { get; set; }
+        public virtual Room Room { get; set; }
     }
 }

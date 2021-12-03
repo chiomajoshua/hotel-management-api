@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using hotel_management_api_identity.Core.Storage;
 
@@ -11,9 +12,10 @@ using hotel_management_api_identity.Core.Storage;
 namespace hotel_management_api_identity.Migrations
 {
     [DbContext(typeof(HMSDbContext))]
-    partial class HMSDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211203112253_Table Relationships")]
+    partial class TableRelationships
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,9 +33,6 @@ namespace hotel_management_api_identity.Migrations
                     b.Property<decimal>("AmountPaid")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTimeOffset>("CheckInDate")
-                        .HasColumnType("datetimeoffset");
-
                     b.Property<DateTimeOffset>("CheckOutDate")
                         .HasColumnType("datetimeoffset");
 
@@ -44,6 +43,9 @@ namespace hotel_management_api_identity.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.Property<Guid?>("CustomerId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("EmployeeId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("HasDiscount")
@@ -69,6 +71,8 @@ namespace hotel_management_api_identity.Migrations
                     b.HasIndex("CreatedOn");
 
                     b.HasIndex("CustomerId");
+
+                    b.HasIndex("EmployeeId");
 
                     b.HasIndex("HasDiscount");
 
@@ -172,6 +176,9 @@ namespace hotel_management_api_identity.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid?>("LoginId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("ModifiedById")
                         .HasColumnType("nvarchar(max)");
 
@@ -190,6 +197,8 @@ namespace hotel_management_api_identity.Migrations
                     b.HasIndex("Email");
 
                     b.HasIndex("Id");
+
+                    b.HasIndex("LoginId");
 
                     b.ToTable("Employee");
                 });
@@ -320,8 +329,14 @@ namespace hotel_management_api_identity.Migrations
                     b.Property<DateTimeOffset>("CreatedOn")
                         .HasColumnType("datetimeoffset");
 
+                    b.Property<Guid?>("EmployeeId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Item")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("MenuId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ModifiedById")
                         .HasColumnType("nvarchar(max)");
@@ -341,7 +356,11 @@ namespace hotel_management_api_identity.Migrations
 
                     b.HasIndex("CreatedOn");
 
+                    b.HasIndex("EmployeeId");
+
                     b.HasIndex("Id");
+
+                    b.HasIndex("MenuId");
 
                     b.HasIndex("Price");
 
@@ -390,16 +409,50 @@ namespace hotel_management_api_identity.Migrations
                         .WithMany("Bookings")
                         .HasForeignKey("CustomerId");
 
-                    b.HasOne("hotel_management_api_identity.Core.Storage.Models.Room", "Room")
+                    b.HasOne("hotel_management_api_identity.Core.Storage.Models.Employee", null)
+                        .WithMany("Bookings")
+                        .HasForeignKey("EmployeeId");
+
+                    b.HasOne("hotel_management_api_identity.Core.Storage.Models.Room", null)
                         .WithMany("Bookings")
                         .HasForeignKey("RoomId");
+                });
 
-                    b.Navigation("Room");
+            modelBuilder.Entity("hotel_management_api_identity.Core.Storage.Models.Employee", b =>
+                {
+                    b.HasOne("hotel_management_api_identity.Core.Storage.Models.Login", "Login")
+                        .WithMany()
+                        .HasForeignKey("LoginId");
+
+                    b.Navigation("Login");
+                });
+
+            modelBuilder.Entity("hotel_management_api_identity.Core.Storage.Models.Sales", b =>
+                {
+                    b.HasOne("hotel_management_api_identity.Core.Storage.Models.Employee", null)
+                        .WithMany("Sales")
+                        .HasForeignKey("EmployeeId");
+
+                    b.HasOne("hotel_management_api_identity.Core.Storage.Models.Menu", null)
+                        .WithMany("Sales")
+                        .HasForeignKey("MenuId");
                 });
 
             modelBuilder.Entity("hotel_management_api_identity.Core.Storage.Models.Customer", b =>
                 {
                     b.Navigation("Bookings");
+                });
+
+            modelBuilder.Entity("hotel_management_api_identity.Core.Storage.Models.Employee", b =>
+                {
+                    b.Navigation("Bookings");
+
+                    b.Navigation("Sales");
+                });
+
+            modelBuilder.Entity("hotel_management_api_identity.Core.Storage.Models.Menu", b =>
+                {
+                    b.Navigation("Sales");
                 });
 
             modelBuilder.Entity("hotel_management_api_identity.Core.Storage.Models.Room", b =>

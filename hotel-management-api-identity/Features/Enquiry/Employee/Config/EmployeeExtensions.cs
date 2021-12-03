@@ -8,7 +8,8 @@ namespace hotel_management_api_identity.Features.Enquiry.Employee.Config
     {
         public static IEnumerable<EmployeeResponse> ToEmployeeList(this List<Core.Storage.Models.Employee> employeeData)
         {
-            new List<EmployeeResponse>().AddRange(employeeData.Select(data => new EmployeeResponse()
+            var result = new List<EmployeeResponse>();
+            result.AddRange(employeeData.Select(data => new EmployeeResponse()
             {
                 EmployeeId = data.Id,
                 Email = data.Email,
@@ -20,7 +21,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Employee.Config
                 Address = data.Address
             }));
 
-            return new List<EmployeeResponse>();
+            return result;
 
         }
         public static EmployeeResponse ToEmployee(this Core.Storage.Models.Employee employeeData)

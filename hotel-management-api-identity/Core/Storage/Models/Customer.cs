@@ -26,6 +26,7 @@ namespace hotel_management_api_identity.Core.Storage.Models
         [Required]
         public string Email { get; set; }        
         public Enums.Gender Gender { get; set; }
+        public virtual ICollection<Booking> Bookings { get; set; }
 
         public Customer()
         {

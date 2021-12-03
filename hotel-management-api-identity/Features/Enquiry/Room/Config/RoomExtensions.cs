@@ -16,13 +16,15 @@ namespace hotel_management_api_identity.Features.Enquiry.Room.Config
 
         public static IEnumerable<RoomResponse> ToRoomList(this List<Core.Storage.Models.Room> roomData)
         {
-            new List<RoomResponse>().AddRange(roomData.Select(data => new RoomResponse()
+            var result = new List<RoomResponse>();
+
+            result.AddRange(roomData.Select(data => new RoomResponse()
             {
                  Price = data.Price,
                  Name = data.Name
             }));
 
-            return new List<RoomResponse>();
+            return result;
 
         }
         public static RoomResponse ToRoom(this Core.Storage.Models.Room roomData)

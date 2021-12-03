@@ -111,3 +111,4 @@ C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api
 C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\bin\Debug\net6.0\logs\log-20211201.json
 C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\bin\Debug\net6.0\logs\log-20211202.json
+C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\bin\Debug\net6.0\logs\log-20211203.json

@@ -36,6 +36,14 @@ namespace hotel_management_api_identity.Features.Enquiry.Employee.Service
         /// <param name="phone"></param>
         /// <returns></returns>
         Task<GenericResponse<EmployeeResponse>> GetEmployeeByPhone(string phone);
+
+        /// <summary>
+        /// Gets All Employees
+        /// </summary>
+        /// <param name="pageSize"></param>
+        /// <param name="pageNumber"></param>
+        /// <returns></returns>
+        Task<GenericResponse<IEnumerable<EmployeeResponse>>> GetEmployees(int pageSize, int pageNumber);
     }
 
     public class EmployeeService : IEmployeeService
@@ -78,6 +86,21 @@ namespace hotel_management_api_identity.Features.Enquiry.Employee.Service
             {
                 _logger.LogError(ex, ex.Message);
                 return new GenericResponse<EmployeeResponse> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
+            }
+        }
+
+        public async Task<GenericResponse<IEnumerable<EmployeeResponse>>> GetEmployees(int pageSize, int pageNumber)
+        {
+            try
+            {
+                var result = await _employeeQuery.GetByAsync(pageSize, pageNumber);
+                if (result.Count() > 0) return new GenericResponse<IEnumerable<EmployeeResponse>> { Data = result.ToList().ToEmployeeList(), IsSuccessful = true, Message = ResponseMessages.OperationSuccessful };
+                return new GenericResponse<IEnumerable<EmployeeResponse>> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, ex.Message);
+                return new GenericResponse<IEnumerable<EmployeeResponse>> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
             }
         }
 

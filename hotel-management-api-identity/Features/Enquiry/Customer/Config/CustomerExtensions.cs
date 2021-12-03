@@ -8,7 +8,8 @@ namespace hotel_management_api_identity.Features.Enquiry.Customer.Config
     {
         public static IEnumerable<CustomerResponse> ToCustomerList(this List<Core.Storage.Models.Customer> customerData)
         {
-            new List<CustomerResponse>().AddRange(customerData.Select(data => new CustomerResponse()
+            var result = new List<CustomerResponse>();
+            result.AddRange(customerData.Select(data => new CustomerResponse()
             {
                 Email = data.Email,
                 FirstName = data.FirstName,
@@ -21,7 +22,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Customer.Config
                 CreatedOn = data.CreatedOn
             }));
 
-            return new List<CustomerResponse>();            
+            return result;
         }
         public static CustomerResponse ToCustomer(this Core.Storage.Models.Customer customerData)
         {

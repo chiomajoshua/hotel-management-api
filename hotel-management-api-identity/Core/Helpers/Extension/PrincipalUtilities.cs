@@ -34,5 +34,38 @@ namespace hotel_management_api_identity.Core.Helpers.Extension
 
             return principal;
         }
+
+        public static string GetEmail(this IIdentity identity)
+        {
+            return GetClaimValue(identity, ClaimTypes.Email);
+        }
+
+        public static string GetRole(this IIdentity identity)
+        {
+            return GetClaimValue(identity, ClaimTypes.Role);
+        }
+
+
+
+        private static string GetClaimValue(this IEnumerable<Claim> claims, string claimType)
+        {
+            var claimsList = new List<Claim>(claims);
+            var claim = claimsList.Find(c => c.Type == claimType);
+            return claim != null ? claim.Value : string.Empty;
+        }
+
+        private static IEnumerable<Claim> GetClaimValues(this IEnumerable<Claim> claims, string claimType)
+        {
+            var claimsList = new List<Claim>(claims);
+            var claim = claimsList.FindAll(c => c.Type == claimType);
+            return claim;
+        }
+
+
+        private static string GetClaimValue(this IIdentity identity, string claimType)
+        {
+            var claimIdentity = (ClaimsIdentity)identity;
+            return claimIdentity.Claims.GetClaimValue(claimType);
+        }
     }
 }
