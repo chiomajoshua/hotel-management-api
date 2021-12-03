@@ -1,6 +1,7 @@
 ﻿using hotel_management_api_identity.Core.Constants;
 using hotel_management_api_identity.Core.Helpers;
 using hotel_management_api_identity.Core.Storage.QueryRepository;
+using hotel_management_api_identity.Features.Enquiry.Room.Service;
 using hotel_management_api_identity.Features.Transaction.Models;
 using Newtonsoft.Json;
 
@@ -40,14 +41,15 @@ namespace hotel_management_api_identity.Features.Transaction.Services
         private readonly ILogger<TransactionService> _logger;
         private readonly IDapperCommand<Core.Storage.Models.Sales> _salesCommand;
         private readonly IDapperCommand<Core.Storage.Models.Booking> _bookingCommand;
-        private readonly IDapperQuery<Core.Storage.Models.Booking> _bookingQuery;
+        private readonly IRoomService _roomService;
+
         public TransactionService(IDapperCommand<Core.Storage.Models.Sales> salesCommand, ILogger<TransactionService> logger, IDapperCommand<Core.Storage.Models.Booking> bookingCommand,
-                                  IDapperQuery<Core.Storage.Models.Booking> _bookingQuery)
+                                  IRoomService roomService)
         {
             _salesCommand = salesCommand;
             _logger = logger;
             _bookingCommand = bookingCommand;
-            _bookingQuery = _bookingQuery;
+            _roomService = roomService;
         }
 
         public async Task<GenericResponse<CreateBookingResponse>> CreateBooking(CreateBookingRequest createBookingRequest, string addedBy)
@@ -55,19 +57,23 @@ namespace hotel_management_api_identity.Features.Transaction.Services
             try
             {
                 _logger.LogInformation($"Create Purchase Request ----> {JsonConvert.SerializeObject(createBookingRequest)},{addedBy}");
-                await _bookingCommand.AddAsync(new Core.Storage.Models.Booking
+                if (!await _roomService.IsRoomTaken(createBookingRequest.CheckInDate, createBookingRequest.CheckOutDate, Guid.Parse(createBookingRequest.RoomId)))
                 {
-                    Room = new Core.Storage.Models.Room
+                    await _bookingCommand.AddAsync(new Core.Storage.Models.Booking
                     {
-                        Id = Guid.Parse(createBookingRequest.RoomId)
-                    },
-                    AmountPaid = createBookingRequest.AmountPaid,
-                    CheckOutDate = createBookingRequest.CheckOutDate,
-                    HasDiscount = createBookingRequest.HasDiscount,
-                    CreatedById = addedBy,
-                    ModifiedById = addedBy
-                });
-                return new GenericResponse<CreateBookingResponse> { IsSuccessful = true, Message = ResponseMessages.CustomerCreatedSuccessfully, Data = new CreateBookingResponse { IsSuccess = true } };
+                        Room = new Core.Storage.Models.Room
+                        {
+                            Id = Guid.Parse(createBookingRequest.RoomId)
+                        },
+                        AmountPaid = createBookingRequest.AmountPaid,
+                        CheckOutDate = createBookingRequest.CheckOutDate,
+                        HasDiscount = createBookingRequest.HasDiscount,
+                        CreatedById = addedBy,
+                        ModifiedById = addedBy
+                    });
+                    return new GenericResponse<CreateBookingResponse> { IsSuccessful = true, Message = ResponseMessages.BookingCreatedSuccessfully, Data = new CreateBookingResponse { IsSuccess = true } };
+                }
+                return new GenericResponse<CreateBookingResponse> { IsSuccessful = false, Message = ResponseMessages.BookingAlreadyExists};
             }
             catch (Exception ex)
             {
@@ -109,7 +115,7 @@ namespace hotel_management_api_identity.Features.Transaction.Services
                 _logger.LogInformation($"Create Purchase Request ----> {JsonConvert.SerializeObject(createPurchaseRequest)},{addedBy}");               
                 await _salesCommand.AddAsync(new Core.Storage.Models.Sales { Category = createPurchaseRequest.Category, Item = createPurchaseRequest.Item, Price = createPurchaseRequest.Price,
                                                                              Quantity = createPurchaseRequest.Quantity, CreatedById = addedBy, ModifiedById = addedBy});
-                return new GenericResponse<CreatePurchaseResponse> { IsSuccessful = true, Message = ResponseMessages.CustomerCreatedSuccessfully, Data = new CreatePurchaseResponse { IsSold = true } };                                    
+                return new GenericResponse<CreatePurchaseResponse> { IsSuccessful = true, Message = ResponseMessages.OperationSuccessful, Data = new CreatePurchaseResponse { IsSold = true } };                                    
             }
             catch (Exception ex)
             {

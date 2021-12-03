@@ -27,6 +27,16 @@ namespace hotel_management_api_identity.Features.Enquiry.Room.Service
         /// <param name="name"></param>
         /// <returns></returns>
         Task<bool> IsRoomExists(string name);
+
+
+        /// <summary>
+        /// Checks if room is currently in use
+        /// </summary>
+        /// <param name="checkInDate"></param>
+        /// <param name="checkOutDate"></param>
+        /// <param name="roomId"></param>
+        /// <returns></returns>
+        Task<bool> IsRoomTaken(DateTimeOffset checkInDate, DateTimeOffset checkOutDate, Guid roomId);
     }
 
 
@@ -35,10 +45,12 @@ namespace hotel_management_api_identity.Features.Enquiry.Room.Service
     {
         private readonly ILogger<RoomService> _logger;
         private readonly IDapperQuery<Core.Storage.Models.Room> _roomQuery;
-        public RoomService(IDapperQuery<Core.Storage.Models.Room> roomQuery, ILogger<RoomService> logger)
+        private readonly IDapperQuery<Core.Storage.Models.Booking> _bookingQuery;
+        public RoomService(IDapperQuery<Core.Storage.Models.Room> roomQuery, ILogger<RoomService> logger, IDapperQuery<Core.Storage.Models.Booking> bookingQuery)
         {
             _logger = logger;
             _roomQuery = roomQuery;
+            _bookingQuery = bookingQuery;
         }
 
 
@@ -80,6 +92,23 @@ namespace hotel_management_api_identity.Features.Enquiry.Room.Service
                 if (string.IsNullOrEmpty(name)) return false;
                 var query = new Dictionary<string, string>() { { "Name", name } };
                 var result = await _roomQuery.IsExistAsync(query);
+                if (result) return true;
+                return false;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, ex.Message);
+                return false;
+            }
+        }
+
+        public async Task<bool> IsRoomTaken(DateTimeOffset checkInDate, DateTimeOffset checkOutDate, Guid roomId)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(roomId.ToString())) return false;
+                var query = new Dictionary<string, DateTimeOffset>() { { "CheckInDate", checkInDate }, { "CheckOutDate", checkOutDate } };
+                var result = await _roomQuery.IsExistAsync(query, roomId);
                 if (result) return true;
                 return false;
             }

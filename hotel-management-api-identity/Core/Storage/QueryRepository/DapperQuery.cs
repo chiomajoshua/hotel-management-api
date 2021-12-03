@@ -43,7 +43,22 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
         /// <returns></returns>
         Task<TEntity> GetByDefaultAsync(Dictionary<string, Guid> criteria);
 
+        /// <summary>
+        /// Get Multiple Rows
+        /// </summary>
+        /// <param name="pageSize"></param>
+        /// <param name="pageNumber"></param>
+        /// <returns></returns>
         Task<IQueryable<TEntity>> GetByAsync(int pageSize, int pageNumber);
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="criteria"></param>
+        /// <param name="roomId"></param>
+        /// <returns></returns>
+        Task<bool> IsExistAsync(Dictionary<string, DateTimeOffset> criteria, Guid roomId);
 
 
     }
@@ -91,7 +106,14 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
             return entityObject.Count() > 0;
         }
 
-       public async Task<IQueryable<TEntity>> GetByAsync(int pageSize, int pageNumber)
+        public async Task<bool> IsExistAsync(Dictionary<string, DateTimeOffset> criteria, Guid roomId)
+        {
+            string query = _utilities.GenerateCheckIfRoomIsEmptyQuery<TEntity>(criteria, roomId);
+            var entityObject = await _executers.ExecuteReaderAsync<TEntity>(query, null);
+            return entityObject.Count() > 0;
+        }
+
+        public async Task<IQueryable<TEntity>> GetByAsync(int pageSize, int pageNumber)
         {
             string query = _utilities.GeneratePaginatedSelectQuery<TEntity>(pageSize,pageNumber );
             var entityObject = await _executers.ExecuteReaderAsync<TEntity>(query, null);

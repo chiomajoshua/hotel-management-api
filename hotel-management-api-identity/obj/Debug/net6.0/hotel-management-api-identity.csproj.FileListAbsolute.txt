@@ -50,7 +50,6 @@ C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api
 C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\obj\Debug\net6.0\ref\hotel-management-api-identity.dll
 C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\obj\Debug\net6.0\hotel-management-api-identity.pdb
 C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\obj\Debug\net6.0\hotel-management-api-identity.genruntimeconfig.cache
-C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\obj\Debug\net6.0\hotel-management-api-identity.csproj.AssemblyReference.cache
 C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\bin\Debug\net6.0\logs\log-20211130.json
 C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\bin\Debug\net6.0\FluentMigrator.dll
 C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\bin\Debug\net6.0\FluentMigrator.Abstractions.dll
