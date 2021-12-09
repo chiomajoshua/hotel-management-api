@@ -9,4 +9,10 @@ namespace hotel_management_api_identity.Features.Authentication.Models
         [Required]
         public string Password { get; set; }
     }
+
+    public class LoginResponse
+    {
+        public string Email { get; set; }
+        public string Token { get; set; }
+    }
 }

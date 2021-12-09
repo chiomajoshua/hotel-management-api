@@ -1,7 +1,9 @@
-﻿using hotel_management_api_identity.Features.Authentication.Models;
+﻿using hotel_management_api_identity.Core.Constants;
+using hotel_management_api_identity.Features.Authentication.Models;
 using hotel_management_api_identity.Features.Authentication.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Mime;
+using StatusCodes = Microsoft.AspNetCore.Http.StatusCodes;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -34,8 +36,15 @@ namespace hotel_management_api_identity.Features.Authentication
                 return BadRequest(ModelState);
 
             if (await _authenticationService.ValidateCredentials(loginRequest))
-                return Ok(new { loginRequest.Email, Token = _tokenService.CreateToken(loginRequest.Email) });
-            return Unauthorized("Email/Password Is Incorrect");
+            {
+                var token = _tokenService.CreateToken(loginRequest.Email);
+                if (!string.IsNullOrEmpty(token))
+                return Ok(new GenericResponse<LoginResponse> { IsSuccessful = true, Data = new LoginResponse { Email = loginRequest.Email, Token = token}, Message = "Login Successful" });
+
+                return Unauthorized(new GenericResponse<LoginResponse> { IsSuccessful = false, Message = "Login Unsuccessful" });
+            }
+
+            return Unauthorized(new GenericResponse<LoginResponse> { IsSuccessful = false, Message = "Login Unsuccessful" });
         }
     }
 }

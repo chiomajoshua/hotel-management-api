@@ -5,7 +5,6 @@ using hotel_management_api_identity.Core.Helpers;
 using hotel_management_api_identity.Core.MiddlewareExtensions;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Localization;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Serilog;
 using System.Globalization;
 
