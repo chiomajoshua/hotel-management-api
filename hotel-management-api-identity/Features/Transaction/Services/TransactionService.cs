@@ -56,7 +56,7 @@ namespace hotel_management_api_identity.Features.Transaction.Services
         {
             try
             {
-                _logger.LogInformation($"Create Purchase Request ----> ", JsonConvert.SerializeObject(createBookingRequest) + addedBy);
+                _logger.LogInformation($"CreateBooking Request ----> ", JsonConvert.SerializeObject(createBookingRequest) + addedBy);
                 if (!await _roomService.IsRoomTaken(createBookingRequest.CheckInDate, createBookingRequest.CheckOutDate, Guid.Parse(createBookingRequest.RoomId)))
                 {
                     await _bookingCommand.AddAsync(new Core.Storage.Models.Booking
