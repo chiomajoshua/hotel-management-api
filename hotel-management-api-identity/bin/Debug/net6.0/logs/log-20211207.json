@@ -1,0 +1,13 @@
+2021-12-07 11:21:12.573 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-07 11:21:12.607 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-07 11:21:12.609 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-07 11:21:12.610 +01:00 [INF] Hosting environment: Development
+2021-12-07 11:21:12.610 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-07 11:21:14.365 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 196.8023 ms
+2021-12-07 11:21:14.377 +01:00 [INF] HTTP GET /swagger/swagger-ui.css responded 304 in 8.9568 ms
+2021-12-07 11:21:14.377 +01:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 8.9609 ms
+2021-12-07 11:21:14.377 +01:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 8.9646 ms
+2021-12-07 11:21:14.616 +01:00 [INF] HTTP GET /swagger/favicon-32x32.png responded 200 in 1.6611 ms
+2021-12-07 11:21:14.713 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 129.2515 ms
+2021-12-07 15:53:27.643 +01:00 [INF] ValidateCredentials Request ----->
+2021-12-07 15:53:27.650 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 145.5318 ms

@@ -20,7 +20,7 @@ namespace hotel_management_api_identity.Features.Authentication.Services
         /// </summary>
         /// <param name="email"></param>
         /// <returns></returns>
-        string CreateToken(string email);
+        List<string> CreateToken(string email);
 
         /// <summary>
         /// Validate Token
@@ -45,8 +45,9 @@ namespace hotel_management_api_identity.Features.Authentication.Services
             _tokenQuery = tokenQuery;
         }
         
-        public string CreateToken(string email)
+        public List<string> CreateToken(string email)
         {
+            var response = new List<string>();
             try
             {
                 var query = new Dictionary<string, string>() { { "email", email } };
@@ -73,12 +74,13 @@ namespace hotel_management_api_identity.Features.Authentication.Services
                 var dateTime = tokenDescriptor.Expires;
                 var token = new JwtSecurityTokenHandler().WriteToken(new JwtSecurityTokenHandler().CreateToken(tokenDescriptor));
                 SaveToken(new TokenRequest { Email = email, ExpiryDate = (DateTimeOffset)tokenDescriptor.Expires, Token = token}).Wait();
-                return token;
+                response.AddRange(new string[] { token, result.UserType.Description() });
+                return response;
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, ex.Message);
-                return string.Empty;
+                return response;
             }
         }
 

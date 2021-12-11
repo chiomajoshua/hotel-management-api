@@ -35,8 +35,8 @@ namespace hotel_management_api_identity.Features.Authentication
             if (await _authenticationService.ValidateCredentials(loginRequest))
             {
                 var token = _tokenService.CreateToken(loginRequest.Email);
-                if (!string.IsNullOrEmpty(token))
-                return Ok(new GenericResponse<LoginResponse> { IsSuccessful = true, Data = new LoginResponse { Email = loginRequest.Email, Token = token}, Message = "Login Successful" });
+                if (token.Count > 0)
+                return Ok(new GenericResponse<LoginResponse> { IsSuccessful = true, Data = new LoginResponse { Email = loginRequest.Email, Token = token.FirstOrDefault(), Role = token.LastOrDefault()}, Message = "Login Successful" });
 
                 return Unauthorized(new GenericResponse<LoginResponse> { IsSuccessful = false, Message = "Login Unsuccessful" });
             }

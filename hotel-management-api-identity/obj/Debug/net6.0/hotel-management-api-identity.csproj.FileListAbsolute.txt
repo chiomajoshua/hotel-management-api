@@ -112,3 +112,4 @@ C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api
 C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\bin\Debug\net6.0\logs\log-20211202.json
 C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\bin\Debug\net6.0\logs\log-20211203.json
 C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\obj\Debug\net6.0\hotel-management-api-identity.csproj.AssemblyReference.cache
+C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\bin\Debug\net6.0\logs\log-20211207.json

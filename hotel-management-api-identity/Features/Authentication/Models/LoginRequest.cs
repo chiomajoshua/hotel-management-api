@@ -14,5 +14,6 @@ namespace hotel_management_api_identity.Features.Authentication.Models
     {
         public string Email { get; set; }
         public string Token { get; set; }
+        public string Role { get; set; }
     }
 }
