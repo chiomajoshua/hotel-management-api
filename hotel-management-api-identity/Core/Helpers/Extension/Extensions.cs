@@ -141,6 +141,14 @@ namespace hotel_management_api_identity.Core.Helpers.Extension
             return $"EMP-{passwordBuilder}";
         }
 
+        public static string RandomCustomerCode()
+        {
+            var passwordBuilder = new StringBuilder();
+            passwordBuilder.Append(RandomString(2));
+            passwordBuilder.Append(RandomNumber(1000, 9999));
+            return $"CUS-{passwordBuilder}";
+        }
+
         public static string Encrypt(string encryptString)
         {
             string EncryptionKey = "a69d4fcf-2bc3-477c-b652-1de27c2e48c9"; 

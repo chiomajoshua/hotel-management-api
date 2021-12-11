@@ -1,4 +1,5 @@
 ﻿using hotel_management_api_identity.Core.Constants;
+using hotel_management_api_identity.Core.Helpers.Extension;
 using System.ComponentModel.DataAnnotations;
 
 namespace hotel_management_api_identity.Features.Onboarding.Models
@@ -18,6 +19,7 @@ namespace hotel_management_api_identity.Features.Onboarding.Models
         [Required]
         public string Email { get; }
         public Enums.Gender Gender { get;}
+        public string CustomerCode { get; }
 
         public CreateCustomerRequest(string title, string firstName, string lastName, string phoneNumber, Enums.Id idType, string idNumber, string email, Enums.Gender gender)
         {
@@ -29,6 +31,7 @@ namespace hotel_management_api_identity.Features.Onboarding.Models
             IdNumber = idNumber;
             Email = email;
             Gender = gender;
+            CustomerCode = Extensions.RandomCustomerCode();
         }
     }
 

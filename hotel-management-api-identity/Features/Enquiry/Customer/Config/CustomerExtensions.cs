@@ -19,7 +19,8 @@ namespace hotel_management_api_identity.Features.Enquiry.Customer.Config
                 IdType = data.IdType.Description(),
                 PhoneNumber = data.PhoneNumber,
                 Title = data.Title,
-                CreatedOn = data.CreatedOn
+                CreatedOn = data.CreatedOn,
+                CustomerCode = data.CustomerCode,
             }));
 
             return result;
@@ -36,7 +37,8 @@ namespace hotel_management_api_identity.Features.Enquiry.Customer.Config
                 IdType = customerData.IdType.Description(),
                 PhoneNumber = customerData.PhoneNumber,
                 Title = customerData.Title,
-                CreatedOn = customerData.CreatedOn
+                CreatedOn = customerData.CreatedOn,
+                CustomerCode = customerData.CustomerCode
             };
         }
 
