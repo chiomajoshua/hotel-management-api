@@ -12,6 +12,7 @@ namespace hotel_management_api_identity.Core.Storage.Models
     [Serializable]
     public class Customer : BaseEntity
     {
+        public string CustomerCode { get; set; }
         [StringLength(15)]
         [Required]
         public string Title { get; set; }
