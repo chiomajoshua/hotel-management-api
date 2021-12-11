@@ -45,6 +45,7 @@ try
                     builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
         });
     });
+    builder.Services.AddRouting(opt => opt.LowercaseUrls = true);
     builder.Services.AddHealthChecks();
     
     builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())

@@ -21,9 +21,6 @@ namespace hotel_management_api_identity.Features.Authentication
             _tokenService = tokenService;
         }
 
-
-
-
         [HttpPost]
         [Route("login")]
         [Consumes(MediaTypeNames.Application.Json)]
