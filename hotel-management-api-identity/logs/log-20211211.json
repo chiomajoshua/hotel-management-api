@@ -39,3 +39,41 @@
 2021-12-11 19:19:54.899 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 91.8014 ms
 2021-12-11 20:13:28.251 +01:00 [INF] Shut down complete
 2021-12-11 20:13:37.204 +01:00 [INF] Shut down complete
+2021-12-11 20:24:48.785 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-11 20:24:48.814 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-11 20:24:48.815 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-11 20:24:48.816 +01:00 [INF] Hosting environment: Development
+2021-12-11 20:24:48.816 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-11 20:24:50.250 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 158.4960 ms
+2021-12-11 20:24:50.566 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 116.7130 ms
+2021-12-11 21:39:09.715 +01:00 [INF] ValidateCredentials Request ----->
+2021-12-11 21:39:10.557 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 1150.1286 ms
+2021-12-11 21:39:26.092 +01:00 [ERR] GetCustomers Error
+2021-12-11 21:39:26.095 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 396.6923 ms
+2021-12-11 21:41:02.362 +01:00 [ERR] GetCustomers Error
+2021-12-11 21:41:02.392 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 27776.6963 ms
+2021-12-11 21:41:45.954 +01:00 [ERR] GetCustomers Error
+2021-12-11 21:41:45.957 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 28287.9859 ms
+2021-12-11 21:43:03.275 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 28199.7401 ms
+2021-12-11 21:48:46.616 +01:00 [ERR] GetCustomers Error
+2021-12-11 21:48:46.635 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 300764.9611 ms
+2021-12-11 21:49:11.103 +01:00 [INF] ValidateCredentials Request ----->
+2021-12-11 21:49:11.245 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 164.2362 ms
+2021-12-11 21:49:51.178 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 27409.1576 ms
+2021-12-11 21:50:33.233 +01:00 [INF] ValidateCredentials Request ----->
+2021-12-11 21:50:33.391 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 183.5741 ms
+2021-12-11 21:50:43.123 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 3408.6874 ms
+2021-12-11 21:51:48.470 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 65.3300 ms
+2021-12-11 21:52:03.777 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 70.7850 ms
+2021-12-11 21:58:06.009 +01:00 [INF] ValidateCredentials Request ----->
+2021-12-11 21:58:06.162 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 177.5073 ms
+2021-12-11 21:58:17.921 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 75.6995 ms
+2021-12-11 22:01:23.091 +01:00 [INF] ValidateCredentials Request ----->
+2021-12-11 22:01:23.216 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 146.7042 ms
+2021-12-11 22:01:28.323 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 76.2565 ms
+2021-12-11 22:07:10.188 +01:00 [INF] ValidateCredentials Request ----->
+2021-12-11 22:07:10.360 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 196.7389 ms
+2021-12-11 22:07:10.628 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 88.0681 ms
+2021-12-11 23:09:52.305 +01:00 [INF] ValidateCredentials Request ----->
+2021-12-11 23:09:52.435 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 150.3628 ms
+2021-12-11 23:09:52.561 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 56.1311 ms

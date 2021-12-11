@@ -38,3 +38,4 @@
 2021-12-11 19:19:54.825 +01:00 [INF] ValidateCredentials Request ----->
 2021-12-11 19:19:54.899 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 91.8014 ms
 2021-12-11 20:13:28.251 +01:00 [INF] Shut down complete
+2021-12-11 20:13:37.204 +01:00 [INF] Shut down complete

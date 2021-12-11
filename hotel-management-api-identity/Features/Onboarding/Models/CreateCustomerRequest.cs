@@ -14,14 +14,14 @@ namespace hotel_management_api_identity.Features.Onboarding.Models
         public string LastName { get;}
         [Required]
         public string PhoneNumber { get; }
-        public Enums.Id IdType { get;}
+        public string IdType { get;}
         public string IdNumber { get;}
         [Required]
         public string Email { get; }
-        public Enums.Gender Gender { get;}
+        public string Gender { get;}
         public string CustomerCode { get; }
 
-        public CreateCustomerRequest(string title, string firstName, string lastName, string phoneNumber, Enums.Id idType, string idNumber, string email, Enums.Gender gender)
+        public CreateCustomerRequest(string title, string firstName, string lastName, string phoneNumber, string idType, string idNumber, string email, string gender)
         {
             Title = title;
             FirstName = firstName;

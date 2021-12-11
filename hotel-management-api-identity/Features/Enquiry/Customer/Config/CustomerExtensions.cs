@@ -1,4 +1,5 @@
-﻿using hotel_management_api_identity.Core.Helpers.Extension;
+﻿using hotel_management_api_identity.Core.Constants;
+using hotel_management_api_identity.Core.Helpers.Extension;
 using hotel_management_api_identity.Features.Enquiry.Customer.Model;
 using hotel_management_api_identity.Features.Onboarding.Models;
 
@@ -50,10 +51,10 @@ namespace hotel_management_api_identity.Features.Enquiry.Customer.Config
                 FirstName = createCustomerRequest.FirstName,
                 LastName = createCustomerRequest.LastName,
                 PhoneNumber = createCustomerRequest.PhoneNumber,               
-                Gender = createCustomerRequest.Gender,
+                Gender = (Enums.Gender)Enum.Parse(typeof(Enums.Gender), createCustomerRequest.Gender),
                 IdNumber = createCustomerRequest.IdNumber,
                 Title = createCustomerRequest.Title,
-                IdType = createCustomerRequest.IdType
+                IdType = (Enums.Id)Enum.Parse(typeof(Enums.Id), createCustomerRequest.IdType)
             };
         }
     }

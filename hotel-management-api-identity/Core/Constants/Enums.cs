@@ -8,14 +8,12 @@ namespace hotel_management_api_identity.Core.Constants
         {
             [EnumDisplay(Name = "None", Description = "None")]
             NONE = 0,
-            [EnumDisplay(Name = "Passport", Description = "Internation Passport")]
-            PASSPORT,
-            [EnumDisplay(Name = "NIN_Slip", Description = "NIN Slip")]
-            NIN_SLIP,
+            [EnumDisplay(Name = "Passport", Description = "International Passport")]
+            INTERNATIONAL_PASSPORT,
             [EnumDisplay(Name = "Drivers_license", Description = "Drivers License")]
             DRIVERS_LICENSE,
-            [EnumDisplay(Name = "Voter_Id", Description = "Voters ID")]
-            VOTER_ID,
+            [EnumDisplay(Name = "Voters_Card", Description = "Voters Card")]
+            VOTERS_CARD,
             [EnumDisplay(Name = "National_Id", Description = "National ID")]
             NATIONAL_ID
         }
