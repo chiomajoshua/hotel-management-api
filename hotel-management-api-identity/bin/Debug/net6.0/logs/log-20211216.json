@@ -278,3 +278,14 @@ Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime
 2021-12-16 10:44:45.202 +01:00 [INF] HTTP GET /api/enquiry/booking/getBookingsByEmail?email=kate@gma.com responded 200 in 7772.5008 ms
 2021-12-16 10:52:56.603 +01:00 [INF] Shut down complete
 2021-12-16 10:53:01.533 +01:00 [INF] Shut down complete
+2021-12-16 10:53:10.489 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-16 10:53:10.534 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-16 10:53:10.536 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-16 10:53:10.536 +01:00 [INF] Hosting environment: Development
+2021-12-16 10:53:10.537 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-16 10:53:12.123 +01:00 [INF] HTTP GET /swagger responded 301 in 58.8992 ms
+2021-12-16 10:53:12.292 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 128.2755 ms
+2021-12-16 10:53:12.380 +01:00 [INF] HTTP GET /swagger/swagger-ui.css responded 200 in 81.5362 ms
+2021-12-16 10:53:12.380 +01:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 74.2015 ms
+2021-12-16 10:53:12.393 +01:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 93.7178 ms
+2021-12-16 10:53:13.031 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 186.1522 ms

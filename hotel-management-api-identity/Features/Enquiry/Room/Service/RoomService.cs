@@ -36,7 +36,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Room.Service
         /// <param name="checkOutDate"></param>
         /// <param name="roomId"></param>
         /// <returns></returns>
-        Task<bool> IsRoomTaken(DateTimeOffset checkInDate, DateTimeOffset checkOutDate, Guid roomId);
+        Task<bool> IsRoomTaken(DateTimeOffset checkInDate, DateTimeOffset checkOutDate, string roomId);
     }
 
 
@@ -102,7 +102,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Room.Service
             }
         }
 
-        public async Task<bool> IsRoomTaken(DateTimeOffset checkInDate, DateTimeOffset checkOutDate, Guid roomId)
+        public async Task<bool> IsRoomTaken(DateTimeOffset checkInDate, DateTimeOffset checkOutDate, string roomId)
         {
             try
             {

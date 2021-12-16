@@ -58,7 +58,7 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
         /// <param name="criteria"></param>
         /// <param name="roomId"></param>
         /// <returns></returns>
-        Task<bool> IsExistAsync(Dictionary<string, DateTimeOffset> criteria, Guid roomId);
+        Task<bool> IsExistAsync(Dictionary<string, DateTimeOffset> criteria, string roomId);
 
         /// <summary>
         /// Get By Date Range
@@ -128,7 +128,7 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
             return entityObject.Any();
         }
 
-        public async Task<bool> IsExistAsync(Dictionary<string, DateTimeOffset> criteria, Guid roomId)
+        public async Task<bool> IsExistAsync(Dictionary<string, DateTimeOffset> criteria, string roomId)
         {
             string query = _utilities.GenerateCheckIfRoomIsEmptyQuery<TEntity>(criteria, roomId);
             var entityObject = await _executers.ExecuteReaderAsync<TEntity>(query, null);

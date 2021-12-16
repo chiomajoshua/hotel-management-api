@@ -42,7 +42,7 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
 
         string GeneratePaginatedSelectQuery<TEntity>(int pageSize, int pageNumber) where TEntity : class;
 
-        string GenerateCheckIfRoomIsEmptyQuery<TEntity>(Dictionary<string, DateTimeOffset> criteria, Guid roomId) where TEntity : class;
+        string GenerateCheckIfRoomIsEmptyQuery<TEntity>(Dictionary<string, DateTimeOffset> criteria, string roomId) where TEntity : class;
 
         string GeneratePaginatedSelectQuery<TEntity>(Dictionary<string, DateTimeOffset> criteria) where TEntity : class;
 
@@ -239,10 +239,10 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
                 count++;
             }           
 
-            return $"{selectQuery} AND ExpiryDate >= TODATETIMEOFFSET('{DateTimeOffset.UtcNow.ToString("MM/dd/yyyy HH:mm:ss.fffffffK")}', '+01:00') order by createdon desc";
+            return $"{selectQuery} AND ExpiryDate >= TODATETIMEOFFSET('{DateTimeOffset.UtcNow:MM/dd/yyyy HH:mm:ss.fffffffK}', '+01:00') order by createdon desc";
         }
 
-        public string GenerateCheckIfRoomIsEmptyQuery<TEntity>(Dictionary<string, DateTimeOffset> criteria, Guid roomId) where TEntity : class
+        public string GenerateCheckIfRoomIsEmptyQuery<TEntity>(Dictionary<string, DateTimeOffset> criteria, string roomId) where TEntity : class
         {
             string tableName = typeof(TEntity).GetTableName<Type>();
             var selectQuery = new StringBuilder($"SELECT * FROM dbo.[{tableName}] with (nolock) WHERE ");
@@ -251,7 +251,7 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
             {
                 if (item.Key.ToLower() == "checkindate")
                 {
-                    selectQuery.Append($"{item.Key} >= 'TODATETIMEOFFSET('{item.Value}', '+01:00')'");
+                    selectQuery.Append($"{item.Key} >= 'TODATETIMEOFFSET('{item.Value:MM/dd/yyyy HH:mm:ss.fffffffK}', '+01:00')'");
                     if (criteria.Count > count)
                     {
                         selectQuery.Append("AND ");
@@ -260,7 +260,7 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
                 }
                 if (item.Key.ToLower() == "checkoutdate")
                 {
-                    selectQuery.Append($"{item.Key} <= 'TODATETIMEOFFSET('{item.Value}', '+01:00')'");
+                    selectQuery.Append($"{item.Key} <= 'TODATETIMEOFFSET('{item.Value:MM/dd/yyyy HH:mm:ss.fffffffK}', '+01:00')'");
                     if (criteria.Count > count)
                     {
                         selectQuery.Append("AND ");
@@ -269,7 +269,7 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
                 }
             }
 
-            return $"{selectQuery} AND RoomId = '{roomId}' order by createdon desc";
+            return $"{selectQuery} AND Room = '{roomId}' order by createdon desc";
         }
 
         public string GeneratePaginatedSelectQuery<TEntity>(Dictionary<string, DateTimeOffset> criteria) where TEntity : class
