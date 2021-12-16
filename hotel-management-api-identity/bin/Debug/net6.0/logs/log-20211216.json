@@ -197,3 +197,46 @@ Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime
 2021-12-16 04:25:46.518 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 77.0153 ms
 2021-12-16 04:26:02.348 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=kate@gma.com responded 200 in 81.0839 ms
 2021-12-16 04:26:07.451 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 57.9656 ms
+2021-12-16 04:54:45.594 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-16 04:54:45.623 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-16 04:54:45.625 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-16 04:54:45.626 +01:00 [INF] Hosting environment: Development
+2021-12-16 04:54:45.627 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-16 04:54:47.084 +01:00 [INF] HTTP GET /swagger responded 301 in 38.0209 ms
+2021-12-16 04:54:47.224 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 108.9297 ms
+2021-12-16 04:54:47.277 +01:00 [INF] HTTP GET /swagger/swagger-ui.css responded 200 in 32.6187 ms
+2021-12-16 04:54:47.326 +01:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 63.9009 ms
+2021-12-16 04:54:47.328 +01:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 69.2685 ms
+2021-12-16 04:54:47.809 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 140.9810 ms
+2021-12-16 04:55:45.038 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-16 04:55:45.547 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 764.4890 ms
+2021-12-16 04:55:45.802 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 146.6062 ms
+2021-12-16 04:55:45.928 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 74.9494 ms
+2021-12-16 04:55:49.966 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 78.9788 ms
+2021-12-16 04:55:53.993 +01:00 [INF] HTTP POST /api/enquiry/transactions/getTransactionsByOrderCode?orderCode=ORD-NS7620 responded 200 in 95.3348 ms
+2021-12-16 04:56:32.105 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-16 04:56:32.216 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 132.5067 ms
+2021-12-16 04:56:32.504 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 61.8336 ms
+2021-12-16 04:56:32.624 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 63.0528 ms
+2021-12-16 04:56:36.213 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 67.2758 ms
+2021-12-16 04:56:43.023 +01:00 [INF] HTTP POST /api/enquiry/transactions/getTransactionsByOrderCode?orderCode=ORD-DZ5341 responded 200 in 64.2147 ms
+2021-12-16 04:56:54.198 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 59.8770 ms
+2021-12-16 04:56:57.533 +01:00 [INF] HTTP POST /api/enquiry/transactions/getTransactionsByOrderCode?orderCode=ORD-NS7620 responded 200 in 65.9784 ms
+2021-12-16 04:57:21.676 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-16 04:57:21.773 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 118.3775 ms
+2021-12-16 04:57:21.962 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 64.4815 ms
+2021-12-16 04:57:22.085 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 70.5044 ms
+2021-12-16 04:57:25.691 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 58.3460 ms
+2021-12-16 04:57:29.374 +01:00 [INF] HTTP POST /api/enquiry/transactions/getTransactionsByOrderCode?orderCode=ORD-NS7620 responded 200 in 62.5711 ms
+2021-12-16 10:15:52.743 +01:00 [INF] Shut down complete
+2021-12-16 10:17:54.825 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-16 10:17:54.854 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-16 10:17:54.855 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-16 10:17:54.856 +01:00 [INF] Hosting environment: Development
+2021-12-16 10:17:54.857 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-16 10:17:56.455 +01:00 [INF] HTTP GET /swagger responded 301 in 36.3099 ms
+2021-12-16 10:17:56.613 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 123.6675 ms
+2021-12-16 10:17:56.637 +01:00 [INF] HTTP GET /swagger/swagger-ui.css responded 200 in 17.2685 ms
+2021-12-16 10:17:56.637 +01:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 17.4393 ms
+2021-12-16 10:17:56.659 +01:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 39.0472 ms
+2021-12-16 10:17:57.164 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 129.8082 ms

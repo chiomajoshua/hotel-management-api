@@ -228,3 +228,16 @@ Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime
 2021-12-16 04:57:22.085 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 70.5044 ms
 2021-12-16 04:57:25.691 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 58.3460 ms
 2021-12-16 04:57:29.374 +01:00 [INF] HTTP POST /api/enquiry/transactions/getTransactionsByOrderCode?orderCode=ORD-NS7620 responded 200 in 62.5711 ms
+2021-12-16 10:15:52.743 +01:00 [INF] Shut down complete
+2021-12-16 10:17:54.825 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-16 10:17:54.854 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-16 10:17:54.855 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-16 10:17:54.856 +01:00 [INF] Hosting environment: Development
+2021-12-16 10:17:54.857 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-16 10:17:56.455 +01:00 [INF] HTTP GET /swagger responded 301 in 36.3099 ms
+2021-12-16 10:17:56.613 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 123.6675 ms
+2021-12-16 10:17:56.637 +01:00 [INF] HTTP GET /swagger/swagger-ui.css responded 200 in 17.2685 ms
+2021-12-16 10:17:56.637 +01:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 17.4393 ms
+2021-12-16 10:17:56.659 +01:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 39.0472 ms
+2021-12-16 10:17:57.164 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 129.8082 ms
+2021-12-16 10:18:37.773 +01:00 [INF] Shut down complete
