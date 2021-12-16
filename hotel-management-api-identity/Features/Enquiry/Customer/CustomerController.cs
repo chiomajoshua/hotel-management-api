@@ -45,6 +45,20 @@ namespace hotel_management_api_identity.Features.Enquiry.Customer
         }
 
         [HttpGet]
+        [Route("getCustomerByCode")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(object))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(object))]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(object))]
+        [ResponseCache(Duration = 90)]
+        public async Task<IActionResult> GetCustomerByCode(string customerCode)
+        {
+            if (string.IsNullOrEmpty(customerCode))
+                return BadRequest();
+            return Ok(await _customerService.GetCustomerByCode(customerCode));
+        }
+
+        [HttpGet]
         [Route("getCustomerByPhone")]
         [Consumes(MediaTypeNames.Application.Json)]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(object))]
@@ -53,7 +67,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Customer
         [ResponseCache(Duration = 90)]
         public async Task<IActionResult> GetCustomerByPhone(string phone)
         {
-            if (!string.IsNullOrEmpty(phone))
+            if (string.IsNullOrEmpty(phone))
                 return BadRequest();
             return Ok(await _customerService.GetCustomerByPhone(phone));
         }

@@ -113,3 +113,96 @@ Error Number:241,State:1,Class:16
 2021-12-15 17:32:12.167 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
 2021-12-15 17:32:12.723 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 2193.2616 ms
 2021-12-15 17:32:45.230 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 31058.6474 ms
+2021-12-15 19:41:13.175 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-15 19:41:13.207 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-15 19:41:13.209 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-15 19:41:13.210 +01:00 [INF] Hosting environment: Development
+2021-12-15 19:41:13.211 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-15 19:41:15.980 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 119.4725 ms
+2021-12-15 19:41:16.220 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 118.7543 ms
+2021-12-15 20:03:07.820 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-15 20:03:08.317 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 4694.5843 ms
+2021-12-15 20:03:24.857 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 8107.2139 ms
+2021-12-15 20:04:02.521 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 16206.8523 ms
+2021-12-15 20:05:57.546 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-15 20:05:57.680 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 152.6132 ms
+2021-12-15 20:06:07.537 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 2598.3482 ms
+2021-12-15 20:06:18.526 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 2714.5563 ms
+2021-12-15 20:07:46.272 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 29229.1311 ms
+2021-12-15 20:09:20.044 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 3281.6063 ms
+2021-12-15 20:11:40.914 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-15 20:11:41.012 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 116.7612 ms
+2021-12-15 20:11:46.307 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 3689.0363 ms
+2021-12-15 20:11:54.040 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 3430.7695 ms
+2021-12-15 20:12:15.698 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 2770.9881 ms
+2021-12-15 20:12:57.816 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 3023.0383 ms
+2021-12-15 20:13:12.828 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 4987.4564 ms
+2021-12-15 20:17:43.378 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-15 20:17:43.423 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-15 20:17:43.426 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-15 20:17:43.428 +01:00 [INF] Hosting environment: Development
+2021-12-15 20:17:43.429 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-15 20:17:44.468 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 147.0045 ms
+2021-12-15 20:17:44.703 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 104.6309 ms
+2021-12-15 20:18:30.168 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-15 20:18:30.642 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 700.7214 ms
+2021-12-15 20:18:43.037 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 12294.6186 ms
+2021-12-15 20:18:57.947 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 9802.8231 ms
+2021-12-15 20:19:30.211 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 52.3460 ms
+2021-12-15 20:20:02.278 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 66.0627 ms
+2021-12-15 20:20:02.372 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 54.7378 ms
+2021-12-15 20:20:24.958 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 55.4492 ms
+2021-12-15 20:20:25.058 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 56.4818 ms
+2021-12-15 20:21:04.578 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 49.0789 ms
+2021-12-15 21:52:28.240 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-15 21:52:28.329 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 110.6260 ms
+2021-12-15 21:52:29.864 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 51.1223 ms
+2021-12-15 21:52:29.965 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 49.8684 ms
+2021-12-15 22:05:32.400 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-15 22:05:32.481 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 97.5708 ms
+2021-12-15 22:05:32.633 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 50.1389 ms
+2021-12-15 22:05:32.729 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 47.0150 ms
+2021-12-15 22:13:06.034 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-15 22:13:06.118 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 102.0366 ms
+2021-12-15 22:13:06.267 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 45.3812 ms
+2021-12-15 22:13:06.377 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 54.9809 ms
+2021-12-15 22:27:18.165 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-15 22:27:18.259 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 110.8858 ms
+2021-12-15 22:27:18.427 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 51.7138 ms
+2021-12-15 22:27:18.531 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 47.4586 ms
+2021-12-15 22:30:01.111 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-15 22:30:01.189 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 93.1408 ms
+2021-12-15 22:30:01.861 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 44.0935 ms
+2021-12-15 22:30:01.955 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 45.4271 ms
+2021-12-15 22:30:49.661 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 53.5678 ms
+2021-12-15 22:32:48.128 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-15 22:32:48.201 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 89.8395 ms
+2021-12-15 22:32:48.360 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 48.3351 ms
+2021-12-15 22:32:48.488 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 78.5421 ms
+2021-12-15 22:41:40.638 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-15 22:41:40.735 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 113.6432 ms
+2021-12-15 22:41:40.920 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 51.4654 ms
+2021-12-15 22:41:41.046 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 65.4353 ms
+2021-12-15 22:42:37.476 +01:00 [INF] Create Customer Request ----->>>> 
+2021-12-15 22:43:36.143 +01:00 [ERR] CreateCustomer Error
+2021-12-15 22:43:36.178 +01:00 [INF] HTTP POST /api/onboarding/customer responded 201 in 73209.7836 ms
+2021-12-15 22:47:36.568 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-15 22:47:36.605 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-15 22:47:36.608 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-15 22:47:36.609 +01:00 [INF] Hosting environment: Development
+2021-12-15 22:47:36.610 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-15 22:47:38.472 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 120.2803 ms
+2021-12-15 22:47:38.729 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 129.7416 ms
+2021-12-15 22:48:02.097 +01:00 [INF] Create Customer Request ----->>>> 
+2021-12-15 22:48:17.224 +01:00 [INF] HTTP POST /api/onboarding/customer responded 201 in 18058.1625 ms
+2021-12-15 22:48:28.611 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 106.0141 ms
+2021-12-15 23:57:50.477 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-15 23:57:50.614 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 165.0196 ms
+2021-12-15 23:57:50.770 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 56.7687 ms
+2021-12-15 23:57:50.887 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 67.4730 ms
+2021-12-15 23:57:56.419 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 53.4144 ms
+2021-12-15 23:59:05.587 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-15 23:59:05.673 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 104.6128 ms
+2021-12-15 23:59:05.840 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 54.3371 ms
+2021-12-15 23:59:05.977 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 76.9915 ms
+2021-12-15 23:59:10.047 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 49.0265 ms

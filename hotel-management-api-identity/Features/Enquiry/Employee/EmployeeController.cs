@@ -39,7 +39,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Employee
         [ResponseCache(Duration = 90)]
         public async Task<IActionResult> GetEmployeeByEmail(string email)
         {
-            if (!string.IsNullOrEmpty(email))
+            if (string.IsNullOrEmpty(email))
                 return BadRequest();
             return Ok(await _employeeService.GetEmployeeByEmail(email));
         }
@@ -53,7 +53,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Employee
         [ResponseCache(Duration = 90)]
         public async Task<IActionResult> GetEmployeeByPhone(string phone)
         {
-            if (!string.IsNullOrEmpty(phone))
+            if (string.IsNullOrEmpty(phone))
                 return BadRequest();
             return Ok(await _employeeService.GetEmployeeByPhone(phone));
         }

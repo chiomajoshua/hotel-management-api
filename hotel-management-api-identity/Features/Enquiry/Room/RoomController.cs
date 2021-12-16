@@ -39,7 +39,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Room
         [ResponseCache(Duration = 90)]
         public async Task<IActionResult> GetRoomByName(string name)
         {
-            if (!string.IsNullOrEmpty(name))
+            if (string.IsNullOrEmpty(name))
                 return BadRequest();
             return Ok(await _roomService.GetRoomByName(name));
         }

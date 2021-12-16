@@ -9,6 +9,7 @@ C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api
 C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\obj\Release\net6.0\PubTmp\Out\logs\log-20211211.json
 C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\obj\Release\net6.0\PubTmp\Out\logs\log-20211214.json
 C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\obj\Release\net6.0\PubTmp\Out\logs\log-20211215.json
+C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\obj\Release\net6.0\PubTmp\Out\logs\log-20211216.json
 C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\obj\Release\net6.0\PubTmp\Out\hotel-management-api-identity.dll
 C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\obj\Release\net6.0\PubTmp\Out\hotel-management-api-identity.runtimeconfig.json
 C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\obj\Release\net6.0\PubTmp\Out\hotel-management-api-identity.pdb

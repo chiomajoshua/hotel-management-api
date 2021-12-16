@@ -119,3 +119,4 @@ C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api
 C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\bin\Release\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\bin\Release\net6.0\Newtonsoft.Json.Bson.dll
 C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\bin\Release\net6.0\logs\log-20211215.json
+C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\bin\Release\net6.0\logs\log-20211216.json

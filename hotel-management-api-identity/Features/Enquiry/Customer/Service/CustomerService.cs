@@ -45,6 +45,13 @@ namespace hotel_management_api_identity.Features.Enquiry.Customer.Service
        /// <param name="pageNumber"></param>
        /// <returns></returns>
         Task<GenericResponse<IEnumerable<CustomerResponse>>> GetCustomers(int pageSize, int pageNumber);
+
+        /// <summary>
+        /// Get Customer By Code
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        Task<GenericResponse<CustomerResponse>> GetCustomerByCode(string email);
     }
 
 
@@ -67,6 +74,22 @@ namespace hotel_management_api_identity.Features.Enquiry.Customer.Service
             try 
             {
                 var query = new Dictionary<string, string>() { { "email", email } };
+                var result = await _customerQuery.GetByDefaultAsync(query);
+                if (result is not null) return new GenericResponse<CustomerResponse> { Data = result.ToCustomer(), IsSuccessful = true, Message = ResponseMessages.OperationSuccessful };
+                return new GenericResponse<CustomerResponse> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("GetCustomerByEmail Error", ex.Message);
+                return new GenericResponse<CustomerResponse> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
+            }
+        }
+
+        public async Task<GenericResponse<CustomerResponse>> GetCustomerByCode(string customerCode)
+        {
+            try
+            {
+                var query = new Dictionary<string, string>() { { "CustomerCode", customerCode } };
                 var result = await _customerQuery.GetByDefaultAsync(query);
                 if (result is not null) return new GenericResponse<CustomerResponse> { Data = result.ToCustomer(), IsSuccessful = true, Message = ResponseMessages.OperationSuccessful };
                 return new GenericResponse<CustomerResponse> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
