@@ -12,5 +12,6 @@ namespace hotel_management_api_identity.Core.Storage.Models
     {
         public string Name { get; set; }
         public decimal Price { get; set; }
+        public string Type { get; set; }
     }
 }

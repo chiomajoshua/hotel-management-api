@@ -10,7 +10,8 @@ namespace hotel_management_api_identity.Features.Enquiry.Room.Config
             return new Core.Storage.Models.Room()
             {
                Name = createRoomRequest.Name,
-               Price = createRoomRequest.Price
+               Price = createRoomRequest.Price,
+               Type = createRoomRequest.Type
             };
         }
 
@@ -21,7 +22,8 @@ namespace hotel_management_api_identity.Features.Enquiry.Room.Config
             result.AddRange(roomData.Select(data => new RoomResponse()
             {
                  Price = data.Price,
-                 Name = data.Name
+                 Name = data.Name,
+                 Type = data.Type
             }));
 
             return result;
@@ -32,7 +34,8 @@ namespace hotel_management_api_identity.Features.Enquiry.Room.Config
             return new RoomResponse()
             {
                  Name = roomData.Name,
-                 Price = roomData.Price
+                 Price = roomData.Price,
+                 Type = roomData.Type
             };
         }
     }

@@ -543,3 +543,99 @@ Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime
 2021-12-16 14:03:47.597 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 44.8652 ms
 2021-12-16 14:03:47.712 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 43.1879 ms
 2021-12-16 14:29:45.790 +01:00 [INF] Shut down complete
+2021-12-16 15:13:35.723 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-16 15:13:35.764 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-16 15:13:35.766 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-16 15:13:35.767 +01:00 [INF] Hosting environment: Development
+2021-12-16 15:13:35.769 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-16 15:13:37.385 +01:00 [INF] HTTP GET /swagger responded 301 in 52.6130 ms
+2021-12-16 15:13:37.583 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 156.8403 ms
+2021-12-16 15:13:37.602 +01:00 [INF] HTTP GET /swagger/swagger-ui.css responded 200 in 13.3782 ms
+2021-12-16 15:13:37.648 +01:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 58.3976 ms
+2021-12-16 15:13:37.677 +01:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 87.2540 ms
+2021-12-16 15:13:38.375 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 140.7743 ms
+2021-12-16 15:13:53.547 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-16 15:13:54.407 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 1199.3525 ms
+2021-12-16 15:13:54.890 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 300.6009 ms
+2021-12-16 15:13:55.093 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 116.0903 ms
+2021-12-16 15:13:55.281 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 108.4940 ms
+2021-12-16 15:16:00.275 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 151.2246 ms
+2021-12-16 15:16:09.362 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-16 15:16:09.514 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 179.7828 ms
+2021-12-16 15:16:09.686 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 80.6661 ms
+2021-12-16 15:20:34.341 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-16 15:20:34.544 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 238.5555 ms
+2021-12-16 15:20:34.798 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 86.6600 ms
+2021-12-16 15:20:34.961 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 95.2003 ms
+2021-12-16 15:20:35.128 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 86.8658 ms
+2021-12-16 15:21:21.308 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-16 15:21:21.515 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 234.3572 ms
+2021-12-16 15:21:21.823 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 78.0934 ms
+2021-12-16 15:21:21.976 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 89.3349 ms
+2021-12-16 15:21:22.120 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 76.3944 ms
+2021-12-16 15:21:46.577 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-16 15:21:46.719 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 170.5206 ms
+2021-12-16 15:21:50.764 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 93.1384 ms
+2021-12-16 15:22:05.210 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 116.6930 ms
+2021-12-16 15:22:06.083 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 81.1297 ms
+2021-12-16 15:31:39.158 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-16 15:31:39.311 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 180.9400 ms
+2021-12-16 15:31:46.598 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 86.6326 ms
+2021-12-16 15:31:46.745 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 64.2605 ms
+2021-12-16 15:32:12.910 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 79.8663 ms
+2021-12-16 15:32:13.885 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 76.3174 ms
+2021-12-16 15:32:28.820 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 75.7680 ms
+2021-12-16 15:32:37.297 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 69.9977 ms
+2021-12-16 15:33:15.279 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-16 15:33:15.440 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 189.7324 ms
+2021-12-16 15:33:18.352 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 72.3349 ms
+2021-12-16 15:33:19.928 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 90.3374 ms
+2021-12-16 15:33:23.689 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 98.1700 ms
+2021-12-16 15:34:08.633 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-16 15:34:08.797 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 196.1847 ms
+2021-12-16 15:34:13.077 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 69.4115 ms
+2021-12-16 15:34:14.012 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 78.2467 ms
+2021-12-16 15:34:14.215 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 69.7120 ms
+2021-12-16 15:34:23.054 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 63.5642 ms
+2021-12-16 15:34:27.694 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 68.0431 ms
+2021-12-16 15:34:49.658 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-16 15:34:49.797 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 161.3082 ms
+2021-12-16 15:34:53.499 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 78.0673 ms
+2021-12-16 15:34:54.332 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 78.2900 ms
+2021-12-16 15:34:54.530 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 66.1594 ms
+2021-12-16 15:35:03.652 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 65.7938 ms
+2021-12-16 15:35:08.598 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 69.1202 ms
+2021-12-16 15:35:13.021 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 66.2263 ms
+2021-12-16 15:35:17.513 +01:00 [INF] HTTP POST /api/enquiry/room/getRooms responded 200 in 76.7475 ms
+2021-12-16 15:40:01.413 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-16 15:40:01.576 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 195.4036 ms
+2021-12-16 15:40:09.332 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 79.5931 ms
+2021-12-16 15:40:09.476 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 69.3420 ms
+2021-12-16 15:40:09.629 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 83.5215 ms
+2021-12-16 15:41:37.909 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 92.1614 ms
+2021-12-16 15:41:38.041 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 71.1780 ms
+2021-12-16 15:41:38.181 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 78.0059 ms
+2021-12-16 15:42:03.974 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 89.0894 ms
+2021-12-16 15:42:04.117 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 71.5483 ms
+2021-12-16 15:42:04.238 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 70.8061 ms
+2021-12-16 15:42:14.027 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-16 15:42:14.160 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 153.5246 ms
+2021-12-16 15:42:14.328 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 74.8245 ms
+2021-12-16 15:42:14.453 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 66.6600 ms
+2021-12-16 15:42:14.581 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 70.4205 ms
+2021-12-16 15:42:50.129 +01:00 [INF] Create Customer Request ----->>>> 
+2021-12-16 15:42:50.301 +01:00 [INF] HTTP POST /api/onboarding/customer responded 201 in 268.6094 ms
+2021-12-16 15:42:50.533 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=kate@gma.com responded 200 in 94.1181 ms
+2021-12-16 15:42:50.661 +01:00 [INF] HTTP POST /api/enquiry/room/getRooms responded 200 in 70.0826 ms
+2021-12-16 15:43:08.268 +01:00 [INF] HTTP GET /api/enquiry/room/getroombyname?name=Game%20Of%20Thrones responded 200 in 100.9055 ms
+2021-12-16 15:43:08.432 +01:00 [INF] CreateBooking Request ----> 
+2021-12-16 15:43:08.629 +01:00 [ERR] IsRoomTaken Error
+2021-12-16 15:43:08.681 +01:00 [INF] HTTP POST /api/transaction/booking responded 201 in 317.5310 ms
+2021-12-16 15:43:08.875 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 73.9017 ms
+2021-12-16 15:43:13.242 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=kate@gma.com responded 200 in 1.7556 ms
+2021-12-16 15:43:13.367 +01:00 [INF] HTTP GET /api/enquiry/booking/getBookingsByEmail?email=kate@gma.com responded 200 in 72.1092 ms
+2021-12-16 15:48:24.581 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 76.8212 ms
+2021-12-16 15:48:24.722 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 80.3092 ms
+2021-12-16 15:48:24.855 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 68.4881 ms
+2021-12-16 16:17:16.708 +01:00 [INF] Shut down complete
+2021-12-16 16:17:23.186 +01:00 [INF] Shut down complete

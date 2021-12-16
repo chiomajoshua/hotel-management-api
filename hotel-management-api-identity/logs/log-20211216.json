@@ -637,3 +637,5 @@ Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime
 2021-12-16 15:48:24.581 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 76.8212 ms
 2021-12-16 15:48:24.722 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 80.3092 ms
 2021-12-16 15:48:24.855 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 68.4881 ms
+2021-12-16 16:17:16.708 +01:00 [INF] Shut down complete
+2021-12-16 16:17:23.186 +01:00 [INF] Shut down complete
