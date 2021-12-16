@@ -7,6 +7,8 @@
 
     public class BookingResponse
     {
+        public string CustomerEmail { get; set; }
+        public string BookingCode { get; set; }
         public bool HasDiscount { get; set; }
         public DateTimeOffset CheckInDate { get; set; }
         public DateTimeOffset CheckOutDate { get; set; }

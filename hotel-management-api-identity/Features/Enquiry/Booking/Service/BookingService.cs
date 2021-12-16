@@ -9,6 +9,8 @@ namespace hotel_management_api_identity.Features.Enquiry.Booking.Service
     public interface IBookingService : IAutoDependencyCore
     {
         Task<GenericResponse<IEnumerable<BookingResponse>>> GetAllBookings(int pageSize, int pageNumber);
+
+        Task<GenericResponse<IEnumerable<BookingResponse>>> GetBookingsByEmail(string email);
     }
     public class BookingService : IBookingService
     {
@@ -25,6 +27,22 @@ namespace hotel_management_api_identity.Features.Enquiry.Booking.Service
             try
             {
                 var result = await _bookingQuery.GetByAsync(pageSize, pageNumber);
+                if (result is not null) return new GenericResponse<IEnumerable<BookingResponse>> { Data = result.ToList().ToBookingList(), IsSuccessful = true, Message = ResponseMessages.OperationSuccessful };
+                return new GenericResponse<IEnumerable<BookingResponse>> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("GetAllBookings Error", ex.Message);
+                return new GenericResponse<IEnumerable<BookingResponse>> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
+            }
+        }
+
+        public async Task<GenericResponse<IEnumerable<BookingResponse>>> GetBookingsByEmail(string email)
+        {
+            try
+            {
+                var query = new Dictionary<string, string>() { { "CustomerEmail", email } };
+                var result = await _bookingQuery.GetByAsync(query);
                 if (result is not null) return new GenericResponse<IEnumerable<BookingResponse>> { Data = result.ToList().ToBookingList(), IsSuccessful = true, Message = ResponseMessages.OperationSuccessful };
                 return new GenericResponse<IEnumerable<BookingResponse>> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
             }

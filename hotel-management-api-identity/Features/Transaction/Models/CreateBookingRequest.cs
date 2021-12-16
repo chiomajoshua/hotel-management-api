@@ -3,6 +3,7 @@
     public class CreateBookingRequest
     {
         public string RoomId { get; set; }
+        public string Room { get; set; }
         public string CustomerEmail { get; set; }
         public bool HasDiscount { get; set; }
         public DateTimeOffset CheckInDate { get; set; } = DateTimeOffset.UtcNow;

@@ -15,7 +15,7 @@ namespace hotel_management_api_identity.Core.Storage.Models
         public DateTimeOffset CheckInDate { get; set; }
         public DateTimeOffset CheckOutDate { get; set; }
         public decimal AmountPaid { get; set; }
-        public virtual Room Room { get; set; }
+        public string Room { get; set; }
         public string BookingCode { get; set; } = Extensions.RandomOrderNumber();
         public string CustomerEmail { get; set; }
     }

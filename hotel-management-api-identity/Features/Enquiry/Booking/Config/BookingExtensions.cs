@@ -16,8 +16,10 @@ namespace hotel_management_api_identity.Features.Enquiry.Booking.Config
                 HasDiscount = data.HasDiscount,
                 ModifiedById = data.ModifiedById,
                 ModifiedOn = data.ModifiedOn,
-                Room = data.Room.Name,
-                CreatedOn = data.CreatedOn
+                Room = data.Room,
+                CreatedOn = data.CreatedOn,
+                BookingCode = data.BookingCode,
+                CustomerEmail = data.CustomerEmail
             }));
 
             return result;
@@ -33,8 +35,9 @@ namespace hotel_management_api_identity.Features.Enquiry.Booking.Config
                 HasDiscount = bookingData.HasDiscount,
                 ModifiedById = bookingData.ModifiedById,
                 ModifiedOn = bookingData.ModifiedOn,
-                Room = bookingData.Room.Name,
-                CreatedOn = bookingData.CreatedOn
+                Room = bookingData.Room,
+                CreatedOn = bookingData.CreatedOn,
+                CustomerEmail= bookingData.CustomerEmail
             };
         }
     }

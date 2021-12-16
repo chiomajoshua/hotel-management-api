@@ -65,10 +65,9 @@ namespace hotel_management_api_identity.Features.Transaction.Services
                 {
                     await _bookingCommand.AddAsync(new Core.Storage.Models.Booking
                     {
-                        Room = new Core.Storage.Models.Room
-                        {
-                            Id = Guid.Parse(createBookingRequest.RoomId)
-                        },
+                        Room = createBookingRequest.Room,
+                        CustomerEmail = createBookingRequest.CustomerEmail,
+                        CheckInDate = createBookingRequest.CheckInDate,
                         AmountPaid = createBookingRequest.AmountPaid,
                         CheckOutDate = createBookingRequest.CheckOutDate,
                         HasDiscount = createBookingRequest.HasDiscount,
