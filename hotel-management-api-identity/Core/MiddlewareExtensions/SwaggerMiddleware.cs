@@ -45,14 +45,14 @@ namespace hotel_management_api_identity.Core.MiddlewareExtensions
 
         public static IApplicationBuilder UseSwaggerService(this IApplicationBuilder app, IHostEnvironment environment)
         {
-            if (!environment.IsProduction())
-            {
+            //if (!environment.IsProduction())
+            //{
                 app.UseSwagger();
                 app.UseSwaggerUI(c =>
                 {
                     c.SwaggerEndpoint("/swagger/v1/swagger.json", "House 4 MS API V1");
                 });
-            }
+            //}
             return app;
         }
     }

@@ -68,7 +68,13 @@ namespace hotel_management_api_identity.Core.Storage
                 b.HasIndex(i => i.Id).IsUnique(false);
                 b.HasIndex(i => i.CreatedOn).IsUnique(false);
                 b.HasIndex(i => i.CreatedById).IsUnique(false);
-                b.HasIndex(i => i.Price).IsUnique(false);
+            });
+
+            modelBuilder.Entity<SaleDetails>(b =>
+            {
+                b.HasIndex(i => i.Id).IsUnique(false);
+                b.HasIndex(i => i.CreatedOn).IsUnique(false);
+                b.HasIndex(i => i.CreatedById).IsUnique(false);
             });
 
             modelBuilder.Entity<Booking>(b =>

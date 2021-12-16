@@ -30,8 +30,7 @@ namespace hotel_management_api_identity.Features.Onboarding.Models
             IdType = idType;
             IdNumber = idNumber;
             Email = email;
-            Gender = gender;
-            CustomerCode = Extensions.RandomCustomerCode();
+            Gender = gender;            
         }
     }
 

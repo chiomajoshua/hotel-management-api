@@ -25,7 +25,7 @@ try
         .WriteTo.Seq("http://localhost:5341")
         .ReadFrom.Configuration(ctx.Configuration));
 
-    builder.Services.AddControllers();
+    builder.Services.AddControllers().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore); ;
     // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerService();
@@ -33,7 +33,7 @@ try
     var jwtTokenSettings = builder.Configuration.GetSection("JwtTokenSettings");
     builder.Services.Configure<JwtToken>(jwtTokenSettings);
     builder.Services.AddIdentity(jwtTokenSettings.Get<JwtToken>());
-    
+    builder.Services.AddResponseCaching();
 
 
     builder.Services.AddCors(options =>
@@ -73,8 +73,8 @@ try
     app.UseRouting();
     app.UseCors("pol");
     app.UseHttpsRedirection();
-    
-    
+    app.UseResponseCaching();
+
 
     app.UseAuthorization();
     app.UseAuthenticationMiddleware();

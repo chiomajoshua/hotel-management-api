@@ -31,6 +31,9 @@ namespace hotel_management_api_identity.Migrations
                     b.Property<decimal>("AmountPaid")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("BookingCode")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTimeOffset>("CheckInDate")
                         .HasColumnType("datetimeoffset");
 
@@ -42,9 +45,6 @@ namespace hotel_management_api_identity.Migrations
 
                     b.Property<DateTimeOffset>("CreatedOn")
                         .HasColumnType("datetimeoffset");
-
-                    b.Property<Guid?>("CustomerId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("HasDiscount")
                         .HasColumnType("bit");
@@ -67,8 +67,6 @@ namespace hotel_management_api_identity.Migrations
                     b.HasIndex("CreatedById");
 
                     b.HasIndex("CreatedOn");
-
-                    b.HasIndex("CustomerId");
 
                     b.HasIndex("HasDiscount");
 
@@ -308,7 +306,7 @@ namespace hotel_management_api_identity.Migrations
                     b.ToTable("Room");
                 });
 
-            modelBuilder.Entity("hotel_management_api_identity.Core.Storage.Models.Sales", b =>
+            modelBuilder.Entity("hotel_management_api_identity.Core.Storage.Models.SaleDetails", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -332,6 +330,9 @@ namespace hotel_management_api_identity.Migrations
                     b.Property<DateTimeOffset>("ModifiedOn")
                         .HasColumnType("datetimeoffset");
 
+                    b.Property<string>("OrderCode")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
@@ -346,7 +347,40 @@ namespace hotel_management_api_identity.Migrations
 
                     b.HasIndex("Id");
 
-                    b.HasIndex("Price");
+                    b.ToTable("SaleDetails");
+                });
+
+            modelBuilder.Entity("hotel_management_api_identity.Core.Storage.Models.Sales", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CreatedById")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTimeOffset>("CreatedOn")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("ModifiedById")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset>("ModifiedOn")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("OrderCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedById");
+
+                    b.HasIndex("CreatedOn");
+
+                    b.HasIndex("Id");
 
                     b.ToTable("Sales");
                 });
@@ -389,20 +423,11 @@ namespace hotel_management_api_identity.Migrations
 
             modelBuilder.Entity("hotel_management_api_identity.Core.Storage.Models.Booking", b =>
                 {
-                    b.HasOne("hotel_management_api_identity.Core.Storage.Models.Customer", null)
-                        .WithMany("Bookings")
-                        .HasForeignKey("CustomerId");
-
                     b.HasOne("hotel_management_api_identity.Core.Storage.Models.Room", "Room")
                         .WithMany("Bookings")
                         .HasForeignKey("RoomId");
 
                     b.Navigation("Room");
-                });
-
-            modelBuilder.Entity("hotel_management_api_identity.Core.Storage.Models.Customer", b =>
-                {
-                    b.Navigation("Bookings");
                 });
 
             modelBuilder.Entity("hotel_management_api_identity.Core.Storage.Models.Room", b =>

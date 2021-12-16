@@ -1,0 +1,252 @@
+2021-12-03 10:07:39.622 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-03 10:07:39.675 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-03 10:07:39.676 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-03 10:07:39.678 +01:00 [INF] Hosting environment: Development
+2021-12-03 10:07:39.679 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-03 10:07:42.174 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 218.9477 ms
+2021-12-03 10:07:42.422 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 133.9188 ms
+2021-12-03 10:12:03.343 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-03 10:12:03.400 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-03 10:12:03.402 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-03 10:12:03.403 +01:00 [INF] Hosting environment: Development
+2021-12-03 10:12:03.404 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-03 10:12:07.582 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 185.9959 ms
+2021-12-03 10:12:07.800 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 104.0677 ms
+2021-12-03 10:19:41.916 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-03 10:19:41.959 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-03 10:19:41.961 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-03 10:19:41.962 +01:00 [INF] Hosting environment: Development
+2021-12-03 10:19:41.964 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-03 10:19:43.554 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 171.5230 ms
+2021-12-03 10:19:43.772 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 110.5201 ms
+2021-12-03 10:28:18.842 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-03 10:28:18.901 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-03 10:28:18.904 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-03 10:28:18.905 +01:00 [INF] Hosting environment: Development
+2021-12-03 10:28:18.907 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-03 10:28:20.064 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 165.2215 ms
+2021-12-03 10:28:20.286 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 108.6102 ms
+2021-12-03 10:36:57.103 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-03 10:36:57.145 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-03 10:36:57.147 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-03 10:36:57.149 +01:00 [INF] Hosting environment: Development
+2021-12-03 10:36:57.150 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-03 10:36:58.188 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 227.8514 ms
+2021-12-03 10:36:58.455 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 142.3833 ms
+2021-12-03 10:38:59.122 +01:00 [INF] HTTP POST /api/enquiry/getemployees responded 404 in 2836.1297 ms
+2021-12-03 10:39:13.909 +01:00 [INF] HTTP POST /api/enquiry/getEmployees responded 404 in 2086.0035 ms
+2021-12-03 10:39:44.697 +01:00 [INF] HTTP POST /api/enquiry/getEmployees responded 404 in 6510.9401 ms
+2021-12-03 10:40:10.061 +01:00 [INF] HTTP POST /api/enquiry/employee/getEmployees responded 200 in 3482.2462 ms
+2021-12-03 10:43:40.687 +01:00 [INF] HTTP POST /api/enquiry/employee/getEmployees responded 200 in 174883.5635 ms
+2021-12-03 10:47:43.011 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-03 10:47:43.048 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-03 10:47:43.052 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-03 10:47:43.053 +01:00 [INF] Hosting environment: Development
+2021-12-03 10:47:43.054 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-03 10:47:44.092 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 207.8585 ms
+2021-12-03 10:47:44.339 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 118.3276 ms
+2021-12-03 10:47:56.512 +01:00 [INF] HTTP POST /api/enquiry/employee/getEmployees responded 200 in 5708.9654 ms
+2021-12-03 10:49:24.579 +01:00 [INF] HTTP POST /api/enquiry/employee/getEmployees responded 200 in 84001.7062 ms
+2021-12-03 10:51:14.718 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-03 10:51:14.756 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-03 10:51:14.759 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-03 10:51:14.760 +01:00 [INF] Hosting environment: Development
+2021-12-03 10:51:14.762 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-03 10:51:15.957 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 187.5388 ms
+2021-12-03 10:51:16.178 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 107.2289 ms
+2021-12-03 10:51:27.832 +01:00 [INF] HTTP POST /api/enquiry/employee/getEmployees responded 200 in 6088.5476 ms
+2021-12-03 11:00:04.301 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-03 11:00:04.359 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-03 11:00:04.362 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-03 11:00:04.363 +01:00 [INF] Hosting environment: Development
+2021-12-03 11:00:04.363 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-03 11:00:05.246 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 187.5838 ms
+2021-12-03 11:00:05.499 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 128.7070 ms
+2021-12-03 11:00:45.453 +01:00 [INF] HTTP POST /api/Enquiry/customer/getCustomers responded 401 in 133.0882 ms
+2021-12-03 11:20:45.243 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-03 11:20:45.297 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-03 11:20:45.301 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-03 11:20:45.304 +01:00 [INF] Hosting environment: Development
+2021-12-03 11:20:45.305 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-03 11:20:46.608 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 177.5865 ms
+2021-12-03 11:20:46.929 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 163.9201 ms
+2021-12-03 12:20:45.798 +01:00 [INF] Shut down complete
+2021-12-03 12:20:54.968 +01:00 [INF] Shut down complete
+2021-12-03 12:22:52.550 +01:00 [INF] Shut down complete
+2021-12-03 12:22:57.184 +01:00 [INF] Shut down complete
+2021-12-03 12:25:36.938 +01:00 [INF] Shut down complete
+2021-12-03 12:25:41.305 +01:00 [INF] Shut down complete
+2021-12-03 13:30:12.061 +01:00 [INF] Shut down complete
+2021-12-03 13:30:17.811 +01:00 [INF] Shut down complete
+2021-12-03 13:42:41.756 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-03 13:42:41.796 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-03 13:42:41.806 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-03 13:42:41.806 +01:00 [INF] Hosting environment: Development
+2021-12-03 13:42:41.807 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-03 13:42:42.817 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 206.2712 ms
+2021-12-03 13:42:43.030 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 103.3521 ms
+2021-12-03 13:44:29.994 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-03 13:44:41.625 +01:00 [INF] HTTP POST /api/Authentication/login responded 200 in 11811.3139 ms
+2021-12-03 13:45:28.018 +01:00 [INF] Create Purchase Request ----> {"Quantity":1,"Price":200.0,"Category":1,"Item":"Bottle Water"},
+2021-12-03 13:45:39.735 +01:00 [INF] Create Purchase Request ----> {"Quantity":1,"Price":200.0,"Category":1,"Item":"Bottle Water"},
+2021-12-03 13:47:52.252 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-03 13:47:52.277 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-03 13:47:52.279 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-03 13:47:52.279 +01:00 [INF] Hosting environment: Development
+2021-12-03 13:47:52.280 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-03 13:47:53.591 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 179.0098 ms
+2021-12-03 13:47:53.829 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 113.6693 ms
+2021-12-03 13:53:10.698 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-03 13:53:10.722 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-03 13:53:10.723 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-03 13:53:10.724 +01:00 [INF] Hosting environment: Development
+2021-12-03 13:53:10.724 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-03 13:53:11.491 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 150.1473 ms
+2021-12-03 13:53:11.680 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 94.3778 ms
+2021-12-03 13:54:05.175 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-03 13:54:05.211 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-03 13:54:05.213 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-03 13:54:05.216 +01:00 [INF] Hosting environment: Development
+2021-12-03 13:54:05.217 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-03 13:54:06.232 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 240.9099 ms
+2021-12-03 13:54:06.443 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 97.9082 ms
+2021-12-03 13:54:28.245 +01:00 [INF] Create Purchase Request ----> {"Quantity":1,"Price":200.0,"Category":1,"Item":"Bottle Water"},
+2021-12-03 13:54:28.320 +01:00 [INF] HTTP POST /api/Transaction/sale responded 201 in 19278.2820 ms
+2021-12-03 13:55:11.129 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-03 13:55:11.156 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-03 13:55:11.157 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-03 13:55:11.157 +01:00 [INF] Hosting environment: Development
+2021-12-03 13:55:11.158 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-03 13:55:12.235 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 205.9337 ms
+2021-12-03 13:55:12.416 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 89.1466 ms
+2021-12-03 13:55:44.305 +01:00 [INF] Create Purchase Request ----> {"Quantity":1,"Price":200.0,"Category":1,"Item":"Bottle Water"},onw@gmail.com
+2021-12-03 13:55:44.385 +01:00 [INF] HTTP POST /api/Transaction/sale responded 201 in 19889.9464 ms
+2021-12-03 13:58:22.413 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-03 13:58:22.445 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-03 13:58:22.446 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-03 13:58:22.447 +01:00 [INF] Hosting environment: Development
+2021-12-03 13:58:22.447 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-03 13:58:23.485 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 202.6686 ms
+2021-12-03 13:58:23.697 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 98.3412 ms
+2021-12-03 13:59:13.241 +01:00 [ERR] HTTP POST /api/Onboarding/employee responded 500 in 3802.9828 ms
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '12/03/2021 12:07:35', Current time: '12/03/2021 12:59:13'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at hotel_management_api_identity.Core.Helpers.Extension.PrincipalUtilities.ValidateToken(String jwtToken, String audience, String issuer, String secret) in C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\Core\Helpers\Extension\PrincipalUtilities.cs:line 33
+   at hotel_management_api_identity.Core.Helpers.Extension.PrincipalUtilities.GetEmail(String jwtToken, String audience, String issuer, String secret) in C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\Core\Helpers\Extension\PrincipalUtilities.cs:line 14
+   at hotel_management_api_identity.Core.MiddlewareExtensions.AuthenticationMiddleware.Invoke(HttpContext httpContext) in C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\Core\MiddlewareExtensions\AuthenticationMiddleware.cs:line 63
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2021-12-03 13:59:13.285 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '12/03/2021 12:07:35', Current time: '12/03/2021 12:59:13'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at hotel_management_api_identity.Core.Helpers.Extension.PrincipalUtilities.ValidateToken(String jwtToken, String audience, String issuer, String secret) in C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\Core\Helpers\Extension\PrincipalUtilities.cs:line 33
+   at hotel_management_api_identity.Core.Helpers.Extension.PrincipalUtilities.GetEmail(String jwtToken, String audience, String issuer, String secret) in C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\Core\Helpers\Extension\PrincipalUtilities.cs:line 14
+   at hotel_management_api_identity.Core.MiddlewareExtensions.AuthenticationMiddleware.Invoke(HttpContext httpContext) in C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\Core\MiddlewareExtensions\AuthenticationMiddleware.cs:line 63
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2021-12-03 13:59:13.452 +01:00 [ERR] An exception was thrown attempting to execute the error handler.
+Newtonsoft.Json.JsonSerializationException: Self referencing loop detected for property 'ManifestModule' with type 'System.Reflection.RuntimeModule'. Path 'TargetSite.Module.Assembly'.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CheckForCircularReference(JsonWriter writer, Object value, JsonProperty property, JsonContract contract, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CalculatePropertyValues(JsonWriter writer, Object value, JsonContainerContract contract, JsonProperty member, JsonProperty property, JsonContract& memberContract, Object& memberValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.SerializeInternal(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonConvert.SerializeObjectInternal(Object value, Type type, JsonSerializer jsonSerializer)
+   at Newtonsoft.Json.JsonConvert.SerializeObject(Object value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.SerializeObject(Object value)
+   at hotel_management_api_identity.Core.MiddlewareExtensions.ExceptionMiddleware.<>c.<<ConfigureExceptionHandler>b__0_1>d.MoveNext() in C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\Core\MiddlewareExtensions\ExceptionMiddleware.cs:line 23
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+2021-12-03 13:59:13.461 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '12/03/2021 12:07:35', Current time: '12/03/2021 12:59:13'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at hotel_management_api_identity.Core.Helpers.Extension.PrincipalUtilities.ValidateToken(String jwtToken, String audience, String issuer, String secret) in C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\Core\Helpers\Extension\PrincipalUtilities.cs:line 33
+   at hotel_management_api_identity.Core.Helpers.Extension.PrincipalUtilities.GetEmail(String jwtToken, String audience, String issuer, String secret) in C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\Core\Helpers\Extension\PrincipalUtilities.cs:line 14
+   at hotel_management_api_identity.Core.MiddlewareExtensions.AuthenticationMiddleware.Invoke(HttpContext httpContext) in C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\Core\MiddlewareExtensions\AuthenticationMiddleware.cs:line 63
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-12-03 13:59:42.468 +01:00 [INF] Create Employee Request ----->>>> {"FirstName":"Desmond","LastName":"Okolie","PhoneNumber":"09011348909","Email":"desperado@gmail.com","Gender":1,"Address":"Lagos, Nigeria","UserType":2}
+2021-12-03 13:59:42.681 +01:00 [ERR] Invalid column name 'Login'.
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Login'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader()
+   at System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at System.Data.SqlClient.SqlCommand.EndExecuteNonQuery(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 646
+   at hotel_management_api_identity.Core.Storage.QueryRepository.Executers.ExecuteCommandAsync[T](String query, Object param) in C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\Core\Storage\QueryRepository\Executers.cs:line 187
+   at hotel_management_api_identity.Core.Storage.QueryRepository.DapperCommand`1.AddAsync(TEntity entity) in C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\Core\Storage\QueryRepository\DapperCommand.cs:line 27
+   at hotel_management_api_identity.Features.Onboarding.Services.OnboardingService.CreateEmployee(CreateEmployeeRequest createEmployeeRequest) in C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\Features\Onboarding\Services\OnboardingService.cs:line 111
+ClientConnectionId:194292c3-f37f-4d00-b992-71c19446787b
+Error Number:207,State:1,Class:16
+2021-12-03 13:59:42.705 +01:00 [INF] HTTP POST /api/Onboarding/employee responded 201 in 567.1189 ms
+2021-12-03 14:00:07.391 +01:00 [INF] Create Employee Request ----->>>> {"FirstName":"Desmond","LastName":"Okolie","PhoneNumber":"09011348909","Email":"desperado@gmail.com","Gender":1,"Address":"Lagos, Nigeria","UserType":2}
+2021-12-03 14:02:41.003 +01:00 [INF] Shut down complete
+2021-12-03 14:02:46.066 +01:00 [INF] Shut down complete
+2021-12-03 14:02:53.323 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-03 14:02:53.351 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-03 14:02:53.352 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-03 14:02:53.352 +01:00 [INF] Hosting environment: Development
+2021-12-03 14:02:53.353 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-03 14:02:54.214 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 206.1180 ms
+2021-12-03 14:02:54.389 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 85.9522 ms
+2021-12-03 14:03:04.111 +01:00 [INF] Create Employee Request ----->>>> {"FirstName":"Desmond","LastName":"Okolie","PhoneNumber":"09011348909","Email":"desperado@gmail.com","Gender":1,"Address":"Lagos, Nigeria","UserType":2}
+2021-12-03 14:03:09.093 +01:00 [INF] CreateAccount Request -----> desperado@gmail.com
+2021-12-03 14:03:17.319 +01:00 [INF] HTTP POST /api/Onboarding/employee responded 201 in 19242.6672 ms
+2021-12-03 15:20:16.040 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-03 15:20:16.065 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-03 15:20:16.066 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-03 15:20:16.066 +01:00 [INF] Hosting environment: Development
+2021-12-03 15:20:16.067 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-03 15:20:17.098 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 162.7861 ms
+2021-12-03 15:20:17.340 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 127.7780 ms
+2021-12-03 17:46:40.612 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-03 17:46:40.640 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-03 17:46:40.641 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-03 17:46:40.642 +01:00 [INF] Hosting environment: Development
+2021-12-03 17:46:40.642 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-03 17:46:41.426 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 131.7416 ms
+2021-12-03 17:46:41.635 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 91.3718 ms
+2021-12-03 23:50:13.936 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-03 23:50:13.964 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-03 23:50:13.965 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-03 23:50:13.965 +01:00 [INF] Hosting environment: Development
+2021-12-03 23:50:13.966 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-03 23:50:14.770 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 167.1627 ms
+2021-12-03 23:50:14.966 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 101.3245 ms

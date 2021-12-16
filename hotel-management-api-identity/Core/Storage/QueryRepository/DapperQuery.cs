@@ -66,6 +66,13 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
         /// <param name="criteria"></param>
         /// <returns></returns>
         Task<IQueryable<TEntity>> GetByDateRangeAsync(Dictionary<string, DateTimeOffset> criteria);
+
+        /// <summary>
+        /// Get By Async Without Pagination
+        /// </summary>
+        /// <param name="criteria"></param>
+        /// <returns></returns>
+        Task<IQueryable<TEntity>> GetByAsync(Dictionary<string, string> criteria);
     }
 
 
@@ -96,6 +103,13 @@ namespace hotel_management_api_identity.Core.Storage.QueryRepository
         public async Task<IQueryable<TEntity>> GetByAsync(Dictionary<string, string> criteria, int pageSize, int pageNumber)
         {
             string query = _utilities.GeneratePaginatedSelectQuery<TEntity>(criteria, pageSize, pageNumber);
+            var entityObject = await _executers.ExecuteReaderAsync<TEntity>(query, null);
+            return entityObject.AsQueryable();
+        }
+
+        public async Task<IQueryable<TEntity>> GetByAsync(Dictionary<string, string> criteria)
+        {
+            string query = _utilities.GeneratePaginatedSelectQuery<TEntity>(criteria);
             var entityObject = await _executers.ExecuteReaderAsync<TEntity>(query, null);
             return entityObject.AsQueryable();
         }

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "vxarh8STYsvn4n6azSbiJdXQITnt3eSuf9RAdeQJR5w=",
+  "Source": "hotel-management-api-identity",
+  "BasePath": "_content/hotel-management-api-identity",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

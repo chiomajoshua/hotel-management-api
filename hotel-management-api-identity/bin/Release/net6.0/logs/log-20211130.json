@@ -1,0 +1,177 @@
+2021-11-30 10:23:44.749 +01:00 [INF] Now listening on: https://localhost:7135
+2021-11-30 10:23:44.784 +01:00 [INF] Now listening on: http://localhost:5135
+2021-11-30 10:23:44.788 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-30 10:23:44.789 +01:00 [INF] Hosting environment: Development
+2021-11-30 10:23:44.791 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-11-30 10:24:08.312 +01:00 [INF] Now listening on: https://localhost:7135
+2021-11-30 10:24:08.344 +01:00 [INF] Now listening on: http://localhost:5135
+2021-11-30 10:24:08.347 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-30 10:24:08.348 +01:00 [INF] Hosting environment: Development
+2021-11-30 10:24:08.349 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-11-30 10:24:09.319 +01:00 [INF] HTTP GET /swagger responded 301 in 52.7694 ms
+2021-11-30 10:24:09.506 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 170.0585 ms
+2021-11-30 10:24:09.517 +01:00 [INF] HTTP GET /swagger/swagger-ui.css responded 200 in 7.8028 ms
+2021-11-30 10:24:09.519 +01:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 9.6519 ms
+2021-11-30 10:24:09.523 +01:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 13.9363 ms
+2021-11-30 10:24:09.710 +01:00 [INF] HTTP GET /swagger/favicon-32x32.png responded 200 in 0.5796 ms
+2021-11-30 10:24:09.744 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 52.6808 ms
+2021-11-30 10:24:49.303 +01:00 [INF] Now listening on: https://localhost:7135
+2021-11-30 10:24:49.334 +01:00 [INF] Now listening on: http://localhost:5135
+2021-11-30 10:24:49.337 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-30 10:24:49.338 +01:00 [INF] Hosting environment: Development
+2021-11-30 10:24:49.338 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-11-30 10:24:50.331 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 160.0680 ms
+2021-11-30 10:24:50.543 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 61.1512 ms
+2021-11-30 10:36:03.415 +01:00 [INF] Now listening on: https://localhost:7135
+2021-11-30 10:36:03.442 +01:00 [INF] Now listening on: http://localhost:5135
+2021-11-30 10:36:03.445 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-30 10:36:03.445 +01:00 [INF] Hosting environment: Development
+2021-11-30 10:36:03.446 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-11-30 10:36:06.100 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 126.8709 ms
+2021-11-30 10:36:06.265 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 73.1606 ms
+2021-11-30 10:38:02.264 +01:00 [INF] Now listening on: https://localhost:7135
+2021-11-30 10:38:02.290 +01:00 [INF] Now listening on: http://localhost:5135
+2021-11-30 10:38:02.293 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-30 10:38:02.293 +01:00 [INF] Hosting environment: Development
+2021-11-30 10:38:02.294 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-11-30 10:38:05.077 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 114.3854 ms
+2021-11-30 10:38:05.226 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 58.5263 ms
+2021-11-30 10:39:50.381 +01:00 [INF] Now listening on: https://localhost:7135
+2021-11-30 10:39:50.414 +01:00 [INF] Now listening on: http://localhost:5135
+2021-11-30 10:39:50.417 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-30 10:39:50.418 +01:00 [INF] Hosting environment: Development
+2021-11-30 10:39:50.418 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-11-30 10:39:51.431 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 162.8611 ms
+2021-11-30 10:39:51.594 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 61.4486 ms
+2021-11-30 16:41:20.387 +01:00 [FTL] Unhandled exception
+Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\Program.cs:line 54
+2021-11-30 16:41:20.425 +01:00 [INF] Shut down complete
+2021-11-30 16:42:29.442 +01:00 [FTL] Unhandled exception
+Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\Program.cs:line 54
+2021-11-30 16:42:29.472 +01:00 [INF] Shut down complete
+2021-11-30 16:42:55.151 +01:00 [FTL] Unhandled exception
+Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\Program.cs:line 54
+2021-11-30 16:42:55.195 +01:00 [INF] Shut down complete
+2021-11-30 16:45:05.030 +01:00 [FTL] Unhandled exception
+Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\Program.cs:line 54
+2021-11-30 16:45:05.062 +01:00 [INF] Shut down complete
+2021-11-30 16:45:09.997 +01:00 [FTL] Unhandled exception
+Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\Program.cs:line 54
+2021-11-30 16:45:10.040 +01:00 [INF] Shut down complete
+2021-11-30 16:46:38.941 +01:00 [FTL] Unhandled exception
+Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\Program.cs:line 54
+2021-11-30 16:46:38.985 +01:00 [INF] Shut down complete
+2021-11-30 16:47:13.575 +01:00 [FTL] Unhandled exception
+Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\Program.cs:line 54
+2021-11-30 16:47:13.607 +01:00 [INF] Shut down complete
+2021-11-30 17:15:29.868 +01:00 [FTL] Unhandled exception
+Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\Program.cs:line 54
+2021-11-30 17:15:29.909 +01:00 [INF] Shut down complete
+2021-11-30 17:15:33.948 +01:00 [FTL] Unhandled exception
+Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\Program.cs:line 54
+2021-11-30 17:15:33.990 +01:00 [INF] Shut down complete
+2021-11-30 17:16:55.934 +01:00 [FTL] Unhandled exception
+Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\Program.cs:line 54
+2021-11-30 17:16:55.966 +01:00 [INF] Shut down complete
+2021-11-30 17:21:36.300 +01:00 [FTL] Unhandled exception
+Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\Program.cs:line 54
+2021-11-30 17:21:36.344 +01:00 [INF] Shut down complete
+2021-11-30 17:21:41.817 +01:00 [FTL] Unhandled exception
+Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\Program.cs:line 54
+2021-11-30 17:21:41.859 +01:00 [INF] Shut down complete
+2021-11-30 17:35:48.492 +01:00 [INF] Now listening on: https://localhost:7135
+2021-11-30 17:35:48.534 +01:00 [INF] Now listening on: http://localhost:5135
+2021-11-30 17:35:48.538 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-30 17:35:48.539 +01:00 [INF] Hosting environment: Development
+2021-11-30 17:35:48.540 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-11-30 17:35:49.354 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 155.6216 ms
+2021-11-30 17:35:49.531 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 69.2458 ms
+2021-11-30 17:44:54.583 +01:00 [INF] Now listening on: https://localhost:7135
+2021-11-30 17:44:54.613 +01:00 [INF] Now listening on: http://localhost:5135
+2021-11-30 17:44:54.616 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-30 17:44:54.617 +01:00 [INF] Hosting environment: Development
+2021-11-30 17:44:54.617 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-11-30 17:44:58.376 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 113.8533 ms
+2021-11-30 17:44:58.532 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 64.6888 ms
+2021-11-30 17:45:28.542 +01:00 [INF] HTTP GET /health responded 401 in 131.7319 ms
+2021-11-30 17:45:28.562 +01:00 [INF] HTTP GET /favicon.ico responded 401 in 0.8873 ms
+2021-11-30 17:46:02.096 +01:00 [INF] HTTP GET /healthz responded 401 in 0.6165 ms
+2021-11-30 17:46:02.119 +01:00 [INF] HTTP GET /favicon.ico responded 401 in 0.4114 ms
+2021-11-30 17:46:06.900 +01:00 [INF] HTTP GET /healthz responded 401 in 0.3705 ms
+2021-11-30 17:46:06.918 +01:00 [INF] HTTP GET /favicon.ico responded 401 in 0.2537 ms
+2021-11-30 17:51:05.358 +01:00 [INF] Now listening on: https://localhost:7135
+2021-11-30 17:51:05.382 +01:00 [INF] Now listening on: http://localhost:5135
+2021-11-30 17:51:05.385 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-30 17:51:05.385 +01:00 [INF] Hosting environment: Development
+2021-11-30 17:51:05.386 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-11-30 17:51:06.437 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 200.1686 ms
+2021-11-30 17:51:06.621 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 82.5996 ms
+2021-11-30 17:51:57.285 +01:00 [INF] Now listening on: https://localhost:7135
+2021-11-30 17:51:57.312 +01:00 [INF] Now listening on: http://localhost:5135
+2021-11-30 17:51:57.315 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-30 17:51:57.316 +01:00 [INF] Hosting environment: Development
+2021-11-30 17:51:57.316 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-11-30 17:51:58.535 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 222.0458 ms
+2021-11-30 17:51:58.767 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 85.8810 ms
+2021-11-30 17:52:11.193 +01:00 [INF] HTTP GET /health responded 401 in 104.6055 ms
+2021-11-30 17:52:11.214 +01:00 [INF] HTTP GET /favicon.ico responded 401 in 0.7897 ms

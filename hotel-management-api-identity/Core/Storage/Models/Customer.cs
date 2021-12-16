@@ -1,4 +1,5 @@
 ﻿using hotel_management_api_identity.Core.Constants;
+using hotel_management_api_identity.Core.Helpers.Extension;
 using hotel_management_api_identity.Core.Helpers.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -12,7 +13,7 @@ namespace hotel_management_api_identity.Core.Storage.Models
     [Serializable]
     public class Customer : BaseEntity
     {
-        public string CustomerCode { get; set; }
+        public string CustomerCode { get; set; } = Extensions.RandomCustomerCode();
         [StringLength(15)]
         [Required]
         public string Title { get; set; }
@@ -27,7 +28,7 @@ namespace hotel_management_api_identity.Core.Storage.Models
         [Required]
         public string Email { get; set; }        
         public Enums.Gender Gender { get; set; }
-        public virtual ICollection<Booking> Bookings { get; set; }
+        
 
         public Customer()
         {

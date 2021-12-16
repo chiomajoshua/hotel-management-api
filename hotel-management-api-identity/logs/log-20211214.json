@@ -1,0 +1,25 @@
+2021-12-14 11:34:47.755 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-14 11:34:47.783 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-14 11:34:47.784 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-14 11:34:47.785 +01:00 [INF] Hosting environment: Development
+2021-12-14 11:34:47.785 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-14 11:34:49.380 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 177.3522 ms
+2021-12-14 11:34:49.612 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 100.0835 ms
+2021-12-14 11:45:55.989 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-14 11:45:56.014 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-14 11:45:56.015 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-14 11:45:56.016 +01:00 [INF] Hosting environment: Development
+2021-12-14 11:45:56.016 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-14 11:45:57.358 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 162.6786 ms
+2021-12-14 11:45:57.601 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 128.1869 ms
+2021-12-14 11:46:06.346 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-14 11:46:06.374 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-14 11:46:06.375 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-14 11:46:06.376 +01:00 [INF] Hosting environment: Development
+2021-12-14 11:46:06.376 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-14 11:46:07.344 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 159.3644 ms
+2021-12-14 11:46:07.561 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 105.6553 ms
+2021-12-14 11:46:11.505 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 114.2764 ms
+2021-12-14 11:47:36.301 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 54637.7095 ms
+2021-12-14 11:47:45.965 +01:00 [INF] ValidateCredentials Request ----->
+2021-12-14 11:47:46.569 +01:00 [INF] HTTP POST /api/Authentication/login responded 200 in 2501.4528 ms

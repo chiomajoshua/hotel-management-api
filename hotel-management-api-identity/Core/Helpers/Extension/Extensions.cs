@@ -149,6 +149,22 @@ namespace hotel_management_api_identity.Core.Helpers.Extension
             return $"CUS-{passwordBuilder}";
         }
 
+        public static string RandomOrderNumber()
+        {
+            var passwordBuilder = new StringBuilder();
+            passwordBuilder.Append(RandomString(2));
+            passwordBuilder.Append(RandomNumber(1000, 9999));
+            return $"ORD-{passwordBuilder}";
+        }
+
+        public static string RandomBookingNumber()
+        {
+            var passwordBuilder = new StringBuilder();
+            passwordBuilder.Append(RandomString(2));
+            passwordBuilder.Append(RandomNumber(1000, 9999));
+            return $"ORD-{passwordBuilder}";
+        }
+
         public static string Encrypt(string encryptString)
         {
             string EncryptionKey = "a69d4fcf-2bc3-477c-b652-1de27c2e48c9"; 

@@ -33,25 +33,39 @@ namespace hotel_management_api_identity.Features.Enquiry.Transaction.Service
         /// <param name="endDate"></param>
         /// <returns></returns>
         Task<GenericResponse<IEnumerable<TransactionResponse>>> GetTransactionsByDateRange(DateTimeOffset startDate, DateTimeOffset endDate);
+
+        /// <summary>
+        /// Get Orders By OrderCode
+        /// </summary>
+        /// <param name="orderCode"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="pageNumber"></param>
+        /// <returns></returns>
+        Task<GenericResponse<IEnumerable<TransactionDetailResponse>>> GetTransactionsByOrderCode(string orderCode, int pageSize, int pageNumber);
     }
     public class TransactionService : ITransactionService
     {
         private readonly ILogger<TransactionService> _logger;
         private readonly IDapperQuery<Core.Storage.Models.Sales> _salesQuery;
+        private readonly IDapperQuery<Core.Storage.Models.SaleDetails> _saleDetailsQuery;
 
         public TransactionService(IDapperQuery<Core.Storage.Models.Sales> salesQuery,
-                               ILogger<TransactionService> logger)
+                               ILogger<TransactionService> logger, IDapperQuery<Core.Storage.Models.SaleDetails> saleDetailsQuery)
         {
             _salesQuery = salesQuery;
             _logger = logger;
+            _saleDetailsQuery = saleDetailsQuery;
         }    
 
         public async Task<GenericResponse<IEnumerable<TransactionResponse>>> GetTransactions(int pageSize, int pageNumber)
         {
             try
-            {
+            {                
                 var result = await _salesQuery.GetByAsync(pageSize, pageNumber);
-                if (result.Any()) return new GenericResponse<IEnumerable<TransactionResponse>> { Data = result.ToList().ToTransactionsList(), IsSuccessful = true, Message = ResponseMessages.OperationSuccessful };
+                if (result.Any())
+                {         
+                    return new GenericResponse<IEnumerable<TransactionResponse>> { Data = result.ToList().ToTransactionsList(), IsSuccessful = true, Message = ResponseMessages.OperationSuccessful };
+                }
                 return new GenericResponse<IEnumerable<TransactionResponse>> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
             }
             catch (Exception ex)
@@ -74,6 +88,22 @@ namespace hotel_management_api_identity.Features.Enquiry.Transaction.Service
             {
                 _logger.LogError("GetTransactionsByEmployee Error", ex.Message);
                 return new GenericResponse<IEnumerable<TransactionResponse>> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
+            }
+        }
+
+        public async Task<GenericResponse<IEnumerable<TransactionDetailResponse>>> GetTransactionsByOrderCode(string orderCode, int pageSize, int pageNumber)
+        {
+            try
+            {
+                var query = new Dictionary<string, string>() { { "OrderCode", orderCode } };
+                var result = await _saleDetailsQuery.GetByAsync(query, pageSize, pageNumber);
+                if (result.Any()) return new GenericResponse<IEnumerable<TransactionDetailResponse>> { Data = result.ToList().ToSalesDetailsList(), IsSuccessful = true, Message = ResponseMessages.OperationSuccessful };
+                return new GenericResponse<IEnumerable<TransactionDetailResponse>> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("GetTransactionsByOrderCode Error", ex.Message);
+                return new GenericResponse<IEnumerable<TransactionDetailResponse>> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
             }
         }
 

@@ -4,6 +4,7 @@ using hotel_management_api_identity.Core.Helpers.Extension;
 using hotel_management_api_identity.Core.Storage.QueryRepository;
 using hotel_management_api_identity.Features.Enquiry.Employee.Config;
 using hotel_management_api_identity.Features.Enquiry.Employee.Model;
+using Newtonsoft.Json;
 
 namespace hotel_management_api_identity.Features.Enquiry.Employee.Service
 {
@@ -68,7 +69,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Employee.Service
             }
             catch (Exception ex)
             {
-                _logger.LogError("GetEmployeeByEmail Error", ex.Message);
+                _logger.LogError($"GetEmployeeByEmail Error----> {ex.Message}", "Args");
                 return new GenericResponse<EmployeeResponse> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
             }
         }
@@ -84,7 +85,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Employee.Service
             }
             catch (Exception ex)
             {
-                _logger.LogError("GetEmployeeByPhone Error", ex.Message);
+                _logger.LogError($"GetEmployeeByPhone Error----> {ex.Message}", "Args");
                 return new GenericResponse<EmployeeResponse> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
             }
         }
@@ -99,7 +100,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Employee.Service
             }
             catch (Exception ex)
             {
-                _logger.LogError("GetEmployees Error", ex.Message);
+                _logger.LogError($"GetEmployees Error----> {ex.Message}", "Args");
                 return new GenericResponse<IEnumerable<EmployeeResponse>> { IsSuccessful = false, Message = ResponseMessages.NoRecordFound };
             }
         }
@@ -117,7 +118,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Employee.Service
             }
             catch (Exception ex)
             {
-                _logger.LogError("IsEmployeeExistsByEmail Error", ex.Message);
+                _logger.LogError($"IsEmployeeExistsByEmail Error----> {ex.Message}", "Args");
                 return false;
             }
         }
@@ -135,7 +136,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Employee.Service
             }
             catch (Exception ex)
             {
-                _logger.LogError("IsEmployeeExistsByPhone Error", ex.Message);
+                _logger.LogError($"IsEmployeeExistsByPhone Error --->>> {ex.Message}", "Args");
                 return false;
             }
         }

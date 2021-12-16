@@ -33,13 +33,13 @@ namespace hotel_management_api_identity.Core.MiddlewareExtensions
                 return;
             }
 
-            var currentController = httpContext.GetRouteData().Values["controller"].ToString();
-            var currentAction = httpContext.GetRouteData().Values["action"].ToString();
-            if(currentController.ToLower() == "authentication" && currentAction.ToLower() == "login")
-            {
-                await _next(httpContext);
-                return;
-            }
+            //var currentController = httpContext.GetRouteData().Values["controller"].ToString();
+            //var currentAction = httpContext.GetRouteData().Values["action"].ToString();
+            //if(currentController.ToLower() == "authentication" && currentAction.ToLower() == "login")
+            //{
+            //    await _next(httpContext);
+            //    return;
+            //}
             
             string authHeader = httpContext.Request.Headers["Token"];            
 

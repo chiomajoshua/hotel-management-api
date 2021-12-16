@@ -1,6 +1,7 @@
 ﻿using hotel_management_api_identity.Core.Constants;
 using hotel_management_api_identity.Features.Authentication.Models;
 using hotel_management_api_identity.Features.Authentication.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Mime;
 using StatusCodes = Microsoft.AspNetCore.Http.StatusCodes;
@@ -23,6 +24,7 @@ namespace hotel_management_api_identity.Features.Authentication
 
         [HttpPost]
         [Route("login")]
+        [AllowAnonymous]
         [Consumes(MediaTypeNames.Application.Json)]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(object))]
