@@ -24,7 +24,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Customer
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(object))]
-        [ResponseCache(Duration = 90)]
+        
         public async Task<IActionResult> GetCustomers(GenericRequest genericRequest)
         {
             return Ok(await _customerService.GetCustomers(genericRequest.PageSize, genericRequest.PageNumber));
@@ -36,7 +36,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Customer
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(object))]
-        [ResponseCache(Duration = 90)]
+        
         public async Task<IActionResult> GetCustomerByEmail(string email)
         {
             if (string.IsNullOrEmpty(email))
@@ -50,7 +50,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Customer
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(object))]
-        [ResponseCache(Duration = 90)]
+        
         public async Task<IActionResult> GetCustomerByCode(string customerCode)
         {
             if (string.IsNullOrEmpty(customerCode))
@@ -64,7 +64,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Customer
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(object))]
-        [ResponseCache(Duration = 90)]
+        
         public async Task<IActionResult> GetCustomerByPhone(string phone)
         {
             if (string.IsNullOrEmpty(phone))

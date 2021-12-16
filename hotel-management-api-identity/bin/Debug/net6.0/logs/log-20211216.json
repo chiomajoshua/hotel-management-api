@@ -639,3 +639,45 @@ Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime
 2021-12-16 15:48:24.855 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 68.4881 ms
 2021-12-16 16:17:16.708 +01:00 [INF] Shut down complete
 2021-12-16 16:17:23.186 +01:00 [INF] Shut down complete
+2021-12-16 16:19:49.180 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-16 16:19:49.222 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-16 16:19:49.223 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-16 16:19:49.224 +01:00 [INF] Hosting environment: Development
+2021-12-16 16:19:49.226 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-16 16:19:51.031 +01:00 [INF] HTTP GET /swagger responded 301 in 59.8711 ms
+2021-12-16 16:19:51.205 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 137.5153 ms
+2021-12-16 16:19:51.307 +01:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 90.1586 ms
+2021-12-16 16:19:51.307 +01:00 [INF] HTTP GET /swagger/swagger-ui.css responded 200 in 92.0897 ms
+2021-12-16 16:19:51.312 +01:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 96.3418 ms
+2021-12-16 16:19:52.219 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 180.5920 ms
+2021-12-16 16:21:06.939 +01:00 [INF] Create Room Request ----->>>> 
+2021-12-16 16:21:07.445 +01:00 [INF] HTTP POST /api/onboarding/room responded 201 in 897.2512 ms
+2021-12-16 16:21:40.333 +01:00 [INF] Create Room Request ----->>>> 
+2021-12-16 16:21:40.428 +01:00 [INF] HTTP POST /api/onboarding/room responded 201 in 125.7632 ms
+2021-12-16 16:21:57.225 +01:00 [INF] Create Room Request ----->>>> 
+2021-12-16 16:21:57.330 +01:00 [INF] HTTP POST /api/onboarding/room responded 201 in 132.6089 ms
+2021-12-16 16:22:13.149 +01:00 [INF] Create Room Request ----->>>> 
+2021-12-16 16:22:13.245 +01:00 [INF] HTTP POST /api/onboarding/room responded 201 in 120.8183 ms
+2021-12-16 16:22:45.376 +01:00 [INF] Create Room Request ----->>>> 
+2021-12-16 16:22:45.473 +01:00 [INF] HTTP POST /api/onboarding/room responded 201 in 130.7344 ms
+2021-12-16 16:23:02.143 +01:00 [INF] Create Room Request ----->>>> 
+2021-12-16 16:23:02.239 +01:00 [INF] HTTP POST /api/onboarding/room responded 201 in 124.3705 ms
+2021-12-16 16:23:22.497 +01:00 [INF] Create Room Request ----->>>> 
+2021-12-16 16:23:22.634 +01:00 [INF] HTTP POST /api/onboarding/room responded 201 in 167.2335 ms
+2021-12-16 16:23:52.427 +01:00 [INF] Create Room Request ----->>>> 
+2021-12-16 16:23:52.522 +01:00 [INF] HTTP POST /api/onboarding/room responded 201 in 125.8535 ms
+2021-12-16 16:24:04.311 +01:00 [INF] Create Room Request ----->>>> 
+2021-12-16 16:24:04.412 +01:00 [INF] HTTP POST /api/onboarding/room responded 201 in 127.7337 ms
+2021-12-16 16:24:17.914 +01:00 [INF] Create Room Request ----->>>> 
+2021-12-16 16:24:17.993 +01:00 [INF] HTTP POST /api/onboarding/room responded 201 in 112.8395 ms
+2021-12-16 16:24:40.516 +01:00 [INF] Create Room Request ----->>>> 
+2021-12-16 16:24:40.625 +01:00 [INF] HTTP POST /api/onboarding/room responded 201 in 134.5985 ms
+2021-12-16 16:25:04.668 +01:00 [INF] Create Room Request ----->>>> 
+2021-12-16 16:25:04.770 +01:00 [INF] HTTP POST /api/onboarding/room responded 201 in 130.3208 ms
+2021-12-16 16:30:03.057 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-16 16:30:03.416 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 398.3891 ms
+2021-12-16 16:30:03.766 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 182.6347 ms
+2021-12-16 16:30:03.924 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 81.6649 ms
+2021-12-16 16:30:04.080 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 90.2392 ms
+2021-12-16 16:30:09.330 +01:00 [INF] HTTP POST /api/enquiry/room/getRooms responded 200 in 113.1157 ms
+2021-12-16 16:30:31.495 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 116.9827 ms

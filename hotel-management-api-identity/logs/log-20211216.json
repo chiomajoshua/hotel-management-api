@@ -639,3 +639,228 @@ Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime
 2021-12-16 15:48:24.855 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 68.4881 ms
 2021-12-16 16:17:16.708 +01:00 [INF] Shut down complete
 2021-12-16 16:17:23.186 +01:00 [INF] Shut down complete
+2021-12-16 16:19:49.180 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-16 16:19:49.222 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-16 16:19:49.223 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-16 16:19:49.224 +01:00 [INF] Hosting environment: Development
+2021-12-16 16:19:49.226 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-16 16:19:51.031 +01:00 [INF] HTTP GET /swagger responded 301 in 59.8711 ms
+2021-12-16 16:19:51.205 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 137.5153 ms
+2021-12-16 16:19:51.307 +01:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 90.1586 ms
+2021-12-16 16:19:51.307 +01:00 [INF] HTTP GET /swagger/swagger-ui.css responded 200 in 92.0897 ms
+2021-12-16 16:19:51.312 +01:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 96.3418 ms
+2021-12-16 16:19:52.219 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 180.5920 ms
+2021-12-16 16:21:06.939 +01:00 [INF] Create Room Request ----->>>> 
+2021-12-16 16:21:07.445 +01:00 [INF] HTTP POST /api/onboarding/room responded 201 in 897.2512 ms
+2021-12-16 16:21:40.333 +01:00 [INF] Create Room Request ----->>>> 
+2021-12-16 16:21:40.428 +01:00 [INF] HTTP POST /api/onboarding/room responded 201 in 125.7632 ms
+2021-12-16 16:21:57.225 +01:00 [INF] Create Room Request ----->>>> 
+2021-12-16 16:21:57.330 +01:00 [INF] HTTP POST /api/onboarding/room responded 201 in 132.6089 ms
+2021-12-16 16:22:13.149 +01:00 [INF] Create Room Request ----->>>> 
+2021-12-16 16:22:13.245 +01:00 [INF] HTTP POST /api/onboarding/room responded 201 in 120.8183 ms
+2021-12-16 16:22:45.376 +01:00 [INF] Create Room Request ----->>>> 
+2021-12-16 16:22:45.473 +01:00 [INF] HTTP POST /api/onboarding/room responded 201 in 130.7344 ms
+2021-12-16 16:23:02.143 +01:00 [INF] Create Room Request ----->>>> 
+2021-12-16 16:23:02.239 +01:00 [INF] HTTP POST /api/onboarding/room responded 201 in 124.3705 ms
+2021-12-16 16:23:22.497 +01:00 [INF] Create Room Request ----->>>> 
+2021-12-16 16:23:22.634 +01:00 [INF] HTTP POST /api/onboarding/room responded 201 in 167.2335 ms
+2021-12-16 16:23:52.427 +01:00 [INF] Create Room Request ----->>>> 
+2021-12-16 16:23:52.522 +01:00 [INF] HTTP POST /api/onboarding/room responded 201 in 125.8535 ms
+2021-12-16 16:24:04.311 +01:00 [INF] Create Room Request ----->>>> 
+2021-12-16 16:24:04.412 +01:00 [INF] HTTP POST /api/onboarding/room responded 201 in 127.7337 ms
+2021-12-16 16:24:17.914 +01:00 [INF] Create Room Request ----->>>> 
+2021-12-16 16:24:17.993 +01:00 [INF] HTTP POST /api/onboarding/room responded 201 in 112.8395 ms
+2021-12-16 16:24:40.516 +01:00 [INF] Create Room Request ----->>>> 
+2021-12-16 16:24:40.625 +01:00 [INF] HTTP POST /api/onboarding/room responded 201 in 134.5985 ms
+2021-12-16 16:25:04.668 +01:00 [INF] Create Room Request ----->>>> 
+2021-12-16 16:25:04.770 +01:00 [INF] HTTP POST /api/onboarding/room responded 201 in 130.3208 ms
+2021-12-16 16:30:03.057 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-16 16:30:03.416 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 398.3891 ms
+2021-12-16 16:30:03.766 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 182.6347 ms
+2021-12-16 16:30:03.924 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 81.6649 ms
+2021-12-16 16:30:04.080 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 90.2392 ms
+2021-12-16 16:30:09.330 +01:00 [INF] HTTP POST /api/enquiry/room/getRooms responded 200 in 113.1157 ms
+2021-12-16 16:30:31.495 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 116.9827 ms
+2021-12-16 16:32:09.142 +01:00 [INF] Now listening on: https://localhost:7135
+2021-12-16 16:32:09.187 +01:00 [INF] Now listening on: http://localhost:5135
+2021-12-16 16:32:09.189 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-16 16:32:09.190 +01:00 [INF] Hosting environment: Development
+2021-12-16 16:32:09.191 +01:00 [INF] Content root path: C:\Users\JoshuaChioma\source\repos\hotel-management-app\api\hotel-management-api-identity\hotel-management-api-identity\
+2021-12-16 16:32:10.722 +01:00 [INF] HTTP GET /swagger responded 301 in 16.2980 ms
+2021-12-16 16:32:10.989 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 1402.6722 ms
+2021-12-16 16:32:11.064 +01:00 [INF] HTTP GET /swagger/index.html responded 200 in 243.4751 ms
+2021-12-16 16:32:11.092 +01:00 [INF] HTTP GET /swagger/swagger-ui.css responded 200 in 11.7365 ms
+2021-12-16 16:32:11.143 +01:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 62.7016 ms
+2021-12-16 16:32:11.143 +01:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 62.8536 ms
+2021-12-16 16:32:11.837 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 142.0977 ms
+2021-12-16 16:32:17.446 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-16 16:32:17.711 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 313.6623 ms
+2021-12-16 16:32:17.936 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 128.1833 ms
+2021-12-16 16:32:18.095 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 105.9791 ms
+2021-12-16 16:32:22.053 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 97.4810 ms
+2021-12-16 16:32:33.916 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 129.2985 ms
+2021-12-16 16:35:26.516 +01:00 [INF] Create Customer Request ----->>>> 
+2021-12-16 16:35:26.645 +01:00 [INF] HTTP POST /api/onboarding/customer responded 201 in 211.8518 ms
+2021-12-16 16:35:26.898 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=chief@house4.com responded 200 in 117.8083 ms
+2021-12-16 16:35:27.054 +01:00 [INF] HTTP POST /api/enquiry/room/getRooms responded 200 in 94.2271 ms
+2021-12-16 16:35:45.035 +01:00 [INF] HTTP GET /api/enquiry/room/getroombyname?name=Squid%20Game responded 200 in 98.2893 ms
+2021-12-16 16:35:45.176 +01:00 [INF] CreateBooking Request ----> 
+2021-12-16 16:35:45.384 +01:00 [ERR] IsRoomTaken Error
+2021-12-16 16:35:45.430 +01:00 [INF] HTTP POST /api/transaction/booking responded 201 in 320.1043 ms
+2021-12-16 16:35:45.608 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 73.8932 ms
+2021-12-16 16:35:54.341 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=chief@house4.com responded 200 in 1.6348 ms
+2021-12-16 16:35:54.492 +01:00 [INF] HTTP GET /api/enquiry/booking/getBookingsByEmail?email=chief@house4.com responded 200 in 94.0542 ms
+2021-12-16 16:35:59.863 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 91.3328 ms
+2021-12-16 16:36:00.005 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 86.7247 ms
+2021-12-16 16:36:05.023 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 85.1369 ms
+2021-12-16 16:36:22.303 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=chief@house4.com responded 200 in 0.7342 ms
+2021-12-16 16:36:22.361 +01:00 [INF] HTTP GET /api/enquiry/booking/getBookingsByEmail?email=chief@house4.com responded 200 in 0.3892 ms
+2021-12-16 16:36:26.017 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=chief@house4.com responded 200 in 0.2268 ms
+2021-12-16 16:36:26.149 +01:00 [INF] HTTP POST /api/enquiry/room/getRooms responded 200 in 81.9063 ms
+2021-12-16 16:36:43.597 +01:00 [INF] HTTP GET /api/enquiry/room/getroombyname?name=Bali responded 200 in 0.3375 ms
+2021-12-16 16:36:43.703 +01:00 [INF] CreateBooking Request ----> 
+2021-12-16 16:36:43.873 +01:00 [ERR] IsRoomTaken Error
+2021-12-16 16:36:43.898 +01:00 [INF] HTTP POST /api/transaction/booking responded 201 in 241.3061 ms
+2021-12-16 16:36:44.070 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 67.6769 ms
+2021-12-16 16:36:48.557 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=chief@house4.com responded 200 in 0.5485 ms
+2021-12-16 16:36:48.613 +01:00 [INF] HTTP GET /api/enquiry/booking/getBookingsByEmail?email=chief@house4.com responded 200 in 0.2620 ms
+2021-12-16 16:37:05.355 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 73.8288 ms
+2021-12-16 16:37:38.374 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 95.6627 ms
+2021-12-16 16:37:56.192 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 82.9056 ms
+2021-12-16 16:37:59.143 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=chief@house4.com responded 200 in 77.6991 ms
+2021-12-16 16:37:59.258 +01:00 [INF] HTTP GET /api/enquiry/booking/getBookingsByEmail?email=chief@house4.com responded 200 in 67.0706 ms
+2021-12-16 16:38:06.201 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=chief@house4.com responded 200 in 0.7191 ms
+2021-12-16 16:38:06.329 +01:00 [INF] HTTP POST /api/enquiry/room/getRooms responded 200 in 77.0056 ms
+2021-12-16 16:38:20.584 +01:00 [INF] HTTP GET /api/enquiry/room/getroombyname?name=Vanilla responded 200 in 67.0721 ms
+2021-12-16 16:38:20.683 +01:00 [INF] CreateBooking Request ----> 
+2021-12-16 16:38:20.846 +01:00 [ERR] IsRoomTaken Error
+2021-12-16 16:38:20.883 +01:00 [INF] HTTP POST /api/transaction/booking responded 201 in 242.9349 ms
+2021-12-16 16:38:21.038 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 65.6771 ms
+2021-12-16 16:38:26.494 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=chief@house4.com responded 200 in 0.3536 ms
+2021-12-16 16:38:26.555 +01:00 [INF] HTTP GET /api/enquiry/booking/getBookingsByEmail?email=chief@house4.com responded 200 in 0.2477 ms
+2021-12-16 16:38:36.697 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=chief@house4.com responded 200 in 0.3792 ms
+2021-12-16 16:38:36.814 +01:00 [INF] HTTP POST /api/enquiry/room/getRooms responded 200 in 69.1680 ms
+2021-12-16 16:39:23.547 +01:00 [INF] Create Customer Request ----->>>> 
+2021-12-16 16:39:23.606 +01:00 [INF] HTTP POST /api/onboarding/customer responded 201 in 112.2469 ms
+2021-12-16 16:39:38.604 +01:00 [INF] Create Customer Request ----->>>> 
+2021-12-16 16:39:38.657 +01:00 [INF] HTTP POST /api/onboarding/customer responded 201 in 103.4509 ms
+2021-12-16 16:40:20.706 +01:00 [INF] Create Customer Request ----->>>> 
+2021-12-16 16:40:20.767 +01:00 [INF] HTTP POST /api/onboarding/customer responded 201 in 109.1670 ms
+2021-12-16 16:41:04.949 +01:00 [INF] Create Customer Request ----->>>> 
+2021-12-16 16:41:05.044 +01:00 [INF] HTTP POST /api/onboarding/customer responded 201 in 163.7190 ms
+2021-12-16 16:41:05.191 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=govt@house4.com responded 200 in 67.3508 ms
+2021-12-16 16:41:05.304 +01:00 [INF] HTTP POST /api/enquiry/room/getRooms responded 200 in 62.5899 ms
+2021-12-16 16:42:00.651 +01:00 [INF] HTTP GET /api/enquiry/room/getroombyname?name=Seychelles responded 200 in 72.2718 ms
+2021-12-16 16:42:12.700 +01:00 [INF] CreateBooking Request ----> 
+2021-12-16 16:42:12.886 +01:00 [ERR] IsRoomTaken Error
+2021-12-16 16:42:12.911 +01:00 [INF] HTTP POST /api/transaction/booking responded 201 in 252.4531 ms
+2021-12-16 16:42:15.949 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 67.6267 ms
+2021-12-16 16:42:23.106 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=govt@house4.com responded 200 in 0.3571 ms
+2021-12-16 16:42:23.219 +01:00 [INF] HTTP GET /api/enquiry/booking/getBookingsByEmail?email=govt@house4.com responded 200 in 67.1641 ms
+2021-12-16 16:42:30.718 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=govt@house4.com responded 200 in 0.3654 ms
+2021-12-16 16:42:30.834 +01:00 [INF] HTTP POST /api/enquiry/room/getRooms responded 200 in 66.2179 ms
+2021-12-16 16:42:52.442 +01:00 [INF] HTTP GET /api/enquiry/room/getroombyname?name=Money%20Heist responded 200 in 0.2031 ms
+2021-12-16 16:42:54.364 +01:00 [INF] CreateBooking Request ----> 
+2021-12-16 16:42:54.566 +01:00 [ERR] IsRoomTaken Error
+2021-12-16 16:42:54.602 +01:00 [INF] HTTP POST /api/transaction/booking responded 201 in 284.5057 ms
+2021-12-16 16:42:58.758 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 67.9049 ms
+2021-12-16 16:43:03.068 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 65.6505 ms
+2021-12-16 16:43:05.949 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=chief@house4.com responded 200 in 65.6310 ms
+2021-12-16 16:43:06.004 +01:00 [INF] HTTP GET /api/enquiry/booking/getBookingsByEmail?email=chief@house4.com responded 200 in 0.2469 ms
+2021-12-16 16:43:15.054 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 68.5984 ms
+2021-12-16 16:43:27.572 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 71.1923 ms
+2021-12-16 16:46:07.422 +01:00 [INF] Create Customer Request ----->>>> 
+2021-12-16 16:46:07.531 +01:00 [INF] HTTP POST /api/onboarding/customer responded 201 in 169.2148 ms
+2021-12-16 16:46:11.789 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=Kennedy@gmail.com responded 200 in 79.2033 ms
+2021-12-16 16:46:11.912 +01:00 [INF] HTTP POST /api/enquiry/room/getRooms responded 200 in 71.1720 ms
+2021-12-16 16:46:38.575 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-16 16:46:38.724 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 171.6335 ms
+2021-12-16 16:46:38.962 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 68.1380 ms
+2021-12-16 16:46:39.107 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 69.1249 ms
+2021-12-16 16:46:39.262 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 73.2151 ms
+2021-12-16 16:46:55.687 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=kennedy@gmail.com responded 200 in 0.4068 ms
+2021-12-16 16:46:55.820 +01:00 [INF] HTTP GET /api/enquiry/booking/getBookingsByEmail?email=kennedy@gmail.com responded 200 in 66.8752 ms
+2021-12-16 16:47:01.198 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=Kennedy@gmail.com responded 200 in 0.5526 ms
+2021-12-16 16:47:01.326 +01:00 [INF] HTTP POST /api/enquiry/room/getRooms responded 200 in 74.8088 ms
+2021-12-16 16:47:15.052 +01:00 [INF] HTTP GET /api/enquiry/room/getroombyname?name=Maldives responded 200 in 70.7656 ms
+2021-12-16 16:47:15.168 +01:00 [INF] CreateBooking Request ----> 
+2021-12-16 16:47:15.333 +01:00 [ERR] IsRoomTaken Error
+2021-12-16 16:47:15.373 +01:00 [INF] HTTP POST /api/transaction/booking responded 201 in 247.6903 ms
+2021-12-16 16:47:15.535 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 65.5875 ms
+2021-12-16 16:47:51.722 +01:00 [INF] Create Customer Request ----->>>> 
+2021-12-16 16:47:51.844 +01:00 [INF] HTTP POST /api/onboarding/customer responded 201 in 176.6482 ms
+2021-12-16 16:47:52.960 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=Umoh@house4.com responded 200 in 78.4387 ms
+2021-12-16 16:47:53.086 +01:00 [INF] HTTP POST /api/enquiry/room/getRooms responded 200 in 71.1918 ms
+2021-12-16 16:48:07.886 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 75.3229 ms
+2021-12-16 16:48:11.720 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=Umoh@house4.com responded 200 in 0.2602 ms
+2021-12-16 16:48:11.774 +01:00 [INF] HTTP GET /api/enquiry/booking/getBookingsByEmail?email=Umoh@house4.com responded 200 in 0.1768 ms
+2021-12-16 16:48:18.333 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=Umoh@house4.com responded 200 in 0.1988 ms
+2021-12-16 16:48:18.450 +01:00 [INF] HTTP POST /api/enquiry/room/getRooms responded 200 in 62.6596 ms
+2021-12-16 16:48:47.862 +01:00 [INF] HTTP GET /api/enquiry/room/getroombyname?name=Santorini responded 200 in 83.0905 ms
+2021-12-16 16:48:49.720 +01:00 [INF] CreateBooking Request ----> 
+2021-12-16 16:48:49.881 +01:00 [ERR] IsRoomTaken Error
+2021-12-16 16:48:49.920 +01:00 [INF] HTTP POST /api/transaction/booking responded 201 in 241.2898 ms
+2021-12-16 16:48:53.003 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 72.5498 ms
+2021-12-16 16:48:56.531 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=Umoh@house4.com responded 200 in 0.1882 ms
+2021-12-16 16:48:56.650 +01:00 [INF] HTTP GET /api/enquiry/booking/getBookingsByEmail?email=Umoh@house4.com responded 200 in 68.0815 ms
+2021-12-16 16:49:38.208 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 117.3344 ms
+2021-12-16 16:49:38.350 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 77.1386 ms
+2021-12-16 16:49:38.471 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 69.4129 ms
+2021-12-16 16:50:13.737 +01:00 [INF] Create Customer Request ----->>>> 
+2021-12-16 16:50:13.866 +01:00 [INF] HTTP POST /api/onboarding/customer responded 201 in 176.8652 ms
+2021-12-16 16:50:16.624 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=Gernkay@house4.com responded 200 in 81.0980 ms
+2021-12-16 16:50:16.933 +01:00 [INF] HTTP POST /api/enquiry/room/getRooms responded 200 in 68.0682 ms
+2021-12-16 16:50:31.243 +01:00 [INF] HTTP GET /api/enquiry/room/getroombyname?name=Game%20Of%20Thrones responded 200 in 73.4928 ms
+2021-12-16 16:50:39.314 +01:00 [INF] CreateBooking Request ----> 
+2021-12-16 16:50:39.480 +01:00 [ERR] IsRoomTaken Error
+2021-12-16 16:50:39.508 +01:00 [INF] HTTP POST /api/transaction/booking responded 201 in 240.3704 ms
+2021-12-16 16:50:41.963 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 74.1809 ms
+2021-12-16 16:51:15.373 +01:00 [INF] Create Customer Request ----->>>> 
+2021-12-16 16:51:15.502 +01:00 [INF] HTTP POST /api/onboarding/customer responded 201 in 181.3024 ms
+2021-12-16 16:51:19.896 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=Cosmos@house4.com responded 200 in 0.1619 ms
+2021-12-16 16:51:20.043 +01:00 [INF] HTTP POST /api/enquiry/room/getRooms responded 200 in 98.9632 ms
+2021-12-16 16:51:32.296 +01:00 [INF] HTTP GET /api/enquiry/room/getroombyname?name=Strawberry responded 200 in 0.2265 ms
+2021-12-16 16:51:32.381 +01:00 [INF] CreateBooking Request ----> 
+2021-12-16 16:51:32.561 +01:00 [ERR] IsRoomTaken Error
+2021-12-16 16:51:32.587 +01:00 [INF] HTTP POST /api/transaction/booking responded 201 in 243.6108 ms
+2021-12-16 16:51:32.745 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 69.3014 ms
+2021-12-16 16:52:05.249 +01:00 [INF] Create Customer Request ----->>>> 
+2021-12-16 16:52:05.318 +01:00 [INF] HTTP POST /api/onboarding/customer responded 201 in 115.8611 ms
+2021-12-16 16:52:12.887 +01:00 [INF] Create Customer Request ----->>>> 
+2021-12-16 16:52:12.981 +01:00 [INF] HTTP POST /api/onboarding/customer responded 201 in 138.8232 ms
+2021-12-16 16:52:15.212 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=honourable@house4.com responded 200 in 69.1958 ms
+2021-12-16 16:52:15.328 +01:00 [INF] HTTP POST /api/enquiry/room/getRooms responded 200 in 66.2558 ms
+2021-12-16 16:52:35.388 +01:00 [INF] HTTP GET /api/enquiry/room/getroombyname?name=Bridgeton responded 200 in 80.4101 ms
+2021-12-16 16:52:35.492 +01:00 [INF] CreateBooking Request ----> 
+2021-12-16 16:52:35.649 +01:00 [ERR] IsRoomTaken Error
+2021-12-16 16:52:35.693 +01:00 [INF] HTTP POST /api/transaction/booking responded 201 in 245.7700 ms
+2021-12-16 16:52:35.851 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 68.2010 ms
+2021-12-16 16:52:41.449 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 63.2829 ms
+2021-12-16 16:52:44.865 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=Cosmos@house4.com responded 200 in 0.2006 ms
+2021-12-16 16:52:44.976 +01:00 [INF] HTTP GET /api/enquiry/booking/getBookingsByEmail?email=Cosmos@house4.com responded 200 in 67.5078 ms
+2021-12-16 16:52:55.599 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 67.6539 ms
+2021-12-16 16:53:00.253 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=Gernkay@house4.com responded 200 in 0.2091 ms
+2021-12-16 16:53:00.301 +01:00 [INF] HTTP GET /api/enquiry/booking/getBookingsByEmail?email=Gernkay@house4.com responded 200 in 0.3293 ms
+2021-12-16 16:53:11.023 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=Gernkay@house4.com responded 200 in 0.1925 ms
+2021-12-16 16:53:11.069 +01:00 [INF] HTTP GET /api/enquiry/booking/getBookingsByEmail?email=Gernkay@house4.com responded 200 in 0.1798 ms
+2021-12-16 16:53:18.755 +01:00 [INF] ValidateCredentials Request -----> {"Email":"onw@gmail.com","Password":"P@$$w0rd"}
+2021-12-16 16:53:18.884 +01:00 [INF] HTTP POST /api/authentication/login responded 200 in 152.5730 ms
+2021-12-16 16:53:19.032 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 67.4774 ms
+2021-12-16 16:53:19.155 +01:00 [INF] HTTP POST /api/enquiry/transactions/getAllTransactions responded 200 in 74.6152 ms
+2021-12-16 16:53:19.272 +01:00 [INF] HTTP POST /api/enquiry/booking/getbookings responded 200 in 65.3684 ms
+2021-12-16 16:53:23.604 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=Cosmos@house4.com responded 200 in 0.5138 ms
+2021-12-16 16:53:23.654 +01:00 [INF] HTTP GET /api/enquiry/booking/getBookingsByEmail?email=Cosmos@house4.com responded 200 in 0.3345 ms
+2021-12-16 16:53:33.535 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 64.9031 ms
+2021-12-16 16:53:36.790 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=govt@house4.com responded 200 in 0.4219 ms
+2021-12-16 16:53:36.838 +01:00 [INF] HTTP GET /api/enquiry/booking/getBookingsByEmail?email=govt@house4.com responded 200 in 0.1822 ms
+2021-12-16 16:54:23.886 +01:00 [INF] Create Customer Request ----->>>> 
+2021-12-16 16:54:23.985 +01:00 [INF] HTTP POST /api/onboarding/customer responded 201 in 139.0012 ms
+2021-12-16 16:54:25.854 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=alex@house4.com responded 200 in 72.0058 ms
+2021-12-16 16:54:25.978 +01:00 [INF] HTTP POST /api/enquiry/room/getRooms responded 200 in 69.4677 ms
+2021-12-16 16:54:38.351 +01:00 [INF] HTTP GET /api/enquiry/room/getroombyname?name=Caramel responded 200 in 66.5953 ms
+2021-12-16 16:54:38.439 +01:00 [INF] CreateBooking Request ----> 
+2021-12-16 16:54:38.598 +01:00 [ERR] IsRoomTaken Error
+2021-12-16 16:54:38.632 +01:00 [INF] HTTP POST /api/transaction/booking responded 201 in 232.4970 ms
+2021-12-16 16:54:38.789 +01:00 [INF] HTTP POST /api/enquiry/customer/getcustomers responded 200 in 76.8717 ms
+2021-12-16 16:54:44.155 +01:00 [INF] HTTP GET /api/enquiry/customer/getCustomerByEmail?email=chief@house4.com responded 200 in 0.2024 ms
+2021-12-16 16:54:44.268 +01:00 [INF] HTTP GET /api/enquiry/booking/getBookingsByEmail?email=chief@house4.com responded 200 in 64.2244 ms

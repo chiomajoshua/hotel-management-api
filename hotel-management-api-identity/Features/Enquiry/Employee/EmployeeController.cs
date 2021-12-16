@@ -24,7 +24,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Employee
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(object))]
-        [ResponseCache(Duration = 90)]
+        
         public async Task<IActionResult> GetEmployees(GenericRequest genericRequest)
         {
             return Ok(await _employeeService.GetEmployees(genericRequest.PageSize, genericRequest.PageNumber));
@@ -36,7 +36,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Employee
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(object))]
-        [ResponseCache(Duration = 90)]
+        
         public async Task<IActionResult> GetEmployeeByEmail(string email)
         {
             if (string.IsNullOrEmpty(email))
@@ -50,7 +50,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Employee
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(object))]
-        [ResponseCache(Duration = 90)]
+        
         public async Task<IActionResult> GetEmployeeByPhone(string phone)
         {
             if (string.IsNullOrEmpty(phone))

@@ -24,7 +24,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Menu
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(object))]
-        [ResponseCache(Duration = 90)]
+        
         public async Task<IActionResult> GetMenu(GenericRequest genericRequest)
         {
             return Ok(await _menuService.GetAllMenu(genericRequest.PageSize, genericRequest.PageNumber));
@@ -36,7 +36,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Menu
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(object))]
-        [ResponseCache(Duration = 90)]
+        
         public async Task<IActionResult> GetMenuByName(string name)
         {
             if (string.IsNullOrEmpty(name))

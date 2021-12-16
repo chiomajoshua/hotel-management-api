@@ -25,7 +25,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Transaction
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(object))]
-        [ResponseCache(Duration = 90)]
+        
         public async Task<IActionResult> GetAllTransactions(GenericRequest genericRequest)
         {
             return Ok(await _transactionService.GetTransactions(genericRequest.PageSize, genericRequest.PageNumber));
@@ -37,7 +37,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Transaction
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(object))]
-        [ResponseCache(Duration = 90)]
+        
         public async Task<IActionResult> GetTransactionsByDateRange(GetByDateRangeRequest getByDateRangeRequest)
         {
             return Ok(await _transactionService.GetTransactionsByDateRange(getByDateRangeRequest.StartDate, getByDateRangeRequest.EndDate));
@@ -50,7 +50,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Transaction
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(object))]
-        [ResponseCache(Duration = 90)]
+        
         public async Task<IActionResult> GetTransactionsByEmployee(GenericRequest genericRequest, string email)
         {
             return Ok(await _transactionService.GetTransactionsByEmployee(email: email, genericRequest.PageSize, genericRequest.PageNumber));
@@ -62,7 +62,7 @@ namespace hotel_management_api_identity.Features.Enquiry.Transaction
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(object))]
-        [ResponseCache(Duration = 90)]
+        
         public async Task<IActionResult> GetTransactionsByOrderCode(GenericRequest genericRequest, string orderCode)
         {
             return Ok(await _transactionService.GetTransactionsByOrderCode(orderCode: orderCode, genericRequest.PageSize, genericRequest.PageNumber));
